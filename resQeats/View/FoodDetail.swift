@@ -13,6 +13,8 @@ struct FoodDetail: View {
     
     var body: some View {
         VStack {
+            Image(offer.title)
+                .resizable()
             Text(offer.title)
                 .font(.title)
             Text(offer.category)

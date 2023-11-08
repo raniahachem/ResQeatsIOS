@@ -15,7 +15,7 @@ struct Restaurant: Identifiable {
 
 // Données de restaurants et offres alimentaires
 var restaurants = [
-    Restaurant(name: "Le zink", imageName: "zink", foodOffers: [
+    Restaurant(name: "Le zink", imageName: "Zink", foodOffers: [
         FoodOffer(title: "Burger", category: "Plat principal", description: "Un délicieux burger", price: 10.99, image: "burger"),
         FoodOffer(title: "Salade", category: "Entrée", description: "Une salade fraîche", price: 7.99, image: "salad")
     ]),

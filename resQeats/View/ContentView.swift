@@ -85,14 +85,19 @@ struct CategoryView: View {
 struct ListRestaurants: View {
     var body: some View {
         List {
-            ForEach(restaurants, id: \.id) { restaurant in
-                NavigationLink(destination: RestaurantDetail(viewModel: RestaurantDetailViewModel(restaurant: restaurant))) {
-                    RestaurantRow(restaurant: restaurant)
-                }
+            Section(header: Text("All Restaurants ")) {
+                ForEach(restaurants, id: \.id) { restaurant in
+                    NavigationLink(destination: RestaurantDetail(viewModel: RestaurantDetailViewModel(restaurant: restaurant))) {
+                        RestaurantRow(restaurant: restaurant)
+                    }
+                }.background(Color(hex: "F1FDDE"))
             }
-        }.background(Color(hex: "F1FDDE"))
+        }
+        .listRowBackground(Color(hex: "F1FDDE"))
     }
 }
+
+
 
 
 
@@ -116,7 +121,7 @@ struct FoodOfferRow: View {
             Button(action: {
                 addToCart()
             }) {
-                Text("Ajouter au paniers")
+                Text("Ajouter au panier")
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.blue)
@@ -139,8 +144,7 @@ struct RestaurantRow: View {
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
             Text(restaurant.name)
-            NavigationLink("", destination: RestaurantDetail(viewModel: RestaurantDetailViewModel(restaurant: restaurant)))
-        }.background(Color(hex: "F1FDDE"))
+        }
     }
 }
 
@@ -194,6 +198,36 @@ struct CartItemView: View {
         }
     }
 }
+
+/*struct MainTabView: View {
+    var body: some View {
+        TabView {
+            HomeView()
+                .tabItem {
+                    Image(systemName: "house.fill") // Utilisez le nom de l'icône système correspondant
+                    Text("Home")
+                }
+            
+            FoodOffersView()
+                .tabItem {
+                    Image(systemName: "tag.fill")
+                    Text("Offers")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person.fill")
+                    Text("Profile")
+                }
+            
+            MoreView()
+                .tabItem {
+                    Image(systemName: "ellipsis.circle.fill")
+                    Text("More")
+                }
+        }
+    }
+}*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -53,30 +53,24 @@ struct FoodImageCategoryView: View {
             Image(offer.title)
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width, height: 200)
-            Text(offer.title)
-                .font(.caption)
-            Text(offer.category)
-                .font(.caption)
+            
+            HStack {
+                Text(offer.title)
+                    .font(.caption)
+                    .foregroundColor(.black) // Couleur noire
+                Spacer()
+            }
+            
+            HStack {
+                Text(offer.category)
+                    .font(.caption)
+                    .foregroundColor(.gray) // Couleur gris
+                Spacer()
+            }
         }
     }
 }
 
 
-class RestaurantDetailViewModel: ObservableObject {
-    @Published var restaurant: Restaurant
-    @Published var cart: [FoodOffer] = []
 
-    init(restaurant: Restaurant) {
-        self.restaurant = restaurant
-    }
-
-    func addToCart(_ offer: FoodOffer) {
-        if let index = restaurant.foodOffers.firstIndex(where: { $0.id == offer.id }) {
-            var updatedOffers = restaurant.foodOffers
-            updatedOffers[index].isInCart = true
-            cart.append(offer)
-            restaurant.foodOffers = updatedOffers
-        }
-    }
-}
 
