@@ -116,7 +116,7 @@ struct FoodOfferRow: View {
             Button(action: {
                 addToCart()
             }) {
-                Text("Ajouter au panier")
+                Text("Ajouter au paniers")
                     .foregroundColor(.white)
                     .padding()
                     .background(Color.blue)
