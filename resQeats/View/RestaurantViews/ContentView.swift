@@ -19,24 +19,22 @@ struct ContentView: View {
             VStack(alignment: .leading) {
                 HStack {
                     Button(action: {
-                        // Action pour sélectionner la localisation de l'utilisateur
                     }) {
                         Image(systemName: "mappin.circle")
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.orange)
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
 
                     TextField("Rechercher...", text: $searchText)
                         .padding(.vertical, 10)
-                        .padding(.horizontal, 15)
+                        .padding(.horizontal, 20)
                         .background(Color(.systemGray6))
                         .cornerRadius(20)
                         .overlay(
                             HStack {
                                 Image(systemName: "magnifyingglass")
-                                    .foregroundColor(Color(.systemGray2))
                                     .padding(10)
                             }
                         )
@@ -46,8 +44,10 @@ struct ContentView: View {
                     NavigationLink(destination: CartView(cart: cart)) {
                         Image(systemName: "cart")
                             .resizable()
+                            .foregroundColor(Color.orange)
                             .frame(width: 20, height: 20)
                         Text("\(cart.items.count)")
+                            .foregroundColor(Color.orange)
                     }
                 }
 
@@ -62,7 +62,7 @@ struct ContentView: View {
                 ListRestaurants()
             }.background(Color(hex: "F1FDDE"))
             .navigationBarTitle("Restaurants", displayMode: .inline)
-        }
+        }.background(Color(hex: "F1FDDE"))
     }
 }
 
@@ -94,10 +94,28 @@ struct ListRestaurants: View {
             }
         }
         .listRowBackground(Color(hex: "F1FDDE"))
+        
     }
 }
 
 
+/*class RestaurantDetailViewModel: ObservableObject {
+    @Published var restaurant: Restaurant
+    @Published var cart: [FoodOffer] = []
+
+    init(restaurant: Restaurant) {
+        self.restaurant = restaurant
+    }
+
+    func addToCart(_ offer: FoodOffer) {
+        if let index = restaurant.foodOffers.firstIndex(where: { $0.id == offer.id }) {
+            var updatedOffers = restaurant.foodOffers
+            updatedOffers[index].isInCart = true
+            cart.append(offer)
+            restaurant.foodOffers = updatedOffers
+        }
+    }
+}*/
 
 
 
@@ -107,7 +125,7 @@ struct FoodOfferRow: View {
 
     var body: some View {
         VStack {
-            Image(offer.title) // Utilisez le nom de l'offre comme nom d'image (assurez-vous que les images sont dans les assets)
+            Image(offer.title)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 200, height: 100)
@@ -143,9 +161,12 @@ struct RestaurantRow: View {
                 .resizable()
                 .frame(width: 100, height: 100)
                 .cornerRadius(10)
+            VStack{
             Text(restaurant.name)
+                Text(restaurant.category)
         }
     }
+}
 }
 
 class CartModel: ObservableObject {
@@ -232,7 +253,6 @@ struct CartItemView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(cart: CartModel())
-            .previewInterfaceOrientation(.portrait)
     }
 }
 

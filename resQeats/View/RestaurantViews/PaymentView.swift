@@ -14,7 +14,7 @@ struct PaymentView: View {
     var body: some View {
         VStack {
             Text("Résumé de la commande")
-                .font(.largeTitle)
+                .font(.title2)
                 .padding()
 
             List {
@@ -22,12 +22,12 @@ struct PaymentView: View {
                     HStack {
                         Text(offer.title)
                         Spacer()
-                        Text("\(offer.price) DT")
+                        Text("\(offer.price) TND")
                     }
                 }
             }
 
-            Text("Total : \(totalPrice()) DT")
+            Text("Total : \(totalPrice(),specifier: "%.2f") TND")
                 .font(.title)
 
             TextField("Moyen de paiement", text: $paymentMethod)

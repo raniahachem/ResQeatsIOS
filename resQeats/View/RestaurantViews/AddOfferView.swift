@@ -18,7 +18,9 @@ struct AddOfferView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Nouvelle Offre Alimentaire")) {
+                Section(header: Text("all fields ae required")
+                    .fontWeight(.medium)
+                    .foregroundColor(Color(red: 0.339, green: 0.435, blue: 0.361))) {
                     TextField("Titre de l'offre", text: $title)
                     
                     Picker("Catégorie", selection: $category) {
@@ -27,7 +29,7 @@ struct AddOfferView: View {
                         Text("Gluten Free").tag("Gluten Free")
                         Text("Dessert").tag("Dessert")
                         Text("Fast Food").tag("Fast Food")
-                        Text("Plat  Principal").tag("Plat Principal")
+                        Text("Main meal").tag("Main meal")
                         Text("Tunisian").tag("Tunisian")
                     }
                      
@@ -57,7 +59,7 @@ struct AddOfferView: View {
                 Button(action: {
                     isOfferAdded = true
                 }) {
-                    Text("Ajouter")
+                    Text("Add")
                 }
                 .foregroundColor(.white)
                 .padding()
@@ -65,11 +67,10 @@ struct AddOfferView: View {
                 .background(Color(hex: "566F5C"))
                 .cornerRadius(10)
             }
-            .navigationTitle("Ajouter une Offre")
-            .background(Color(hex: "F1FDDE")) 
+            .navigationTitle("Add a new food offer")
         }
         .alert(isPresented: $isOfferAdded) {
-            Alert(title: Text("Offre Ajoutée"), message: Text("L'offre a été ajoutée avec succès."), dismissButton: .default(Text("OK")))
+            Alert(title: Text("Offer was added"), message: Text("Offer was added sucecessfully"), dismissButton: .default(Text("OK")))
         }
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(selectedImage: $selectedImage)

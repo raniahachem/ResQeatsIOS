@@ -39,7 +39,7 @@ struct OrderRow: View {
                 }
             }
             // Vous pouvez ajouter d'autres détails de la commande ici
-        }
+        }.background(Color(hex: "F1FDDE"))
     }
 }
 
@@ -54,9 +54,7 @@ struct Order: Identifiable {
     var date: String
     var totalPrice: Double
     var status: String
-    // Ajoutez d'autres attributs de commande ici
-
-    // Si vous voulez définir un statut par défaut en attente, vous pouvez utiliser une initialisation
+   
     init(date: String, totalPrice: Double, status: String = "En attente") {
         self.date = date
         self.totalPrice = totalPrice
@@ -67,6 +65,6 @@ struct Order: Identifiable {
 var orders = [
     Order(date: "2023-11-01", totalPrice: 25.99),
     Order(date: "2023-11-02", totalPrice: 15.49),
-    // Ajoutez d'autres commandes ici
+   
 ]
 
