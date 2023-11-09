@@ -51,7 +51,7 @@ struct LocationDetailsView: View {
             }
         }
         .onAppear{
-            print("Debug: Did call on appear ")
+            print("Debug: Did  you have a call on appear ")
             fetchLookAroundPreview()
         }
         .onChange(of: mapSelection){ oldValue , newValue in
