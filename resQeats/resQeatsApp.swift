@@ -2,7 +2,7 @@
 //  resQeatsApp.swift
 //  resQeats
 //
-//  Created by rania hm on 6/11/2023.
+//  Created by KOOLI MOOTEZ on 07/11/2023.
 //
 
 import SwiftUI
@@ -13,8 +13,7 @@ struct resQeatsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(cart: CartModel())
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+         Text("hello world")
         }
     }
 }
