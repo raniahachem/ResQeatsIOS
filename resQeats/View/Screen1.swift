@@ -10,7 +10,7 @@ import SwiftUI
 struct Screen1: View {
     var body: some View {
         ZStack{
-            (Color.gray).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            (Color.white).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 .ignoresSafeArea(.all)
             Image("images")
                 .resizable()
@@ -29,24 +29,31 @@ struct Screen1: View {
                 .frame(height: 0.0)
                 .bold()
                 .font(.title3)
-                
-            Label("From Waste to Taste", systemImage: "")
-                .padding(.top, 100.0)
-                .font(.system(size: 11))
-             
-            Label("Rescue,savor,and save with budget-friendly surplus meals", systemImage: "")
-                .frame(width: 300.0, height: 2.0)
-                .accessibilityElement(children: /*@START_MENU_TOKEN@*/.contain/*@END_MENU_TOKEN@*/)
-                .padding(.top, 180.0)
-                .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
-                .font(.system(size: 9))
-            Button("Next") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            VStack{
+                Label("From Waste to Taste", systemImage: "")
+                Label("Rescue,savor,and save with budget-friendly surplus meals", systemImage: "")
+                    
             }
-            .padding(.top, 290.0)
-            .contrast(17)
-            .buttonStyle(.borderedProminent)
-
+            .padding(.top, 100.0)
+            .font(.system(size: 11))
+            .frame(width: 300.0, height: 2.0)
+            .accessibilityElement(children: /*@START_MENU_TOKEN@*/.contain/*@END_MENU_TOKEN@*/)
+            .padding(.top, 180.0)
+            .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
+            .font(.system(size: 9))
+            .offset(x: 0 , y:-60)
+            VStack{
+                Button("Next"){
+                    
+                }
+                .foregroundColor(.white)
+                .frame(width: 300 , height: 50)
+                .background(Color.green)
+                .cornerRadius(10)
+                .offset(x:0 , y:169)
+                
+                
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ struct sugnUp2: View {
     @State private var ConfirmPassword = ""
 
     var body: some View {
+        
        
         VStack(alignment: .leading,spacing: 15, content: {
             
