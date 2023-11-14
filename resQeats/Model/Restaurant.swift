@@ -6,40 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
 struct Restaurant: Identifiable {
     var id = UUID()
     var name: String
     var category: String
     var imageName: String
-    var foodOffers: [FoodOffer]
+    var description: String
+    var foodOffers: [FoodOffer] // Utilisez le modèle FoodOffer
 }
-
-// Données de restaurants et offres alimentaires
 var restaurants = [
-    Restaurant(name: "Le zink", category: "Fast food", imageName: "Zink", foodOffers: [
-        FoodOffer(title: "Korean BBQ Burger", category: "Fast food", description: "A beef patty marinated in a sweet and spicy korean BBQ", price: 10.99, image: "Korean BBQ Burger"),
-        FoodOffer(title: "Classic Burger", category: "Fast food", description: "A classic cheese burger", price: 6.99, image: "Classic Burger"),
-        FoodOffer(title: "Burger", category: "Plat principal", description: "A double beef burger", price: 6.99, image: "Burger"),
-        FoodOffer(title: "Pasta", category: "Main meal", description: "new pasta in da house", price: 6.99, image: "pasta")
-        
-    ]),
-    Restaurant(name: "Slayta", category: "Healthy", imageName: "Slayta", foodOffers: [
-        FoodOffer(title: "Salad", category: "Entrée", description: "Une salade fraîche", price: 7.99, image: "Salad"),
-        FoodOffer(title: "Pasta", category: "Plat principal", description: "Avec de la sauce blanche", price: 6.99, image: "pasta")
-    ]),
-    Restaurant(name: "Joes Pizza", category: "Fast food", imageName: "joespizza", foodOffers: [
-        FoodOffer(title: "Pizza", category: "Plat principal", description: "Pizza pepperoni, tomate mozza", price: 12.99, image: "Pizza")
-        
+    Restaurant(name: "Le zink", category: "Fast food", imageName: "zink", description: "Le zink specialisé en Burgers gourmets , salades, pastrami… Les chefs y sont très doués et inventifs, une des meilleures adresses en Tunisie", foodOffers: [
+        offers[0],
+        offers[1],
+        offers[2],
+]),
+Restaurant(name: "Slayta", category: "Healthy", imageName: "Slayta", description: "Slayta Bar à Salade, une des meilleures adresses pour la healthy bouffe en Tunisie", foodOffers: [
+    offers[3]
+]),
+Restaurant(name: "Joe's Pizza", category: "Fast food", imageName: "joespizza", description: "Chez Joe's Pizza, nous servons les pizzas les plus délicieuses tout en nous engageant à réduire le gaspillage alimentaire.Chez Joe's Pizza, chaque bouchée compte ", foodOffers: [
+    offers[4]
+]),
+    Restaurant(name: "Tik Tak Family", category: "Gluten free", imageName: "Tiktak", description: "Avec une option sans gluten disponible, leurs créations sucrées et salées vous feront saliver à chaque bouchée.", foodOffers: [
+        offers[5]
     ])
 ]
-
-/*func setupRestaurants() {
-    let burgerOffer = FoodOffer(title: "Burger", category: "Plat principal", description: "Un délicieux burger", price: 10.99)
-    let saladOffer = FoodOffer(title: "Salade", category: "Entrée", description: "Une salade fraîche", price: 7.99)
-    let pastaOffer = FoodOffer(title: "Pasta", category: "Plat principal", description: "Avec de la sauce blanche", price: 6.99)
-    let pizzaOffer = FoodOffer(title: "Pizza", category: "Plat principal", description: "Pizza pepperoni, tomate mozza", price: 12.99)
-
-    restaurants[0].foodOffers = [burgerOffer, saladOffer]
-    restaurants[1].foodOffers = [pizzaOffer]
-    restaurants[2].foodOffers = [pastaOffer]
-}*/

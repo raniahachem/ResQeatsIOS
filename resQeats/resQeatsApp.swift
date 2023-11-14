@@ -5,7 +5,7 @@
 //  Created by rania hm on 6/11/2023.
 //
 
-import SwiftUI
+/*import SwiftUI
 
 @main
 struct resQeatsApp: App {
@@ -17,4 +17,19 @@ struct resQeatsApp: App {
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
+}*/
+
+
+import SwiftUI
+@main
+struct resQeatsApp: App {
+    @StateObject var cartManager = CartManager() // Déclarer CartManager comme @StateObject
+
+    var body: some Scene {
+        WindowGroup {
+            ClientView()
+                .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
+        }
+    }
 }
+
