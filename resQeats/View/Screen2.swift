@@ -23,11 +23,7 @@ struct Screen2: View {
             }
               
             
-          
-               
-                
-                
-            VStack{
+               VStack{
                 Label("Dscover savor delicious plates", systemImage: "")
                     .padding([.top, .leading], 0.0)
                     .frame(height: 0.0)
@@ -46,7 +42,7 @@ struct Screen2: View {
                     .font(.system(size: 9))
             }
             VStack{
-                Button("Login"){
+                Button("Next"){
                     
                 }
                 .foregroundColor(.red)

@@ -5,7 +5,7 @@
 //  Created by KOOLI MOOTEZ on 07/11/2023.
 //
 
-/*import SwiftUI
+import SwiftUI
 import CoreData
 
 struct ContentView: View {
@@ -84,4 +84,4 @@ private let itemFormatter: DateFormatter = {
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
-*/
+

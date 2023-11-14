@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct NewPassword: View {
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -14,7 +15,9 @@ struct NewPassword: View {
     
     var body: some View {
         NavigationView{
+            
             ZStack{
+                
                 Rectangle()
                 
                     .scale(1.9)
@@ -86,7 +89,10 @@ struct NewPassword: View {
                 
             }
         }
+        
+        
         }
+    
     }
 
 #Preview {

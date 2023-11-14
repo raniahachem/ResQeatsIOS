@@ -13,7 +13,7 @@ struct resQeatsApp: App {
 
     var body: some Scene {
         WindowGroup {
-         Text("hello world")
+         map()
         }
     }
 }

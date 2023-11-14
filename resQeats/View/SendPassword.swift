@@ -65,12 +65,12 @@ struct sendpassword: View {
         .offset(x:1 , y:-280)
         .opacity(0.95)
         .font(.system(size: 12))
-        .offset(x: -59, y:250)
+        .offset(x: -50, y:250)
         VStack{
             Button("ClickHere?") {
                 
             }
-            .offset(x:17 , y:-118)
+            .offset(x:35 , y:-118)
             .frame(width: 100 , height: 12)
             .foregroundColor(.red)
             .font(.system(size: 12))

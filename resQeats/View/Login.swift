@@ -46,6 +46,7 @@ struct Login: View {
                     
                     Button("Login"){
                         authenticateUser(username: username, password: password)
+                        
                     }
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
@@ -65,12 +66,12 @@ struct Login: View {
                     // manque le label forgot password
                    
                     Image("fb").resizable()
-                        .frame(width: 29, height: 15)
-                        .offset(x:55 , y:45)
+                        .frame(width: 55, height: 19)
+                        .offset(x:55 , y:75)
                     
                     Image("google").resizable()
-                        .frame(width: 22, height: 15)
-                        .offset(x:-52 , y:20)
+                        .frame(width: 35, height: 19)
+                        .offset(x:-52 , y:49)
                         
                     
                 }

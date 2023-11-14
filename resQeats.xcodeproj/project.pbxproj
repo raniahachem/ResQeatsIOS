@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B0AE2BD2AFD4ADE0020608B /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0AE2BC2AFD4ADE0020608B /* map.swift */; };
 		4B0AE2BF2AFD60030020608B /* LocationDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0AE2BE2AFD60030020608B /* LocationDetailsView.swift */; };
+		4B2545262B03382A00B646B2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2545252B03382A00B646B2 /* Profile.swift */; };
 		4B2AF2942AFB73E000F3DE2D /* Screen3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2932AFB73E000F3DE2D /* Screen3.swift */; };
 		4B2AF2982AFB80F400F3DE2D /* loginCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2972AFB80F400F3DE2D /* loginCreateAccount.swift */; };
 		4B2AF2A42AFBF85200F3DE2D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2A32AFBF85200F3DE2D /* Login.swift */; };
@@ -55,6 +56,7 @@
 /* Begin PBXFileReference section */
 		4B0AE2BC2AFD4ADE0020608B /* map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = map.swift; sourceTree = "<group>"; };
 		4B0AE2BE2AFD60030020608B /* LocationDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsView.swift; sourceTree = "<group>"; };
+		4B2545252B03382A00B646B2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		4B2AF2932AFB73E000F3DE2D /* Screen3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen3.swift; sourceTree = "<group>"; };
 		4B2AF2972AFB80F400F3DE2D /* loginCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginCreateAccount.swift; sourceTree = "<group>"; };
 		4B2AF2A32AFBF85200F3DE2D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				4B0AE2BC2AFD4ADE0020608B /* map.swift */,
 				4B0AE2BE2AFD60030020608B /* LocationDetailsView.swift */,
 				4BB3F2532AFDD5980017EAF7 /* SendPassword.swift */,
+				4B2545252B03382A00B646B2 /* Profile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				4B2AF2AC2AFC649800F3DE2D /* signup.swift in Sources */,
 				4B6729C62AFA6D3E0002F7B8 /* ContentView.swift in Sources */,
 				4BB3F2542AFDD5980017EAF7 /* SendPassword.swift in Sources */,
+				4B2545262B03382A00B646B2 /* Profile.swift in Sources */,
 				4B6729C42AFA6D3E0002F7B8 /* resQeatsApp.swift in Sources */,
 				4BB3F2522AFDD28D0017EAF7 /* OTPViewModel.swift in Sources */,
 			);

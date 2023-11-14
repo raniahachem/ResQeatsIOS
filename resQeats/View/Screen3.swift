@@ -46,7 +46,7 @@ struct Screen3: View {
             
             VStack{
                 
-                Button("Login"){
+                Button("Next"){
                     
                 }
                 .foregroundColor(.red)
