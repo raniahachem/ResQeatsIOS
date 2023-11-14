@@ -149,6 +149,7 @@ struct TagLineView: View {
     var body: some View {
         Text("Find the best food deals \n")
             .font(.custom("PlayfairDisplay-Regular", size: 28))
+        
             .foregroundColor(Color("GreenforB"))
             + Text("in your zone!")
             .font(.custom("PlayfairDisplay-Bold", size: 28))

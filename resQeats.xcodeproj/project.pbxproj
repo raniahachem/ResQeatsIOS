@@ -34,9 +34,6 @@
 		2CBBA8C92B035A0400AAD6A6 /* SupplierOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8C82B035A0400AAD6A6 /* SupplierOrderView.swift */; };
 		2CBBA8CB2B035A3500AAD6A6 /* SupplierNewOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8CA2B035A3500AAD6A6 /* SupplierNewOfferView.swift */; };
 		2CBBA8CD2B035A4500AAD6A6 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8CC2B035A4500AAD6A6 /* OrderView.swift */; };
-		2CBBA8CF2B035C0B00AAD6A6 /* OrganisationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8CE2B035C0B00AAD6A6 /* OrganisationView.swift */; };
-		2CBBA8D12B035C3100AAD6A6 /* TabBarOrganisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8D02B035C3100AAD6A6 /* TabBarOrganisation.swift */; };
-		2CBBA8D32B035C5500AAD6A6 /* AskForDonationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8D22B035C5500AAD6A6 /* AskForDonationView.swift */; };
 		2CBDCB122AFB731D00E001E0 /* FoodOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDCB112AFB731D00E001E0 /* FoodOffer.swift */; };
 		2CBDCB142AFB735700E001E0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDCB132AFB735700E001E0 /* Restaurant.swift */; };
 		2CDB25B92AF90BA200CE54B3 /* resQeatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB25B82AF90BA200CE54B3 /* resQeatsApp.swift */; };
@@ -94,9 +91,6 @@
 		2CBBA8C82B035A0400AAD6A6 /* SupplierOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierOrderView.swift; sourceTree = "<group>"; };
 		2CBBA8CA2B035A3500AAD6A6 /* SupplierNewOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierNewOfferView.swift; sourceTree = "<group>"; };
 		2CBBA8CC2B035A4500AAD6A6 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
-		2CBBA8CE2B035C0B00AAD6A6 /* OrganisationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganisationView.swift; sourceTree = "<group>"; };
-		2CBBA8D02B035C3100AAD6A6 /* TabBarOrganisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarOrganisation.swift; sourceTree = "<group>"; };
-		2CBBA8D22B035C5500AAD6A6 /* AskForDonationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskForDonationView.swift; sourceTree = "<group>"; };
 		2CBDCB112AFB731D00E001E0 /* FoodOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOffer.swift; sourceTree = "<group>"; };
 		2CBDCB132AFB735700E001E0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		2CDB25B52AF90BA200CE54B3 /* resQeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = resQeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,16 +153,6 @@
 				2C254F722AFD12FE000A2344 /* CatererView.swift */,
 			);
 			path = CatererViews;
-			sourceTree = "<group>";
-		};
-		2CBBA89E2B03561B00AAD6A6 /* ProductOrganistaionView */ = {
-			isa = PBXGroup;
-			children = (
-				2CBBA8CE2B035C0B00AAD6A6 /* OrganisationView.swift */,
-				2CBBA8D02B035C3100AAD6A6 /* TabBarOrganisation.swift */,
-				2CBBA8D22B035C5500AAD6A6 /* AskForDonationView.swift */,
-			);
-			path = ProductOrganistaionView;
 			sourceTree = "<group>";
 		};
 		2CBBA89F2B03563200AAD6A6 /* ProductFournisseurView */ = {
@@ -289,7 +273,6 @@
 				2CBBA8A12B03566600AAD6A6 /* Fonts */,
 				2CBBA8A02B03564B00AAD6A6 /* ProductClientView */,
 				2CBBA89F2B03563200AAD6A6 /* ProductFournisseurView */,
-				2CBBA89E2B03561B00AAD6A6 /* ProductOrganistaionView */,
 				2C254F6D2AFD119A000A2344 /* CatererViews */,
 				2C254F6C2AFD1188000A2344 /* BakeryViews */,
 				2C254F6B2AFD1145000A2344 /* SupermarketViews */,
@@ -444,14 +427,12 @@
 				2CBBA8C52B0359DA00AAD6A6 /* SettingsView.swift in Sources */,
 				2CBBA8B72B03588800AAD6A6 /* RestaurantOffers.swift in Sources */,
 				2CBBA8AF2B03582700AAD6A6 /* PaymentButton.swift in Sources */,
-				2CBBA8D12B035C3100AAD6A6 /* TabBarOrganisation.swift in Sources */,
 				2CDB25C52AF90BA300CE54B3 /* resQeats.xcdatamodeld in Sources */,
 				2CBDCB142AFB735700E001E0 /* Restaurant.swift in Sources */,
 				2CBBA8C12B0359B200AAD6A6 /* SupplierDonnationView.swift in Sources */,
 				2C254F6F2AFD12E0000A2344 /* SupermarketView.swift in Sources */,
 				2CBBA8CB2B035A3500AAD6A6 /* SupplierNewOfferView.swift in Sources */,
 				2CBBA8B12B03583E00AAD6A6 /* FoodOfferRow.swift in Sources */,
-				2CBBA8D32B035C5500AAD6A6 /* AskForDonationView.swift in Sources */,
 				2CBBA8AD2B03581A00AAD6A6 /* FoodCartButton.swift in Sources */,
 				2CBBA8B32B03586800AAD6A6 /* HomeScreen.swift in Sources */,
 				2CBBA8CD2B035A4500AAD6A6 /* OrderView.swift in Sources */,
@@ -467,7 +448,6 @@
 				2CBBA8A52B0356AC00AAD6A6 /* CartManager.swift in Sources */,
 				2C8199992AFBBB8800F92781 /* ImagePicker.swift in Sources */,
 				2CBBA8C32B0359CD00AAD6A6 /* AddOfferView.swift in Sources */,
-				2CBBA8CF2B035C0B00AAD6A6 /* OrganisationView.swift in Sources */,
 				2CBBA8B52B03587700AAD6A6 /* DetailScreen.swift in Sources */,
 				2CBBA8C72B0359F200AAD6A6 /* TabBarSupplier.swift in Sources */,
 				2CDB25B92AF90BA200CE54B3 /* resQeatsApp.swift in Sources */,

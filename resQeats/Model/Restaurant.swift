@@ -27,7 +27,7 @@ Restaurant(name: "Slayta", category: "Healthy", imageName: "Slayta", description
 Restaurant(name: "Joe's Pizza", category: "Fast food", imageName: "joespizza", description: "Chez Joe's Pizza, nous servons les pizzas les plus délicieuses tout en nous engageant à réduire le gaspillage alimentaire.Chez Joe's Pizza, chaque bouchée compte ", foodOffers: [
     offers[4]
 ]),
-    Restaurant(name: "Tik Tak Family", category: "Gluten free", imageName: "Tiktak", description: "Avec une option sans gluten disponible, leurs créations sucrées et salées vous feront saliver à chaque bouchée.", foodOffers: [
+    Restaurant(name: "Tik Tak Family", category: "Gluten Free", imageName: "Tiktak", description: "Avec une option sans gluten disponible, leurs créations sucrées et salées vous feront saliver à chaque bouchée.", foodOffers: [
         offers[5]
     ])
 ]
