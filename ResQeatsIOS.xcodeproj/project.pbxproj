@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2C4C952D2B05133700142FCD /* ResQeatsIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */; };
-		2C4C952F2B05133700142FCD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C952E2B05133700142FCD /* ContentView.swift */; };
 		2C4C95312B05133800142FCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C95302B05133800142FCD /* Assets.xcassets */; };
 		2C4C95342B05133800142FCD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C4C95332B05133800142FCD /* Preview Assets.xcassets */; };
 		2C4C95362B05133800142FCD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C95352B05133800142FCD /* Persistence.swift */; };
@@ -38,7 +37,6 @@
 /* Begin PBXFileReference section */
 		2C4C95292B05133700142FCD /* ResQeatsIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResQeatsIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSApp.swift; sourceTree = "<group>"; };
-		2C4C952E2B05133700142FCD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C4C95302B05133800142FCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C4C95332B05133800142FCD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2C4C95352B05133800142FCD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -78,6 +76,7 @@
 		2C4C95202B05133700142FCD = {
 			isa = PBXGroup;
 			children = (
+				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
 				2C4C952B2B05133700142FCD /* ResQeatsIOS */,
 				2C4C95412B05133800142FCD /* ResQeatsIOSTests */,
 				2C4C954B2B05133800142FCD /* ResQeatsIOSUITests */,
@@ -100,8 +99,6 @@
 			children = (
 				2C4C955D2B0513B200142FCD /* ViewModel */,
 				2C4C955B2B05138500142FCD /* View */,
-				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
-				2C4C952E2B05133700142FCD /* ContentView.swift */,
 				2C4C95302B05133800142FCD /* Assets.xcassets */,
 				2C4C95352B05133800142FCD /* Persistence.swift */,
 				2C4C95372B05133800142FCD /* ResQeatsIOS.xcdatamodeld */,
@@ -280,7 +277,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4C95362B05133800142FCD /* Persistence.swift in Sources */,
-				2C4C952F2B05133700142FCD /* ContentView.swift in Sources */,
 				2C4C952D2B05133700142FCD /* ResQeatsIOSApp.swift in Sources */,
 				2C4C95392B05133800142FCD /* ResQeatsIOS.xcdatamodeld in Sources */,
 			);
