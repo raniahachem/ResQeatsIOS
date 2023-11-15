@@ -15,6 +15,7 @@
 		2C4C95432B05133800142FCD /* ResQeatsIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C95422B05133800142FCD /* ResQeatsIOSTests.swift */; };
 		2C4C954D2B05133800142FCD /* ResQeatsIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C954C2B05133800142FCD /* ResQeatsIOSUITests.swift */; };
 		2C4C954F2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C954E2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift */; };
+		2C4C955F2B05159E00142FCD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C955E2B05159E00142FCD /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		2C4C95482B05133800142FCD /* ResQeatsIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResQeatsIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4C954C2B05133800142FCD /* ResQeatsIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSUITests.swift; sourceTree = "<group>"; };
 		2C4C954E2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2C4C955E2B05159E00142FCD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,6 @@
 		2C4C95202B05133700142FCD = {
 			isa = PBXGroup;
 			children = (
-				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
 				2C4C952B2B05133700142FCD /* ResQeatsIOS */,
 				2C4C95412B05133800142FCD /* ResQeatsIOSTests */,
 				2C4C954B2B05133800142FCD /* ResQeatsIOSUITests */,
@@ -97,6 +98,7 @@
 		2C4C952B2B05133700142FCD /* ResQeatsIOS */ = {
 			isa = PBXGroup;
 			children = (
+				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
 				2C4C955D2B0513B200142FCD /* ViewModel */,
 				2C4C955B2B05138500142FCD /* View */,
 				2C4C95302B05133800142FCD /* Assets.xcassets */,
@@ -135,6 +137,7 @@
 		2C4C955B2B05138500142FCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C4C955E2B05159E00142FCD /* MainView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C4C95362B05133800142FCD /* Persistence.swift in Sources */,
+				2C4C955F2B05159E00142FCD /* MainView.swift in Sources */,
 				2C4C952D2B05133700142FCD /* ResQeatsIOSApp.swift in Sources */,
 				2C4C95392B05133800142FCD /* ResQeatsIOS.xcdatamodeld in Sources */,
 			);
