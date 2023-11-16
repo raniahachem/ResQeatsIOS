@@ -10,6 +10,7 @@ struct HomeScreen: View {
     @StateObject var cartManager = CartManager()
     @State private var search: String = ""
     @State private var selectedIndex: Int = 0
+    @State private var foodOffers: [FoodOffer] = []
 
     private let categories = ["Restaurants", "Bakeries", "Caterers"]
 
@@ -35,7 +36,14 @@ struct HomeScreen: View {
                             }
                             .padding()
                         }
-
+                        Section(header: Text("All Offers")) {
+                                    List(foodOffers, id: \.id) { offer in
+                                        FoodOfferRow(offer: offer)
+                                    }
+                                    .onAppear {
+                                        // Chargez les offres alimentaires lors de l'apparition de la vue
+                                        loadFoodOffers()
+                                    }
                         Text("Popular")
                             .font(.custom("PlayfairDisplay-Bold", size: 24))
                             .padding(.trailing, 220.0)
@@ -112,7 +120,29 @@ struct HomeScreen: View {
         }
     }
 }
+    func loadFoodOffers() {
+            guard let url = URL(string: "http://172.20.10.5:5005/product") else {
+                return
+            }
 
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let offers = try decoder.decode([FoodOffer].self, from: data)
+                        DispatchQueue.main.async {
+                            foodOffers = offers
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                } else if let error = error {
+                    print("Error fetching data: \(error)")
+                }
+            }
+            .resume()
+        }
+    }
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
