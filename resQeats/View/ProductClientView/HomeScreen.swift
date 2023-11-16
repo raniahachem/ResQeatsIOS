@@ -10,7 +10,6 @@ struct HomeScreen: View {
     @StateObject var cartManager = CartManager()
     @State private var search: String = ""
     @State private var selectedIndex: Int = 0
-    @State private var foodOffers: [FoodOffer] = []
 
     private let categories = ["Restaurants", "Bakeries", "Caterers"]
 
@@ -36,14 +35,7 @@ struct HomeScreen: View {
                             }
                             .padding()
                         }
-                        Section(header: Text("All Offers")) {
-                                    List(foodOffers, id: \.id) { offer in
-                                        FoodOfferRow(offer: offer)
-                                    }
-                                    .onAppear {
-                                        // Chargez les offres alimentaires lors de l'apparition de la vue
-                                        loadFoodOffers()
-                                    }
+
                         Text("Popular")
                             .font(.custom("PlayfairDisplay-Bold", size: 24))
                             .padding(.trailing, 220.0)

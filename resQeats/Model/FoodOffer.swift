@@ -71,12 +71,12 @@ struct FoodOffer: Identifiable, Decodable{
     var restaurantName: String
 }*/
 
-/*var offers = [
+var offers = [
     FoodOffer(title: "Korean BBQ Burger", category: .fastFood, description: "A beef patty marinated in a sweet and spicy Korean BBQ", price: 10, image: "Korean BBQ Burger", quantity: 2, restaurantName: "Le zink"),
     FoodOffer(title: "Burger", category: .fastFood, description: "Un délicieux burger", price: 10, image: "Burger", quantity: 2, restaurantName: "Le zink"),
     FoodOffer(title: "Pasta", category: .mainMeal, description: "Avec de la sauce blanche", price: 6, image: "Pasta", quantity: 2, restaurantName: "Le zink"),
     FoodOffer(title: "Salad", category: .healthy, description: "Une salade fraîche", price: 7, image: "Salad", quantity: 2, restaurantName: "Slayta"),
     FoodOffer(title: "Pizza", category: .fastFood, description: "Pizza pepperoni, tomate mozza", price: 9, image: "Pizza", quantity: 2, restaurantName: "Joe's Pizza"),
     FoodOffer(title: "Gluten free crepe", category: .glutenFree, description: "Crêpe sans gluten", price: 6, image: "Gluten free crepe", quantity: 2, restaurantName: "Tik Tak Family")
-]*/
+]
 
