@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-struct Restaurant: Identifiable {
+struct Restaurant2: Identifiable {
     var id = UUID()
     var name: String
     var category: String
@@ -15,7 +15,7 @@ struct Restaurant: Identifiable {
     var description: String
     var foodOffers: [FoodOffer] // Utilisez le modèle FoodOffer
 }
-var restaurants = [
+/*var restaurants = [
     Restaurant(name: "Le zink", category: "Fast food", imageName: "zink", description: "Le zink specialisé en Burgers gourmets , salades, pastrami… Les chefs y sont très doués et inventifs, une des meilleures adresses en Tunisie", foodOffers: [
         offers[0],
         offers[1],
@@ -30,4 +30,4 @@ Restaurant(name: "Joe's Pizza", category: "Fast food", imageName: "joespizza", d
     Restaurant(name: "Tik Tak Family", category: "Gluten Free", imageName: "Tiktak", description: "Avec une option sans gluten disponible, leurs créations sucrées et salées vous feront saliver à chaque bouchée.", foodOffers: [
         offers[5]
     ])
-]
+]*/

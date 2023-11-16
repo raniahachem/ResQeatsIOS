@@ -73,11 +73,11 @@ class RestaurantOffersViewModel: ObservableObject {
 }
 
 
-struct FoodDetail_Previews: PreviewProvider {
+/*struct FoodDetail_Previews: PreviewProvider {
     static var previews: some View {
         FoodDetail(offer: restaurants[0].foodOffers[0], viewModel: RestaurantOffersViewModel(restaurant: restaurants[0]), restaurantName: restaurants[0].name)
     }
-}
+}*/
 
 
 

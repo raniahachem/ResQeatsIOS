@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct HomeScreen: View {
+/*struct HomeScreen: View {
     @StateObject var cartManager = CartManager()
     @State private var search: String = ""
     @State private var selectedIndex: Int = 0
@@ -278,7 +278,7 @@ struct RestaurantCardView: View {
         .clipShape(Capsule())
         .padding(.horizontal)
         .shadow(color: Color.blue.opacity(0.15), radius: 8, x: 2, y: 6)
-    }
+    }*/
 }
 
 struct BottomNavBarItem: View {
