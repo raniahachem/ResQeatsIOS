@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct AddOfferView: View {
     @State private var title: String = ""
     @State private var selectedCategory: Category = .healthy
@@ -15,6 +14,10 @@ struct AddOfferView: View {
     @State private var selectedImage: UIImage?
     @State private var isImagePickerPresented = false
     @State private var quantity: String = ""
+    @State private var isAddSuccessful = false
+
+    private let apiURL = URL(string: "http://172.20.10.5:5005/product")!
+
     var body: some View {
         NavigationView {
             Form {
@@ -40,7 +43,7 @@ struct AddOfferView: View {
                         .keyboardType(.numberPad)
                 }
 
-                Section(header: Text("Image")) {
+                /*Section(header: Text("Image")) {
                     HStack {
                         Text("Image")
                             .foregroundColor(.primary)
@@ -59,7 +62,7 @@ struct AddOfferView: View {
                             .scaledToFit()
                             .frame(height: 200)
                     }
-                }
+                }*/
                 Section(header: Text("Quantity")) {
                     TextField("Quantity", text: $quantity)
                         .keyboardType(.numberPad)
@@ -81,24 +84,94 @@ struct AddOfferView: View {
                 }
 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button{
-                        // Handle done action
+                    Button("Done") {
+                        addProduct()
                     }
-                label: {
-                                   Label("Done", systemImage: "checkmark")
                                        .labelStyle(.iconOnly)
-                               }.disabled(title.isEmpty)
-                    .disabled(title.isEmpty)
+                               .disabled(title.isEmpty)
                 }
-            }
+                        }
             .navigationTitle("Add new offer")
+                        .alert(isPresented: $isAddSuccessful) {
+                            Alert(
+                                title: Text("Offer Added Successfully"),
+                                message: Text("Your offer has been added successfully."),
+                                dismissButton: .default(Text("OK")) {
+                                    // Ajoutez ici toute logique de nettoyage ou d'autres actions après la réussite
+                                    // Réinitialisez le formulaire, par exemple
+                                    clearForm()
+                                }
+                            )
+                        }
         }
     }
-}
+    private func addProduct() {
+           // Sample user data
+           let productData: [String: Any] = [
+               "title": title,
+               "category": selectedCategory.rawValue,
+               "description": description,
+               "price": price,
+               "quantity": quantity,
+               "fournisseur": "65553581de3f2a6f302e2094"
+               // Add other fields as needed
+           ]
 
-struct AddOfferView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddOfferView()
-    }
-}
+           do {
+               // Convert the product data to JSON
+               let jsonData = try JSONSerialization.data(withJSONObject: productData)
+
+               // Create a URLRequest with the API URL
+               var request = URLRequest(url: apiURL)
+
+               // Set the request method to POST
+               request.httpMethod = "POST"
+
+               // Set the request body with the JSON data
+               request.httpBody = jsonData
+
+               // Set the request header to indicate JSON content
+               request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+               // Make the request
+               URLSession.shared.dataTask(with: request) { (data, response, error) in
+                   // Handle the response and error here
+                   if let error = error {
+                       print("Error: \(error.localizedDescription)")
+                   } else if let data = data {
+                       // Parse and handle the response data
+                       do {
+                           let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                           print("Response: \(jsonResponse)")
+
+                           // Ajouter cette ligne pour montrer l'alerte en cas de succès
+                           isAddSuccessful = true
+                       } catch {
+                           print("Error parsing JSON: \(error.localizedDescription)")
+                       }
+                   }
+               }.resume()
+           } catch {
+               print("Error converting data to JSON: \(error.localizedDescription)")
+           }
+       }
+
+       private func clearForm() {
+           // Ajoutez ici le code pour réinitialiser les champs du formulaire
+           title = ""
+           selectedCategory = .healthy
+           description = ""
+           price = ""
+           selectedImage = nil
+           isImagePickerPresented = false
+           quantity = ""
+       }
+   }
+
+   struct AddOfferView_Previews: PreviewProvider {
+       static var previews: some View {
+           AddOfferView()
+       }
+   }
+
 

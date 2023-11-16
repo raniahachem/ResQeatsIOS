@@ -25,7 +25,7 @@ struct TabBarSupplier: View {
                 }
             SupplierOrderView()
                 .tabItem{
-                    Label("Orders", systemImage: "house")
+                    Label("Orders", systemImage: "checkmark")
                 }
             SettingsView()
                 .tabItem{

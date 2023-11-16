@@ -163,10 +163,10 @@
 				2CBBA8C02B0359B200AAD6A6 /* SupplierDonnationView.swift */,
 				2CBBA8C22B0359CD00AAD6A6 /* AddOfferView.swift */,
 				2CBBA8C42B0359DA00AAD6A6 /* SettingsView.swift */,
-				2CBBA8C62B0359F200AAD6A6 /* TabBarSupplier.swift */,
 				2CBBA8C82B035A0400AAD6A6 /* SupplierOrderView.swift */,
 				2CBBA8CA2B035A3500AAD6A6 /* SupplierNewOfferView.swift */,
 				2CBBA8CC2B035A4500AAD6A6 /* OrderView.swift */,
+				2CBBA8C62B0359F200AAD6A6 /* TabBarSupplier.swift */,
 			);
 			path = ProductFournisseurView;
 			sourceTree = "<group>";
