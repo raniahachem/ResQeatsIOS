@@ -9,10 +9,10 @@ import SwiftUI
 struct TabBarClient: View {
     var body: some View {
         TabView{
-            /*HomeScreen()
+            HomeScreen()
                 .tabItem{
                     Label("Home", systemImage: "house")
-                }*/
+                }
             SettingsView()
                 .tabItem{
                     Label("Settings", systemImage: "gear")

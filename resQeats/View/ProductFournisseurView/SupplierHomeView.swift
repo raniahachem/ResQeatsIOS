@@ -22,7 +22,7 @@ struct SupplierHomeView: View {
     }
 }
 
-/*struct SupplierHomeView_Previews: PreviewProvider {
+struct SupplierHomeView_Previews: PreviewProvider {
     static var previews: some View {
         let restaurantLeZink = Restaurant(name: "Le zink", category: "Fast food", imageName: "zink", description: "Le zink specialisé en Burgers gourmets , salades, pastrami… Les chefs y sont très doués et inventifs, une des meilleures adresses en Tunisie", foodOffers: [
             offers[0],
@@ -35,7 +35,7 @@ struct SupplierHomeView: View {
  // Créez un exemple de modèle de vue
         return SupplierHomeView(viewModel: viewModel)
     }
-}*/
+}
 
 struct SupplierOffers: View {
     @ObservedObject var viewModel: RestaurantOffersViewModel

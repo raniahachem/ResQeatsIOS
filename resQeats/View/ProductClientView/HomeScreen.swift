@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-/*struct HomeScreen: View {
+struct HomeScreen: View {
     @StateObject var cartManager = CartManager()
     @State private var search: String = ""
     @State private var selectedIndex: Int = 0
@@ -120,29 +120,7 @@ import SwiftUI
         }
     }
 }
-    func loadFoodOffers() {
-            guard let url = URL(string: "http://172.18.32.60:5005/product") else {
-                return
-            }
 
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data {
-                    do {
-                        let decoder = JSONDecoder()
-                        let offers = try decoder.decode([FoodOffer].self, from: data)
-                        DispatchQueue.main.async {
-                            foodOffers = offers
-                        }
-                    } catch {
-                        print("Error decoding JSON: \(error)")
-                    }
-                } else if let error = error {
-                    print("Error fetching data: \(error)")
-                }
-            }
-            .resume()
-        }
-    }
 
 struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
@@ -278,7 +256,7 @@ struct RestaurantCardView: View {
         .clipShape(Capsule())
         .padding(.horizontal)
         .shadow(color: Color.blue.opacity(0.15), radius: 8, x: 2, y: 6)
-    }*/
+    }
 }
 
 struct BottomNavBarItem: View {

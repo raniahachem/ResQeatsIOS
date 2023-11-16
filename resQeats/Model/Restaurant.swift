@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-struct Restaurant2: Identifiable {
+struct Restaurant: Identifiable {
     var id = UUID()
     var name: String
     var category: String
