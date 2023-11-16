@@ -121,7 +121,7 @@ struct HomeScreen: View {
     }
 }
     func loadFoodOffers() {
-            guard let url = URL(string: "http://172.20.10.5:5005/product") else {
+            guard let url = URL(string: "http://172.18.32.60:5005/product") else {
                 return
             }
 
