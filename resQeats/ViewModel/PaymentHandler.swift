@@ -31,27 +31,26 @@ class PaymentHandler: NSObject {
     
     // Define the shipping methods (this app only offers delivery) and the delivery dates
     func shippingMethodCalculator() -> [PKShippingMethod] {
-        
         let today = Date()
         let calendar = Calendar.current
-        
-        let shippingStart = calendar.date(byAdding: .day, value: 5, to: today)
-        let shippingEnd = calendar.date(byAdding: .day, value: 10, to: today)
-        
-        if let shippingEnd = shippingEnd, let shippingStart = shippingStart {
-            let startComponents = calendar.dateComponents([.calendar, .year, .month, .day], from: shippingStart)
-            let endComponents = calendar.dateComponents([.calendar, .year, .month, .day], from: shippingEnd)
-            
+
+        let deliveryStart = calendar.date(byAdding: .minute, value: 30, to: today)
+        let deliveryEnd = calendar.date(byAdding: .hour, value: 1, to: today)
+
+        if let deliveryEnd = deliveryEnd, let deliveryStart = deliveryStart {
+            let startComponents = calendar.dateComponents([.calendar, .year, .month, .day, .hour, .minute], from: deliveryStart)
+            let endComponents = calendar.dateComponents([.calendar, .year, .month, .day, .hour, .minute], from: deliveryEnd)
+
             let shippingDelivery = PKShippingMethod(label: "Delivery", amount: NSDecimalNumber(string: "0.00"))
             shippingDelivery.dateComponentsRange = PKDateComponentsRange(start: startComponents, end: endComponents)
-            shippingDelivery.detail = "Sweaters sent to your address"
+            shippingDelivery.detail = "Food sent to your address"
             shippingDelivery.identifier = "DELIVERY"
-            
+
             return [shippingDelivery]
         }
         return []
     }
-    
+
     func startPayment(foodOffers: [FoodOffer], total: Int, completion: @escaping PaymentCompletionHandler) {
         completionHandler = completion
         

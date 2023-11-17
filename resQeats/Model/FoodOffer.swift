@@ -6,9 +6,9 @@
 //
 import Foundation
 enum Category: String, CaseIterable, Identifiable, Decodable {
-    case fastFood = "fast_food"
-    case mainMeal = "main_meal"
-    case glutenFree = "gluten_free"
+    case fastFood = "fast food"
+    case mainMeal = "main meal"
+    case glutenFree = "gluten free"
     case healthy = "healthy"
     case dessert = "dessert"
     case drink = "drink"
