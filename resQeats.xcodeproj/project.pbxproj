@@ -33,9 +33,12 @@
 		2CBBA8C72B0359F200AAD6A6 /* TabBarSupplier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8C62B0359F200AAD6A6 /* TabBarSupplier.swift */; };
 		2CBBA8C92B035A0400AAD6A6 /* SupplierOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8C82B035A0400AAD6A6 /* SupplierOrderView.swift */; };
 		2CBBA8CB2B035A3500AAD6A6 /* SupplierNewOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8CA2B035A3500AAD6A6 /* SupplierNewOfferView.swift */; };
-		2CBBA8CD2B035A4500AAD6A6 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8CC2B035A4500AAD6A6 /* OrderView.swift */; };
+		2CBBA8CD2B035A4500AAD6A6 /* SupplierOderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8CC2B035A4500AAD6A6 /* SupplierOderDetailView.swift */; };
 		2CBDCB122AFB731D00E001E0 /* FoodOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDCB112AFB731D00E001E0 /* FoodOffer.swift */; };
 		2CBDCB142AFB735700E001E0 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBDCB132AFB735700E001E0 /* Restaurant.swift */; };
+		2CC9C6322B0B6DCE00C901FA /* ClientOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9C6312B0B6DCE00C901FA /* ClientOrderView.swift */; };
+		2CC9C6342B0B6DE500C901FA /* ClientOrderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9C6332B0B6DE500C901FA /* ClientOrderDetailView.swift */; };
+		2CC9C6362B0B6E3E00C901FA /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC9C6352B0B6E3E00C901FA /* Order.swift */; };
 		2CDB25B92AF90BA200CE54B3 /* resQeatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB25B82AF90BA200CE54B3 /* resQeatsApp.swift */; };
 		2CDB25BD2AF90BA300CE54B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB25BC2AF90BA300CE54B3 /* Assets.xcassets */; };
 		2CDB25C02AF90BA300CE54B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDB25BF2AF90BA300CE54B3 /* Preview Assets.xcassets */; };
@@ -90,9 +93,12 @@
 		2CBBA8C62B0359F200AAD6A6 /* TabBarSupplier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSupplier.swift; sourceTree = "<group>"; };
 		2CBBA8C82B035A0400AAD6A6 /* SupplierOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierOrderView.swift; sourceTree = "<group>"; };
 		2CBBA8CA2B035A3500AAD6A6 /* SupplierNewOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierNewOfferView.swift; sourceTree = "<group>"; };
-		2CBBA8CC2B035A4500AAD6A6 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		2CBBA8CC2B035A4500AAD6A6 /* SupplierOderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierOderDetailView.swift; sourceTree = "<group>"; };
 		2CBDCB112AFB731D00E001E0 /* FoodOffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodOffer.swift; sourceTree = "<group>"; };
 		2CBDCB132AFB735700E001E0 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		2CC9C6312B0B6DCE00C901FA /* ClientOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientOrderView.swift; sourceTree = "<group>"; };
+		2CC9C6332B0B6DE500C901FA /* ClientOrderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientOrderDetailView.swift; sourceTree = "<group>"; };
+		2CC9C6352B0B6E3E00C901FA /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2CDB25B52AF90BA200CE54B3 /* resQeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = resQeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDB25B82AF90BA200CE54B3 /* resQeatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resQeatsApp.swift; sourceTree = "<group>"; };
 		2CDB25BC2AF90BA300CE54B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,7 +171,7 @@
 				2CBBA8C42B0359DA00AAD6A6 /* SettingsView.swift */,
 				2CBBA8C82B035A0400AAD6A6 /* SupplierOrderView.swift */,
 				2CBBA8CA2B035A3500AAD6A6 /* SupplierNewOfferView.swift */,
-				2CBBA8CC2B035A4500AAD6A6 /* OrderView.swift */,
+				2CBBA8CC2B035A4500AAD6A6 /* SupplierOderDetailView.swift */,
 				2CBBA8C62B0359F200AAD6A6 /* TabBarSupplier.swift */,
 			);
 			path = ProductFournisseurView;
@@ -184,6 +190,8 @@
 				2CBBA8B62B03588800AAD6A6 /* RestaurantOffers.swift */,
 				2CBBA8B82B03589600AAD6A6 /* FoodDetail.swift */,
 				2CBBA8BA2B0358A200AAD6A6 /* TabBarClient.swift */,
+				2CC9C6312B0B6DCE00C901FA /* ClientOrderView.swift */,
+				2CC9C6332B0B6DE500C901FA /* ClientOrderDetailView.swift */,
 			);
 			path = ProductClientView;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 				2CBDCB132AFB735700E001E0 /* Restaurant.swift */,
 				2C8199982AFBBB8800F92781 /* ImagePicker.swift */,
 				2CBBA8A62B0356D000AAD6A6 /* Bakery.swift */,
+				2CC9C6352B0B6E3E00C901FA /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,8 +443,9 @@
 				2CBBA8CB2B035A3500AAD6A6 /* SupplierNewOfferView.swift in Sources */,
 				2CBBA8B12B03583E00AAD6A6 /* FoodOfferRow.swift in Sources */,
 				2CBBA8AD2B03581A00AAD6A6 /* FoodCartButton.swift in Sources */,
+				2CC9C6342B0B6DE500C901FA /* ClientOrderDetailView.swift in Sources */,
 				2CBBA8B32B03586800AAD6A6 /* HomeScreen.swift in Sources */,
-				2CBBA8CD2B035A4500AAD6A6 /* OrderView.swift in Sources */,
+				2CBBA8CD2B035A4500AAD6A6 /* SupplierOderDetailView.swift in Sources */,
 				2CBBA8A72B0356D000AAD6A6 /* Bakery.swift in Sources */,
 				2CBBA8A32B03569300AAD6A6 /* PaymentHandler.swift in Sources */,
 				2CBBA8B92B03589600AAD6A6 /* FoodDetail.swift in Sources */,
@@ -445,12 +455,14 @@
 				2C254F712AFD12ED000A2344 /* BakeryView.swift in Sources */,
 				2CBBA8BB2B0358A200AAD6A6 /* TabBarClient.swift in Sources */,
 				2CBBA8BD2B03597F00AAD6A6 /* SupplierView.swift in Sources */,
+				2CC9C6362B0B6E3E00C901FA /* Order.swift in Sources */,
 				2CBBA8A52B0356AC00AAD6A6 /* CartManager.swift in Sources */,
 				2C8199992AFBBB8800F92781 /* ImagePicker.swift in Sources */,
 				2CBBA8C32B0359CD00AAD6A6 /* AddOfferView.swift in Sources */,
 				2CBBA8B52B03587700AAD6A6 /* DetailScreen.swift in Sources */,
 				2CBBA8C72B0359F200AAD6A6 /* TabBarSupplier.swift in Sources */,
 				2CDB25B92AF90BA200CE54B3 /* resQeatsApp.swift in Sources */,
+				2CC9C6322B0B6DCE00C901FA /* ClientOrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@ struct FoodDetail: View {
                         .font(.title)
                         .padding(.leading, 20.0)
                     Spacer()
-                    Text("Price:\(offer.price, specifier: "%.2f") TND")
+                    Text("Price:\(offer.price) TND")
                         .padding(.trailing, 20.0)
                 }
                 Text(offer.category.rawValue)

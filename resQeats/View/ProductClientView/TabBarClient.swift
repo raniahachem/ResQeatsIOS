@@ -13,10 +13,19 @@ struct TabBarClient: View {
                 .tabItem{
                     Label("Home", systemImage: "house")
                 }
+            FoodCartView()
+                .tabItem{
+                    Label("Cart", systemImage: "cart")
+                }
+            ClientOrderView()
+                .tabItem{
+                    Label("Order", systemImage: "checkmark")
+                }
             SettingsView()
                 .tabItem{
                     Label("Settings", systemImage: "gear")
                 }
+            
         }
     }
 }
@@ -26,4 +35,5 @@ struct TabBarClient_Previews: PreviewProvider {
         TabBarClient()
     }
 }
+
 
