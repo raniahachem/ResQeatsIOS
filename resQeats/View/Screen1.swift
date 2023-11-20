@@ -10,6 +10,7 @@ import SwiftUI
 struct Screen1: View {
     var body: some View {
         ZStack{
+            
             (Color.white).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 .ignoresSafeArea(.all)
             Image("images")
@@ -44,8 +45,10 @@ struct Screen1: View {
             .offset(x: 0 , y:-60)
             VStack{
                 Button("Next"){
+                 
                     
                 }
+                
                 .foregroundColor(.white)
                 .frame(width: 300 , height: 50)
                 .background(Color.green)

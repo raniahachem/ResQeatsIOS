@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct sugnUp2: View {
+    @StateObject var signupv = UserViewModel()
     @State private var name = ""
     @State private var email = ""
     @State private var chooseType = ""
@@ -22,14 +23,14 @@ struct sugnUp2: View {
             Text("Signup")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .offset(x:105, y:-140)
+                .offset(x:83, y:-110)
             
             Text("Add your details to sign up as a recepient")
                 .font(.callout)
                 .fontWeight(.regular)
                 .foregroundStyle(.gray)
                 .padding(.top,-5)
-                .offset(x:3 , y:-145)
+                .offset(x:3 , y:-105)
                 .opacity(0.3)
                 .font(.system(size: 0.1))
             
@@ -42,7 +43,7 @@ struct sugnUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-120)
+                .offset(x:-3 ,y:-80)
             
         }
      
@@ -53,7 +54,7 @@ struct sugnUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-100)
+                .offset(x:-3 ,y:-55)
             
         }
         
@@ -64,7 +65,7 @@ struct sugnUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-80)
+                .offset(x:-3 ,y:-39)
             
         }
         
@@ -77,7 +78,7 @@ struct sugnUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-60)
+                .offset(x:-3 ,y:-22)
             
         }
         
@@ -88,7 +89,7 @@ struct sugnUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-45)
+                .offset(x:-3 ,y:-4)
             
         }
         VStack{

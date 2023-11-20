@@ -8,133 +8,248 @@
 import SwiftUI
 import MapKit
 
-struct map: View {
-    @State private var cameraPosition:MapCameraPosition = .region(.userRegion)
-    @State private var searchText = ""
-    @State private var results = [MKMapItem]()
+struct map:View {
+    //map properties
+    @State private var cameraPosition: MapCameraPosition = .region(.userRegion)
     @State private var mapSelection: MKMapItem?
-    @State private var showDetails = false
-    @State private var getDirections = false
-    @State private var routeDisplaying = false
+    @Namespace private var locationSpace
+    @State private var viewingRegion:MKCoordinateRegion?
+    //search properties
+    @State private var searchText: String = ""
+    @State private var showSearch: Bool = false
+    @State private var searchResults: [MKMapItem] = []
+    //map selecttion detail properties
+    @State private var showDetails: Bool = false
+    @State private var lookAroundScene:MKLookAroundScene?
+    //Routes properties
+    @State private var routeDisplaying:Bool = false
     @State private var route:MKRoute?
-    @State private var routeDestination:MKMapItem?
+    @State private var routeDestination: MKMapItem?
     var body: some View {
-        Map(position: $cameraPosition , selection: $mapSelection){
-       //     Marker("My location" ,systemImage: "paperplane",coordinate: .userLocation)
-         //       .tint(.blue)
-            UserAnnotation()
-            Annotation("My location", coordinate: .userLocation){
-                ZStack{
-                    Circle()
-                        .frame(width: 32 , height: 32)
-                        .foregroundColor(.blue.opacity(0.25))
+        
+        NavigationStack{
+            Map(position: $cameraPosition , selection: $mapSelection , scope: locationSpace ){
+                //Map annotations
+                Annotation("My location", coordinate: .userLocation){
+                    ZStack{
+                        Image(systemName: "applelogo")
+                            .font(.title3)
+                        Image(systemName: "square")
+                            .font(.largeTitle)
+                    }
                     
-                    Circle()
-                        .frame(width: 20 , height: 20)
-                        .foregroundColor(.white)
-                    
-                    Circle()
-                        .frame(width: 12 , height: 12)
-                        .foregroundColor(.blue)
                 }
+                .annotationTitles(.hidden)
+                
+                //simply display annotation as Marker , as we seen before
+               ForEach($searchResults, id: \.self){ mapItem in
+                  // hiding all other Markers , except the one of destination
+                   if routeDisplaying{
+                       if mapItem == routeDestination{
+                           let placemark = mapItem.placemark
+                           Marker(placemark.name ?? "Place" , coordinate:
+                                .tint(.blue)
+                      )}
+                                  
+                   }
+                      else{
+                       let placemark = mapItem.placemark
+                       Marker(placemark.name ?? "Place", coordinate:
+                                placemark.coordinate)
+                       .tint(.blue)
+                   }
+                }
+                // display routes using polyline
+                if let route {
+                    MapPolyline(route.polyline)
+                    
+                    // applying big stroke
+                        .stroke(.blue , lineWidth:7)
+                
+                }
+                //to show user current location
+                UserAnnotation()
             }
-            
-            ForEach(results , id:\.self){  item in
-                if routeDisplaying{
-                    if item == routeDestination{
-                        let placemark = item.placemark
-                        Marker(placemark.name ?? "" , coordinate: placemark.coordinate)
-                        
+            .onMapCameraChange ({ ctx in
+                viewingRegion = ctx.region
+            })
+            .overlay(alignment: .bottomTrailing){
+                VStack(spacing:15){
+                    MapCompass(scope: locationSpace)
+                    MapPitchToggle(scope: locationSpace)
+                    MapUserLocationButton(scope:locationSpace )
+                }
+                .buttonBorderShape(.circle)
+                .padding()
+            }
+            .mapScope(locationSpace)
+            .navigationTitle("Map")
+            .navigationBarTitleDisplayMode(.inline)
+            //searchBar
+            .searchable(text: $searchText, isPresented: $showSearch)
+            //showing Translucent toolBar
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(.ultraThinMaterial, for: .navigationBar)
+            // when route displaying hiding top and bottom bar
+            .toolbar(routeDisplaying ? .hidden: .visible, for: .navigationBar)
+            .sheet(isPresented: $showDetails,onDismiss :{
+                withAnimation(.snappy){
+                    //Zooming routes
+                    if let boundingRect = route?.polyline.boundingMapRect ,
+                    routeDisplaying{
+                        cameraPosition = .rect(boundingRect)
                     }
                 }
-                else{
-                    let placemark = item.placemark
-                    Marker(placemark.name ?? "" , coordinate: placemark.coordinate)
+            }, content:{
+                MapDetails()
+                    .presentationDetents([.height(300)])
+                    .presentationBackgroundInteraction(.enabled(upThrough: .height(300)))
+                    .presentationCornerRadius(25)
+                    .interactiveDismissDisabled(true)
+                
+            })
+                .safeAreaInsets(edge : .bottom){
+                    if routeDisplaying {
+                        Button("End Route"){
+                            // closing the routes and setting the selection
+                            withAnimation(.snappy){
+                                routeDisplaying = false
+                                showDetails = true
+                                mapSelection = routeDestination
+                                routeDestination = nil
+                                cameraPosition = .region(.userRegion)
+                            }
+                            
+                        }
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(.red.gradient , in:  .rect(cornerRaduis: 15))
+                        .padding()
+                        .background(.ultraThinMaterial)
+                    }
+                }
+        }
+        .onSubmit(of: .search) {
+            Task{
+                guard !searchText.isEmpty else{return}
+                await searchPlaces()
+            }
+            
+        }
+        .onChange(of: showSearch, initial: false){
+            if !showSearch{
+                //clearing search results
+                searchResults.removeAll(keepingCapacity: false)
+                showDetails = false
+                //zooming out to user regin when search is cancelled
+                withAnimation(.snappy){
+                    cameraPosition = .region(.userRegion)
+                }
+                
+            }
+        }
+        .onChange(of: mapSelection){oldValue , newValue in
+            //displaying details about the selected place
+            showDetails = newValue != nil
+            //fetching look around preview whenever selection changes
+            fetchLookAroundPreview()
+        }
+    }
+    // map details
+    @ViewBuilder
+    func MapDetails() -> some View {
+        VStack(spacing:15){
+            ZStack{
+                // new look Around API
+                if lookAroundScene == nil {
+                    // New empty view API
+                    ContentUnavailableView("No Preview available", systemImage: "eye.slash")
+                }else{
+                    LookAroundPreview(scene: $lookAroundScene)
                 }
             }
-            if let route{
-                MapPolyline(route.polyline)
-                    .stroke(.blue, lineWidth: 6)
-            }
-        }
-        .overlay(alignment: .top){
-            TextField("Search for location ..." , text:$searchText)
-                .font(.subheadline)
-                .padding(12)
-                .background(.white)
-                .padding()
-                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-        }
-        .onSubmit(of: .text) {
-           // Task{ await searchPlaces() }
-        }
-        .onChange(of:getDirections , {oldValue , newValue in
-            if newValue{
-               // fetchRoutes()
+            .frame(height: 200)
+            .clipShape(.rect(cornerRadius: 15))
+            //close button
+            .overlay(alignment:.topTrailing){
+                Button(action:{
+                    //closing views
+                    showDetails = false
+                    withAnimation(.snappy){
+                        mapSelection = nil
+                    }
+                } , label:{
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.title)
+                        .foregroundColor(.black)
+                        .background(.white , in: .circle)
+                })
+                .padding(10)
             }
             
-        })
-        .onChange(of: mapSelection, {oldValue , newValue in
-               showDetails = newValue != nil
-        })
-        .sheet(isPresented: $showDetails , content: {
-            LocationDetailsView(mapSelection: $mapSelection, show: $showDetails, getDirections: $getDirections)
-                .presentationDetents([.height(340)])
-                .presentationBackgroundInteraction(.enabled(upThrough: .height(340)))
-                .presentationCornerRadius(12)
-        })
-        .mapControls{
-           MapCompass()
-           MapPitchToggle()
-           MapUserLocationButton()
+            //Direction's button
+            Button("Get Directions", action: fetchRoutes)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    .padding(.vertical,12)
+                    .background(.blue.gradient, in:.rect(cornerRadius: 15))
         }
-   
+        .padding(15)
     }
-}
-extension UIContentView{
-    func searchPlaces() async{
+    //search places
+    func searchPlaces() async {
         let request = MKLocalSearch.Request()
-        // request.naturalLanguageQuery = searchText
-        request.region = .userRegion
-        _ = try? await MKLocalSearch(request: request).start()
-        //self.results = results?.mapItems ?? []
-    }
-    func fetchRoute(){
+        request.naturalLanguageQuery = searchText
+        request.region = viewingRegion ?? .userRegion
         
-    // il ne lit pas les declarations ? ????
-      /*  if let mapSelection{
-            let request = MKDirections.Request()
-            request.source = MKMapItem(placemark: .init(coordinate: .userLocation))
-            request.destination = mapSelection
-            
+        let results = try? await MKLocalSearch(request: request).start()
+        searchResults = results?.mapItems ?? []
+    }
+    // fetchong location preview
+    func fetchLookAroundPreview(){
+        if let mapSelection{
+            //clearing old one
+            lookAroundScene = nil
             Task{
-                let result = try? await MKDirections(request:request).calculate()
-              /*  route = result?.routes.first
+                let request = MKLookAroundSceneRequest(mapItem: mapSelection)
+                lookAroundScene = try? await request.scene
+            }
+        }
+    }
+    // fetching route
+    func fetchRoutes(){
+        if let mapSelection {
+            let request = MKDirections.Request()
+            request.source = .init(placemark: .init(coordinate: .userLocation))
+            request.destination = mapSelection
+            Task{
+                let result = try? await MKDirections(request: request).calculate()
+                route = result?.routes.first
+                
+                // saving routes destination
                 routeDestination = mapSelection
                 withAnimation(.snappy){
-                    routeDisplaying = true
+                   routeDisplaying = true
                     showDetails = false
-                    if let rect = route?.polyline.boundingMapRect,routeDisplaying{
-                        CameraPosition = .rect(rect)
-                    }
-                }*/
+                    
+                   
+                }
             }
-        }*/
+        }
     }
 }
-    
-
-extension CLLocationCoordinate2D{
-    static var userLocation:  CLLocationCoordinate2D{
-        return.init(latitude: 25.7602 , longitude:-80.1959)
-    }
-}
-extension MKCoordinateRegion{
-    static var userRegion : MKCoordinateRegion{
-        return.init(center:.userLocation , latitudinalMeters: 10000,longitudinalMeters: 10000 )
-    }
-}
-
 #Preview {
     map()
+}
+extension CLLocationCoordinate2D{
+    static var userLocation:  CLLocationCoordinate2D{
+        return.init(latitude: 37.3346 , longitude:-122.0090)
+    }
+}
+
+extension MKCoordinateRegion{
+    static var userRegion : MKCoordinateRegion{
+        return.init(center: .userLocation , latitudinalMeters: 10000,longitudinalMeters: 10000 )
+    }
 }

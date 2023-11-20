@@ -79,23 +79,25 @@ struct Login: View {
             }.navigationBarHidden(true)
         }
         
-        func authenticateUser(username:String , password : String){
-            if username.lowercased() == "caircoers"{
-                wrongUsername = 0
-                if password.lowercased() == "123456"{
-                    wrongPassword = 0
-                    showingLoginScreen = true
-                }
-                
+    func authenticateUser(username:String , password : String){
+        if username.lowercased() == "caircoers"{
+            wrongUsername = 0
+            if password.lowercased() == "123456"{
+                wrongPassword = 0
+                showingLoginScreen = true
             }
-            else {
-                wrongPassword = 2
-                
-            }
-            /*else {
-                wrongUsername = 2
-             */
-            }
+            
+        }
+        else {
+            wrongPassword = 2
+            
+        }
+     /*   else {
+            wrongUsername = 2
+            
+        }*/
+        
+    }
         }
 
 

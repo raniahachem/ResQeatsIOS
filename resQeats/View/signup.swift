@@ -18,12 +18,12 @@ struct signup: View {
                     .foregroundColor(.green.opacity(0.29))
                 Color.white.ignoresSafeArea()
                 
-                Label("New Password", systemImage: "")
+                Label("Sign Up", systemImage: "")
                     .padding()
                     .frame(width: 300 , height: 50)
                     .background(Color.black.opacity(0))
                     .cornerRadius(10)
-                    .offset(x:-8, y:-352)
+                    .offset(x:-8, y:-330)
                 
                 Spacer(minLength: 22)
                 
@@ -42,7 +42,7 @@ struct signup: View {
                 Spacer()
                 Spacer()
                 VStack{
-                    Button("As a Food Supplier"){
+                    Button("As a recepient" ){
                         
                     }
                     .foregroundColor(.white)
