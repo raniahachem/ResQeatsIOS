@@ -27,7 +27,7 @@ struct resQeatsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SupplierView()
+            ClientView()
                 .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
         }
     }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SupplierOrderView: View {
-    @State private var orders: [Order] = [sampleOrder()]  // Replace this with your actual data source
+    @State private var orders: [Order] = []  // Replace this with your actual data source
 
     var body: some View {
         NavigationView {
@@ -99,7 +99,7 @@ struct SupplierOrderView_Previews: PreviewProvider {
     }
 }
 
-func sampleOrder() -> Order {
+/*func sampleOrder() -> Order {
     let foodOffer = FoodOffer(
         title: "Sample Food",
         category: .fastFood,
@@ -127,5 +127,5 @@ func sampleOrder() -> Order {
         // Handle error
         fatalError("Error creating sample order: \(error)")
     }
-}
+}*/
 

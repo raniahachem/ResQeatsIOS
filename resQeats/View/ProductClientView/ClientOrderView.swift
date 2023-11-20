@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ClientOrderView: View {
-    @State private var orders: [Order] = [sampleOrder()]  // Replace this with your actual data source
+    @State private var orders: [Order] = []  // Replace this with your actual data source
 
     var body: some View {
         NavigationView {

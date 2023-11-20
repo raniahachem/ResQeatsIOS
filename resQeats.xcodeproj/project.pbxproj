@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C095E4F2B0BAF1E00DC7542 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C095E4E2B0BAF1E00DC7542 /* ProductViewModel.swift */; };
 		2C254F6F2AFD12E0000A2344 /* SupermarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C254F6E2AFD12E0000A2344 /* SupermarketView.swift */; };
 		2C254F712AFD12ED000A2344 /* BakeryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C254F702AFD12ED000A2344 /* BakeryView.swift */; };
 		2C254F732AFD12FE000A2344 /* CatererView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C254F722AFD12FE000A2344 /* CatererView.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C095E4E2B0BAF1E00DC7542 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		2C254F6E2AFD12E0000A2344 /* SupermarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketView.swift; sourceTree = "<group>"; };
 		2C254F702AFD12ED000A2344 /* BakeryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BakeryView.swift; sourceTree = "<group>"; };
 		2C254F722AFD12FE000A2344 /* CatererView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatererView.swift; sourceTree = "<group>"; };
@@ -196,13 +198,6 @@
 			path = ProductClientView;
 			sourceTree = "<group>";
 		};
-		2CBBA8A12B03566600AAD6A6 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		2CDB25AC2AF90BA200CE54B3 = {
 			isa = PBXGroup;
 			children = (
@@ -279,7 +274,6 @@
 		2CDB25E82AF90BB100CE54B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2CBBA8A12B03566600AAD6A6 /* Fonts */,
 				2CBBA8A02B03564B00AAD6A6 /* ProductClientView */,
 				2CBBA89F2B03563200AAD6A6 /* ProductFournisseurView */,
 				2C254F6D2AFD119A000A2344 /* CatererViews */,
@@ -294,6 +288,7 @@
 			children = (
 				2CBBA8A22B03569300AAD6A6 /* PaymentHandler.swift */,
 				2CBBA8A42B0356AC00AAD6A6 /* CartManager.swift */,
+				2C095E4E2B0BAF1E00DC7542 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -442,6 +437,7 @@
 				2C254F6F2AFD12E0000A2344 /* SupermarketView.swift in Sources */,
 				2CBBA8CB2B035A3500AAD6A6 /* SupplierNewOfferView.swift in Sources */,
 				2CBBA8B12B03583E00AAD6A6 /* FoodOfferRow.swift in Sources */,
+				2C095E4F2B0BAF1E00DC7542 /* ProductViewModel.swift in Sources */,
 				2CBBA8AD2B03581A00AAD6A6 /* FoodCartButton.swift in Sources */,
 				2CC9C6342B0B6DE500C901FA /* ClientOrderDetailView.swift in Sources */,
 				2CBBA8B32B03586800AAD6A6 /* HomeScreen.swift in Sources */,

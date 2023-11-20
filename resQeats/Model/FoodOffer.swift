@@ -5,7 +5,7 @@
 //  Created by rania hm on 8/11/2023.
 //
 import Foundation
-enum Category: String, CaseIterable, Identifiable, Decodable {
+enum Category: String, CaseIterable, Identifiable, Decodable, Encodable {
     case fastFood = "fast food"
     case mainMeal = "main meal"
     case glutenFree = "gluten free"
@@ -33,7 +33,7 @@ enum Category: String, CaseIterable, Identifiable, Decodable {
     }
 }
 
-struct FoodOffer: Identifiable, Decodable {
+struct FoodOffer: Identifiable, Decodable, Encodable {
     var id = UUID()
     var title: String
     var category: Category

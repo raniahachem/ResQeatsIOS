@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 struct Order: Identifiable, Decodable {
     var id = UUID()
     var status: OrderStatus = .pending
