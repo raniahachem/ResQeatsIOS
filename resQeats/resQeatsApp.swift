@@ -20,6 +20,19 @@ struct resQeatsApp: App {
 }*/
 
 
+/*import SwiftUI
+@main
+struct resQeatsApp: App {
+    @StateObject var cartManager = CartManager() // Déclarer CartManager comme @StateObject
+
+    var body: some Scene {
+        WindowGroup {
+            SupplierView()
+                .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
+        }
+    }
+}*/
+
 import SwiftUI
 @main
 struct resQeatsApp: App {
@@ -27,9 +40,8 @@ struct resQeatsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ClientView()
-                .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
+            ProductView()
+                //.environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
         }
     }
 }
-

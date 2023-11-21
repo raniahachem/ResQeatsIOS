@@ -11,6 +11,9 @@
 		2C254F6F2AFD12E0000A2344 /* SupermarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C254F6E2AFD12E0000A2344 /* SupermarketView.swift */; };
 		2C254F712AFD12ED000A2344 /* BakeryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C254F702AFD12ED000A2344 /* BakeryView.swift */; };
 		2C254F732AFD12FE000A2344 /* CatererView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C254F722AFD12FE000A2344 /* CatererView.swift */; };
+		2C6F76162B0C95BA00A49284 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F76152B0C95BA00A49284 /* ProductView.swift */; };
+		2C6F76182B0C980100A49284 /* Prodcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F76172B0C980100A49284 /* Prodcut.swift */; };
+		2C6F761A2B0C9B9900A49284 /* ProdcutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F76192B0C9B9900A49284 /* ProdcutCardView.swift */; };
 		2C7D829C2AFA824B000282D3 /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D829B2AFA824B000282D3 /* FoodCategory.swift */; };
 		2C8199992AFBBB8800F92781 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8199982AFBBB8800F92781 /* ImagePicker.swift */; };
 		2CBBA8A32B03569300AAD6A6 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8A22B03569300AAD6A6 /* PaymentHandler.swift */; };
@@ -72,6 +75,9 @@
 		2C254F6E2AFD12E0000A2344 /* SupermarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketView.swift; sourceTree = "<group>"; };
 		2C254F702AFD12ED000A2344 /* BakeryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BakeryView.swift; sourceTree = "<group>"; };
 		2C254F722AFD12FE000A2344 /* CatererView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatererView.swift; sourceTree = "<group>"; };
+		2C6F76152B0C95BA00A49284 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		2C6F76172B0C980100A49284 /* Prodcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prodcut.swift; sourceTree = "<group>"; };
+		2C6F76192B0C9B9900A49284 /* ProdcutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdcutCardView.swift; sourceTree = "<group>"; };
 		2C7D829B2AFA824B000282D3 /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		2C8199982AFBBB8800F92781 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		2CBBA8A22B03569300AAD6A6 /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 				2CBBA8BA2B0358A200AAD6A6 /* TabBarClient.swift */,
 				2CC9C6312B0B6DCE00C901FA /* ClientOrderView.swift */,
 				2CC9C6332B0B6DE500C901FA /* ClientOrderDetailView.swift */,
+				2C6F76152B0C95BA00A49284 /* ProductView.swift */,
+				2C6F76192B0C9B9900A49284 /* ProdcutCardView.swift */,
 			);
 			path = ProductClientView;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 				2C8199982AFBBB8800F92781 /* ImagePicker.swift */,
 				2CBBA8A62B0356D000AAD6A6 /* Bakery.swift */,
 				2CC9C6352B0B6E3E00C901FA /* Order.swift */,
+				2C6F76172B0C980100A49284 /* Prodcut.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,8 +432,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C6F76162B0C95BA00A49284 /* ProductView.swift in Sources */,
 				2CBDCB122AFB731D00E001E0 /* FoodOffer.swift in Sources */,
 				2CBBA8AB2B03580C00AAD6A6 /* FoodCartView.swift in Sources */,
+				2C6F76182B0C980100A49284 /* Prodcut.swift in Sources */,
 				2C7D829C2AFA824B000282D3 /* FoodCategory.swift in Sources */,
 				2CBBA8A92B0357FC00AAD6A6 /* ClientView.swift in Sources */,
 				2CDB25C22AF90BA300CE54B3 /* Persistence.swift in Sources */,
@@ -453,6 +464,7 @@
 				2CBBA8BD2B03597F00AAD6A6 /* SupplierView.swift in Sources */,
 				2CC9C6362B0B6E3E00C901FA /* Order.swift in Sources */,
 				2CBBA8A52B0356AC00AAD6A6 /* CartManager.swift in Sources */,
+				2C6F761A2B0C9B9900A49284 /* ProdcutCardView.swift in Sources */,
 				2C8199992AFBBB8800F92781 /* ImagePicker.swift in Sources */,
 				2CBBA8C32B0359CD00AAD6A6 /* AddOfferView.swift in Sources */,
 				2CBBA8B52B03587700AAD6A6 /* DetailScreen.swift in Sources */,

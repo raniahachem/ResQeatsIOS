@@ -21,11 +21,11 @@ struct HomeScreen: View {
 
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        AppBarView()
-                        TagLineView()
-                        SearchAndScanView(search: $search)
+                        //AppBarView2()
+                        //TagLineView2()
+                        //SearchAndScanView2(search: $search)
 
-                        ScrollView(.horizontal, showsIndicators: false) {
+                        /*ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 ForEach(0 ..< categories.count) { i in
                                     Button(action: { selectedIndex = i }) {
@@ -100,7 +100,7 @@ struct HomeScreen: View {
                                 }
                                 .padding(.leading)
                             }
-                        }.padding(.bottom)
+                        }.padding(.bottom)*/
                     }
                 }
 
@@ -114,15 +114,15 @@ struct HomeScreen: View {
 }
 
 
-struct HomeScreen_Previews: PreviewProvider {
+/*struct HomeScreen_Previews: PreviewProvider {
     static var previews: some View {
         HomeScreen()
     }
-}
+}*/
 
 
 
-struct AppBarView: View {
+struct AppBarView2: View {
     var body: some View {
         HStack {
             Button(action: {}) {

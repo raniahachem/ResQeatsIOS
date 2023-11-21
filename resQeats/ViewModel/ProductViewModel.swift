@@ -11,13 +11,13 @@ import CoreLocation
 
     
     class ProductViewModel: ObservableObject {
-        @Published var products: [FoodOffer] = []
+        @Published var products: [Product] = []
 
         init(){
             getAllProducts()
            }
         func getAllProducts() {
-                guard let url = URL(string: "http://192.168.100.162:3000/api/product/products") else {
+                guard let url = URL(string: "http://172.20.10.5:5005/product/products") else {
                     print("there is errors with url parsing")
                     return
                 }
@@ -41,7 +41,7 @@ import CoreLocation
                     }
                     
                     print(String(data: data, encoding: .utf8) ?? "Invalid data")
-                    guard let jsondata = try? JSONDecoder().decode([FoodOffer].self, from: data)
+                    guard let jsondata = try? JSONDecoder().decode([Product].self, from: data)
                     else{
                         print("error from decoder")
                         return
@@ -59,17 +59,17 @@ import CoreLocation
     
 
     
-    func ajouterProduit(_ foodoffer: FoodOffer) {
+    func ajouterProduit(_ product: Product) {
         // Création d'une instance de User
         
         // Convertir la structure User en données JSON
         let encoder = JSONEncoder()
-        guard let jsonData = try? encoder.encode(foodoffer) else {
+        guard let jsonData = try? encoder.encode(product) else {
             fatalError("Erreur lors de l'encodage en JSON")
         }
         
         // Créer une URLRequest avec l'URL de votre API
-        let url = URL(string: "http://192.168.100.162:3000/api/product/products")! // Remplacez par votre URL
+        let url = URL(string: "http://172.20.10.5:5005/product/products")! // Remplacez par votre URL
         var request = URLRequest(url: url)
         
         // Configurer la requête en tant que POST et définir le corps de la requête
