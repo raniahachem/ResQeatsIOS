@@ -9,21 +9,21 @@ import SwiftUI
 
 struct FoodOfferRow: View {
     @EnvironmentObject var cartManager: CartManager
-    var offer: FoodOffer
+    var product: Product
 
     var body: some View {
         HStack(spacing: 20) {
-            Image(offer.image)
+            Image(product.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)
                 .cornerRadius(10)
 
             VStack(alignment: .leading, spacing: 10) {
-                Text(offer.title)
+                Text(product.title)
                     .bold()
 
-                Text("\(offer.price) TND")
+                Text("\(product.price) TND")
             }
 
             Spacer()
@@ -31,7 +31,7 @@ struct FoodOfferRow: View {
             Image(systemName: "trash")
                 .foregroundColor(Color(hue: 1.0, saturation: 0.89, brightness: 0.835))
                 .onTapGesture {
-                    cartManager.removeFromCart(offer: offer)
+                    cartManager.removeFromCart(product: product)
                 }
         }
         .padding(.horizontal)

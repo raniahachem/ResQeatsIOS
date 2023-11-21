@@ -16,9 +16,9 @@ struct FoodCartView: View {
                 Text("Thanks for your purchase! Your delicious food will be on its way to you. You'll also receive an email confirmation shortly.")
                     .padding()
             } else {
-                if cartManager.foodOffers.count > 0 {
-                    ForEach(cartManager.foodOffers, id: \.id) { offer in
-                        FoodOfferRow(offer: offer)
+                if cartManager.products.count > 0 {
+                    ForEach(cartManager.products, id: \._id) { product in
+                        FoodOfferRow(product: product)
                     }
 
                     HStack {

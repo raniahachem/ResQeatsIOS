@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct RestaurantOffers: View {
+/*struct RestaurantOffers: View {
     @ObservedObject var viewModel: RestaurantOffersViewModel
     var restaurantName: String
     @EnvironmentObject var cartManager: CartManager // Ajoutez l'environnement CartManager
@@ -31,11 +31,11 @@ struct RestaurantOffers: View {
                 .padding()
             }
         }
-        .toolbar {
+        /*.toolbar {
                    NavigationLink(destination: FoodCartView().environmentObject(cartManager)) {
                        FoodCartButton(numberOfOffers: cartManager.foodOffers.count)
                    }
-        }
+        }*/
     }
 }
 
@@ -72,7 +72,7 @@ struct FoodCardView: View {
                     }
                 }
                 .padding()
-                Button {
+               /* Button {
                     cartManager.addToCart(offer: offer)
                 } label: {
                     Image(systemName: "plus")
@@ -81,10 +81,10 @@ struct FoodCardView: View {
                         .background(.black)
                         .cornerRadius(50)
                         .padding()
-                }
+                }*/
             }
             .frame(maxWidth: .infinity)
         }
-    }
+    }*/
 
 

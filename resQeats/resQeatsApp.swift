@@ -40,8 +40,8 @@ struct resQeatsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ProductView()
-                //.environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
+            HomeScreen2View()
+                .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
         }
     }
 }

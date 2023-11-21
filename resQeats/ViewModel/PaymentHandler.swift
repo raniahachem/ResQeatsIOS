@@ -51,15 +51,15 @@ class PaymentHandler: NSObject {
         return []
     }
 
-    func startPayment(foodOffers: [FoodOffer], total: Int, completion: @escaping PaymentCompletionHandler) {
+    func startPayment(products: [Product], total: Int, completion: @escaping PaymentCompletionHandler) {
         completionHandler = completion
         
         // Reset the paymentSummaryItems array before adding to it
         paymentSummaryItems = []
         
         // Iterate over the products array, create a PKPaymentSummaryItem for each and append to the paymentSummaryItems array
-        foodOffers.forEach { foodOffer in
-            let item = PKPaymentSummaryItem(label: foodOffer.title, amount: NSDecimalNumber(string: "\(foodOffer.price)"), type: .final)
+        products.forEach { product in
+            let item = PKPaymentSummaryItem(label: product.title, amount: NSDecimalNumber(string: "\(product.price)"), type: .final)
             paymentSummaryItems.append(item)
         }
         

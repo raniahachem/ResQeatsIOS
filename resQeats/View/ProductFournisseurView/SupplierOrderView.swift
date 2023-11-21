@@ -19,7 +19,7 @@ struct SupplierOrderView: View {
                         .padding()
                         .font(.headline)
                 } else {
-                    List(orders, id: \.id) { order in
+                    List(orders, id: \._id) { order in
                         NavigationLink(
                             destination: SupplierOrderDetailView(
                                 order: order,
@@ -57,7 +57,7 @@ struct SupplierOrderView: View {
     }
 
     func updateOrderStatus(_ order: Order, newStatus: Order.OrderStatus) {
-        if let index = orders.firstIndex(where: { $0.id == order.id }) {
+        if let index = orders.firstIndex(where: { $0._id == order._id }) {
             orders[index].status = newStatus
         }
     }

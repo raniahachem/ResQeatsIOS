@@ -6,19 +6,13 @@
 //
 
 import SwiftUI
-struct ProductView: View {
+/*struct ProductView: View {
     @State private var selectedTab = 0 // Assurez-vous que cette variable est dans
     @State private var search: String = ""
     @State private var selectedIndex: Int = 1
     @State private var selectedLogo: String?
 @StateObject private var pl = ProductViewModel()
-
-
-
-
-
-
-                    // Le reste de votre AppBarView
+    @EnvironmentObject var cartManager: CartManager
                 
     struct LogoListView: View {
         let logos: [String] = ["logoferrari", "logotesla", "logocupra", "logocitroen", "logopeugeot", "logonissan", "logoaudi", "lgomini", "logoseat"]
@@ -101,7 +95,6 @@ struct ProductView: View {
                                 .padding(.leading)
                             }
                         }
-
                     
                         .padding(.bottom)
                         
@@ -176,7 +169,7 @@ struct ProductView: View {
 
     
     
-    struct TagLineView2: View {
+    struct TagLineView: View {
         var body: some View {
             VStack{
                 Text("  Trouvez les \nmeilleures ")
@@ -192,7 +185,7 @@ struct ProductView: View {
         }
     }
     
-    struct SearchAndScanView2: View {
+    struct SearchAndScanView: View {
         @Binding var search: String
         
         var body: some View {
@@ -214,7 +207,7 @@ struct ProductView: View {
     }
 
     
-    struct CategoryView2: View {
+    struct CategoryView: View {
         let isActive: Bool
         let text: String
         var body: some View {
@@ -259,6 +252,35 @@ struct ProductView: View {
             ProductView()
         }
     }
-    
+ */
 
-                                                
+struct ProductView: View {
+
+    @ObservedObject var viewModel: ProductViewModel
+    //var restaurantName: String
+    @StateObject private var cartManager = CartManager()
+
+    let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
+
+    var body: some View {
+        ScrollView {
+            VStack {
+                //Text("Latest offers posted by \(restaurantName)")
+                Text("Latest offers posted")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .padding(.top, 10)
+
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEach(viewModel.products, id: \._id) { product in
+                        NavigationLink(destination: FoodDetail(product: product, viewModel: viewModel)) {
+                            ProductCardView(product: product)
+                        }
+                    }
+                }
+                .padding()
+            }
+        }
+    }
+}
+

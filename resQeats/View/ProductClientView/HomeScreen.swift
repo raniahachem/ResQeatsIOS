@@ -122,7 +122,7 @@ struct HomeScreen: View {
 
 
 
-struct AppBarView2: View {
+struct AppBarView4: View {
     var body: some View {
         HStack {
             Button(action: {}) {
@@ -145,7 +145,7 @@ struct AppBarView2: View {
     }
 }
 
-struct TagLineView: View {
+struct TagLineView4: View {
     var body: some View {
         Text("Find the best food deals \n")
             .font(.custom("PlayfairDisplay-Regular", size: 28))
@@ -158,7 +158,7 @@ struct TagLineView: View {
     }
 }
 
-struct SearchAndScanView: View {
+struct SearchAndScanView4: View {
     @Binding var search: String
     var body: some View {
         HStack {
@@ -184,7 +184,7 @@ struct SearchAndScanView: View {
     }
 }
 
-struct CategoryView: View {
+struct CategoryView4: View {
     let isActive: Bool
     let text: String
     var body: some View {
@@ -202,37 +202,7 @@ struct CategoryView: View {
     }
 }
 
-struct RestaurantCardView: View {
-    let restaurant: Restaurant
-    let size: CGFloat
-    var body: some View {
-        VStack {
-            Image(restaurant.imageName)
-                .resizable()
-                .frame(width: size, height: 200 * (size/210))
-                .cornerRadius(20.0)
-            Text(restaurant.name)
-                .font(.title3)
-                .fontWeight(.bold)
 
-            HStack(spacing: 2) {
-                ForEach(0 ..< 5) { item in
-                    Image("star")
-                }
-                Spacer()
-                Text(restaurant.category)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .lineLimit(1)
-                    
-            }
-        }
-        .frame(width: size)
-        .padding()
-        .background(Color.white)
-        .cornerRadius(20.0)
-    }
-}
 
 
 /*struct BottomNavBarView: View {

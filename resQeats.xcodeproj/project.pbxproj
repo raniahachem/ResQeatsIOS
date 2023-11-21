@@ -16,6 +16,11 @@
 		2C6F761A2B0C9B9900A49284 /* ProdcutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6F76192B0C9B9900A49284 /* ProdcutCardView.swift */; };
 		2C7D829C2AFA824B000282D3 /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7D829B2AFA824B000282D3 /* FoodCategory.swift */; };
 		2C8199992AFBBB8800F92781 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8199982AFBBB8800F92781 /* ImagePicker.swift */; };
+		2CB90D072B0CAC43009A263E /* Restaurant2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB90D062B0CAC43009A263E /* Restaurant2.swift */; };
+		2CB90D092B0CB1A7009A263E /* HomeScreen2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB90D082B0CB1A7009A263E /* HomeScreen2View.swift */; };
+		2CB90D0B2B0CB4FC009A263E /* DetailRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB90D0A2B0CB4FC009A263E /* DetailRestaurantView.swift */; };
+		2CB90D0D2B0CB546009A263E /* RestaurantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB90D0C2B0CB546009A263E /* RestaurantViewModel.swift */; };
+		2CB90D0F2B0CC018009A263E /* RestaurantCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB90D0E2B0CC018009A263E /* RestaurantCardView.swift */; };
 		2CBBA8A32B03569300AAD6A6 /* PaymentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8A22B03569300AAD6A6 /* PaymentHandler.swift */; };
 		2CBBA8A52B0356AC00AAD6A6 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8A42B0356AC00AAD6A6 /* CartManager.swift */; };
 		2CBBA8A72B0356D000AAD6A6 /* Bakery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBBA8A62B0356D000AAD6A6 /* Bakery.swift */; };
@@ -80,6 +85,11 @@
 		2C6F76192B0C9B9900A49284 /* ProdcutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdcutCardView.swift; sourceTree = "<group>"; };
 		2C7D829B2AFA824B000282D3 /* FoodCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
 		2C8199982AFBBB8800F92781 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2CB90D062B0CAC43009A263E /* Restaurant2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant2.swift; sourceTree = "<group>"; };
+		2CB90D082B0CB1A7009A263E /* HomeScreen2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen2View.swift; sourceTree = "<group>"; };
+		2CB90D0A2B0CB4FC009A263E /* DetailRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRestaurantView.swift; sourceTree = "<group>"; };
+		2CB90D0C2B0CB546009A263E /* RestaurantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewModel.swift; sourceTree = "<group>"; };
+		2CB90D0E2B0CC018009A263E /* RestaurantCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCardView.swift; sourceTree = "<group>"; };
 		2CBBA8A22B03569300AAD6A6 /* PaymentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentHandler.swift; sourceTree = "<group>"; };
 		2CBBA8A42B0356AC00AAD6A6 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		2CBBA8A62B0356D000AAD6A6 /* Bakery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bakery.swift; sourceTree = "<group>"; };
@@ -202,6 +212,9 @@
 				2CC9C6332B0B6DE500C901FA /* ClientOrderDetailView.swift */,
 				2C6F76152B0C95BA00A49284 /* ProductView.swift */,
 				2C6F76192B0C9B9900A49284 /* ProdcutCardView.swift */,
+				2CB90D082B0CB1A7009A263E /* HomeScreen2View.swift */,
+				2CB90D0A2B0CB4FC009A263E /* DetailRestaurantView.swift */,
+				2CB90D0E2B0CC018009A263E /* RestaurantCardView.swift */,
 			);
 			path = ProductClientView;
 			sourceTree = "<group>";
@@ -276,6 +289,7 @@
 				2CBBA8A62B0356D000AAD6A6 /* Bakery.swift */,
 				2CC9C6352B0B6E3E00C901FA /* Order.swift */,
 				2C6F76172B0C980100A49284 /* Prodcut.swift */,
+				2CB90D062B0CAC43009A263E /* Restaurant2.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +312,7 @@
 				2CBBA8A22B03569300AAD6A6 /* PaymentHandler.swift */,
 				2CBBA8A42B0356AC00AAD6A6 /* CartManager.swift */,
 				2C095E4E2B0BAF1E00DC7542 /* ProductViewModel.swift */,
+				2CB90D0C2B0CB546009A263E /* RestaurantViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -433,20 +448,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6F76162B0C95BA00A49284 /* ProductView.swift in Sources */,
+				2CB90D0F2B0CC018009A263E /* RestaurantCardView.swift in Sources */,
 				2CBDCB122AFB731D00E001E0 /* FoodOffer.swift in Sources */,
 				2CBBA8AB2B03580C00AAD6A6 /* FoodCartView.swift in Sources */,
+				2CB90D092B0CB1A7009A263E /* HomeScreen2View.swift in Sources */,
 				2C6F76182B0C980100A49284 /* Prodcut.swift in Sources */,
 				2C7D829C2AFA824B000282D3 /* FoodCategory.swift in Sources */,
 				2CBBA8A92B0357FC00AAD6A6 /* ClientView.swift in Sources */,
 				2CDB25C22AF90BA300CE54B3 /* Persistence.swift in Sources */,
+				2CB90D072B0CAC43009A263E /* Restaurant2.swift in Sources */,
 				2CBBA8C52B0359DA00AAD6A6 /* SettingsView.swift in Sources */,
 				2CBBA8B72B03588800AAD6A6 /* RestaurantOffers.swift in Sources */,
 				2CBBA8AF2B03582700AAD6A6 /* PaymentButton.swift in Sources */,
+				2CB90D0B2B0CB4FC009A263E /* DetailRestaurantView.swift in Sources */,
 				2CDB25C52AF90BA300CE54B3 /* resQeats.xcdatamodeld in Sources */,
 				2CBDCB142AFB735700E001E0 /* Restaurant.swift in Sources */,
 				2CBBA8C12B0359B200AAD6A6 /* SupplierDonnationView.swift in Sources */,
 				2C254F6F2AFD12E0000A2344 /* SupermarketView.swift in Sources */,
 				2CBBA8CB2B035A3500AAD6A6 /* SupplierNewOfferView.swift in Sources */,
+				2CB90D0D2B0CB546009A263E /* RestaurantViewModel.swift in Sources */,
 				2CBBA8B12B03583E00AAD6A6 /* FoodOfferRow.swift in Sources */,
 				2C095E4F2B0BAF1E00DC7542 /* ProductViewModel.swift in Sources */,
 				2CBBA8AD2B03581A00AAD6A6 /* FoodCartButton.swift in Sources */,

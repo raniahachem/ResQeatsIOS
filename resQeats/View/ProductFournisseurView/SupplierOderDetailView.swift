@@ -52,11 +52,11 @@ struct SupplierOrderDetailView: View {
                 .padding()
 
             VStack(alignment: .leading, spacing: 10) {
-                ForEach(order.items, id: \.id) { foodOffer in
+                ForEach(order.items, id: \._id) { product in
                     HStack {
-                        Text("\(foodOffer.quantity) x \(foodOffer.title)")
+                        Text("\(product.quantity) x \(product.title)")
                         Spacer()
-                        Text("\(foodOffer.price) TND")
+                        Text("\(product.price) TND")
                     }
                 }
             }

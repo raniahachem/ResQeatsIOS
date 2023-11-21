@@ -16,7 +16,6 @@ struct Product: Codable{
     var image: String
     var quantity: Int
     var restaurant: String
-    
 
     init(id: String, title: String, category: String, description: String, price: Int, image: String, quantity: Int, restaurant: String) {
 
@@ -28,7 +27,6 @@ struct Product: Codable{
         self.image = image
         self.quantity = quantity
         self.restaurant = restaurant
-
 
     }
 

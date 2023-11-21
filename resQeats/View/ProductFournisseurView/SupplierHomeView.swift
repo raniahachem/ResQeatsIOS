@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SupplierHomeView: View {
-    @ObservedObject var viewModel: RestaurantOffersViewModel
+/*struct SupplierHomeView: View {
+    @ObservedObject var viewModel: ProductViewModel
 
     var body: some View {
         NavigationView {
@@ -108,4 +108,4 @@ struct SupplierOfferCardView: View {
         }
         .frame(maxWidth: .infinity)
     }
-}
+}*/

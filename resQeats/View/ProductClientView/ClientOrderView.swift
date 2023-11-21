@@ -20,7 +20,7 @@ struct ClientOrderView: View {
                         .font(.headline)
                 } else {
                     // Display orders for the client
-                    List(orders, id: \.id) { order in
+                    List(orders, id: \._id) { order in
                         NavigationLink(
                             destination: ClientOrderDetailView(order: order)
                         ) {

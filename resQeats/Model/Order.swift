@@ -7,10 +7,32 @@
 
 import Foundation
 import SwiftUI
+struct Order: Codable {
+    var _id: String
+    var status: OrderStatus = .pending
+    var items: [Product]
+    var totalAmount: Int
+    var orderNumber: String
+
+    enum OrderStatus: String, Codable {
+        case pending, accepted, declined
+    }
+
+    init(id: String, status: OrderStatus, items: [Product], totalAmount: Int, orderNumber: String) {
+        self._id = id
+        self.status = status
+        self.items = items
+        self.totalAmount = totalAmount
+        self.orderNumber = orderNumber
+    }
+}
+
+
+/*import SwiftUI
 struct Order: Identifiable, Decodable {
     var id = UUID()
     var status: OrderStatus = .pending
-    var items: [FoodOffer]
+    var items: [Product]
     var totalAmount: Int
     var orderNumber: String
 
@@ -36,5 +58,4 @@ struct Order: Identifiable, Decodable {
         let statusRaw = try container.decode(String.self, forKey: .statusRaw)
         status = OrderStatus(rawValue: statusRaw) ?? .pending
     }
-}
-
+}*/
