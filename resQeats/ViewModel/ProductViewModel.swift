@@ -10,7 +10,7 @@ import CoreLocation
 
     class ProductViewModel: ObservableObject {
         @Published var products: [Product] = []
-        @Published var cart: [FoodOffer] = []
+        //@Published var cart: [Product] = []
         init(){
             getAllProducts()
            }

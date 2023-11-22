@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ProductCardView: View {
     let product: Product
-    @StateObject private var cartManager = CartManager()
-    
+    //@ObservedObject private var cartManager: CartManager
+    //@StateObject private var cartManager = CartManager()
+    @EnvironmentObject var cartManager: CartManager
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)

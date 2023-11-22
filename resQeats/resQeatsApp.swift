@@ -36,11 +36,12 @@ struct resQeatsApp: App {
 import SwiftUI
 @main
 struct resQeatsApp: App {
-    @StateObject var cartManager = CartManager() // Déclarer CartManager comme @StateObject
+    //@StateObject var cartManager = CartManager() // Déclarer CartManager comme @StateObject
+    @StateObject private var cartManager = CartManager()
 
     var body: some Scene {
         WindowGroup {
-            HomeScreen2View()
+            ClientView()
                 .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
         }
     }

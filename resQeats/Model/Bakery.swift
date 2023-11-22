@@ -5,7 +5,7 @@
 //  Created by rania hm on 14/11/2023.
 //
 
-import Foundation
+/*import Foundation
 import SwiftUI
 struct Bakery: Identifiable {
     var id = UUID()
@@ -27,5 +27,5 @@ Bakery(name: "Takacim", imageName: "takacim", description: "Takacim pour céléb
     FoodOffer(title: "Pizza", category: .salty, description: "Pizza pepperoni, tomate mozza", price: 12, image: "pizza", quantity: 2, restaurantName: "Takacim")
 ])
    
-]
+]*/
 

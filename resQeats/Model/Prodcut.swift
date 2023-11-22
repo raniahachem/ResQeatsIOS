@@ -30,13 +30,11 @@ struct Product: Codable{
 
     }
 
-
-
-
-    
-
-
-
-
+    enum Category: String, CaseIterable {
+        case healthy = "healthy"
+        case mainMeal = "mainMeal"
+        case dessert = "dessert"
+        case fastFood = "fastFood"
+    }
 }
 

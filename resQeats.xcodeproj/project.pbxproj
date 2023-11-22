@@ -56,6 +56,7 @@
 		2CDB25CF2AF90BA300CE54B3 /* resQeatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB25CE2AF90BA300CE54B3 /* resQeatsTests.swift */; };
 		2CDB25D92AF90BA300CE54B3 /* resQeatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB25D82AF90BA300CE54B3 /* resQeatsUITests.swift */; };
 		2CDB25DB2AF90BA300CE54B3 /* resQeatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDB25DA2AF90BA300CE54B3 /* resQeatsUITestsLaunchTests.swift */; };
+		2CF46ACB2B0E0A3600A386D4 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF46ACA2B0E0A3600A386D4 /* OrderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		2CDB25D42AF90BA300CE54B3 /* resQeatsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = resQeatsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDB25D82AF90BA300CE54B3 /* resQeatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resQeatsUITests.swift; sourceTree = "<group>"; };
 		2CDB25DA2AF90BA300CE54B3 /* resQeatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resQeatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2CF46ACA2B0E0A3600A386D4 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				2CBBA8A42B0356AC00AAD6A6 /* CartManager.swift */,
 				2C095E4E2B0BAF1E00DC7542 /* ProductViewModel.swift */,
 				2CB90D0C2B0CB546009A263E /* RestaurantViewModel.swift */,
+				2CF46ACA2B0E0A3600A386D4 /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				2CB90D072B0CAC43009A263E /* Restaurant2.swift in Sources */,
 				2CBBA8C52B0359DA00AAD6A6 /* SettingsView.swift in Sources */,
 				2CBBA8B72B03588800AAD6A6 /* RestaurantOffers.swift in Sources */,
+				2CF46ACB2B0E0A3600A386D4 /* OrderViewModel.swift in Sources */,
 				2CBBA8AF2B03582700AAD6A6 /* PaymentButton.swift in Sources */,
 				2CB90D0B2B0CB4FC009A263E /* DetailRestaurantView.swift in Sources */,
 				2CDB25C52AF90BA300CE54B3 /* resQeats.xcdatamodeld in Sources */,

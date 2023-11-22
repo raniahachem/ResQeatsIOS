@@ -10,10 +10,10 @@ import SwiftUI
 struct TabBarSupplier: View {
     var body: some View {
         TabView{
-            /*SupplierHomeView(viewModel: ProductViewModel())
+            SupplierHomeView()
                 .tabItem{
                     Label("Offers", systemImage: "house")
-                }*/
+                }
             SupplierDonnationView()
                 .tabItem{
                     Label("Donnation", systemImage: "heart.circle.fill")

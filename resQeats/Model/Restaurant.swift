@@ -5,7 +5,7 @@
 //  Created by rania hm on 8/11/2023.
 //
 
-import Foundation
+/*import Foundation
 import SwiftUI
 struct Restaurant: Identifiable {
     var id = UUID()
@@ -30,4 +30,4 @@ Restaurant(name: "Joe's Pizza", category: "Fast food", imageName: "joespizza", d
     Restaurant(name: "Tik Tak Family", category: "Gluten Free", imageName: "Tiktak", description: "Avec une option sans gluten disponible, leurs créations sucrées et salées vous feront saliver à chaque bouchée.", foodOffers: [
         offers[5]
     ])
-]
+]*/

@@ -9,7 +9,7 @@ import SwiftUI
 struct TabBarClient: View {
     var body: some View {
         TabView{
-            HomeScreen()
+            HomeScreen2View()
                 .tabItem{
                     Label("Home", systemImage: "house")
                 }

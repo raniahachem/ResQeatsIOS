@@ -258,7 +258,8 @@ struct ProductView: View {
 
     @ObservedObject var viewModel: ProductViewModel
     //var restaurantName: String
-    @StateObject private var cartManager = CartManager()
+    //@StateObject private var cartManager = CartManager()
+    @EnvironmentObject var cartManager: CartManager
 
     let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
 

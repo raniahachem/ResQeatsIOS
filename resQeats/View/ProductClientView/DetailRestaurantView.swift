@@ -24,7 +24,7 @@ struct DetailRestaurantView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     // Product Image
-                    Image(restaurant.image)
+                    Image(restaurant.username)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 200)
@@ -60,7 +60,11 @@ struct DetailRestaurantView: View {
                 }
                 .padding()
             }
-        }
+        }.toolbar {
+            NavigationLink(destination: FoodCartView().environmentObject(cartManager)) {
+                FoodCartButton(numberOfOffers: cartManager.products.count)
+            }
+ }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: BackButton(action: { presentationMode.wrappedValue.dismiss() }), trailing: Image("threeDot"))
    

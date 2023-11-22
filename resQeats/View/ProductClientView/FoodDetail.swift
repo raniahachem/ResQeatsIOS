@@ -65,7 +65,7 @@ import SwiftUI
 
 class RestaurantOffersViewModel: ObservableObject {
     @Published var restaurant: Restaurant2
-    @Published var cart: [FoodOffer] = []
+    @Published var cart: [Product] = []
 
     init(restaurant: Restaurant2) {
         self.restaurant = restaurant

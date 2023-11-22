@@ -139,7 +139,7 @@ struct DetailScreen: View {
     
     var body: some View {
         ZStack {
-            Color("Bg")
+            Color("Background")
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {
@@ -173,12 +173,6 @@ struct DetailScreen: View {
                         .foregroundColor(.secondary)
                         .lineSpacing(8)
                     
-                    // Vehicle Details Section
-                    Group {
-                        ProductDetailRow(imageName: "speedometer", title: "Vitesse Max", value: "\(product.quantity) km/h")
-                        
-                        
-                    }
                     
                     Spacer()
                 }

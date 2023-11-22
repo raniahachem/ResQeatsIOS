@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-/*struct SupplierHomeView: View {
-    @ObservedObject var viewModel: ProductViewModel
+struct SupplierHomeView: View {
+    @StateObject private var cartManager = CartManager()
+    @StateObject private var productViewModel = ProductViewModel()
 
     var body: some View {
         NavigationView {
             
             ScrollView {
-                SupplierOffers(viewModel: viewModel)
+                ProductView(viewModel: productViewModel)
+                    .environmentObject(cartManager)
             }
             .navigationTitle("My offers")
         }
@@ -22,30 +24,16 @@ import SwiftUI
     }
 }
 
-struct SupplierHomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        let restaurantLeZink = Restaurant(name: "Le zink", category: "Fast food", imageName: "zink", description: "Le zink specialisé en Burgers gourmets , salades, pastrami… Les chefs y sont très doués et inventifs, une des meilleures adresses en Tunisie", foodOffers: [
-            offers[0],
-            offers[1],
-            offers[2],
-        ])
-
-        let viewModel =
-        RestaurantOffersViewModel(restaurant: restaurantLeZink)
- // Créez un exemple de modèle de vue
-        return SupplierHomeView(viewModel: viewModel)
-    }
-}
-
 struct SupplierOffers: View {
-    @ObservedObject var viewModel: RestaurantOffersViewModel
+    @ObservedObject var viewModel: ProductViewModel
+    
     let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         ScrollView {
             VStack {
-                let filteredOffers = viewModel.restaurant.foodOffers.filter { $0.restaurantName == "Le zink" }
+                //let filteredOffers = $viewModel.restaurant.foodOffers.filter { $0.restaurantName == "Le zink" }
                 HStack{
-                Text("\(filteredOffers.count) offers posted")
+                Text("offers posted")
                                     .font(.headline)
                                     .fontWeight(.medium)
                                     .padding(.leading, 16)
@@ -60,9 +48,9 @@ struct SupplierOffers: View {
                         }
                 }
                 LazyVGrid(columns: columns, spacing: 16) {
-                    ForEach(viewModel.restaurant.foodOffers.filter { $0.restaurantName == "Le zink" }) { offer in
-                        NavigationLink(destination: FoodDetail(offer: offer, viewModel: viewModel, restaurantName: "Le zink")) {
-                            SupplierOfferCardView(offer: offer)
+                    ForEach(viewModel.products, id: \._id) { product in
+                        NavigationLink(destination: FoodDetail(product: product, viewModel: viewModel)) {
+                            SupplierOfferCardView(product: product)
                         }
                     }
                 }
@@ -73,7 +61,7 @@ struct SupplierOffers: View {
 }
 
 struct SupplierOfferCardView: View {
-    var offer: FoodOffer
+    var product: Product
 
     var body: some View {
         ZStack {
@@ -82,24 +70,24 @@ struct SupplierOfferCardView: View {
                 .shadow(radius: 3)
 
             VStack {
-                Image(offer.image)
+                Image(product.image)
                     .resizable()
                     .frame(height: 150)
                     .cornerRadius(10)
 
-                Text(offer.title)
+                Text(product.title)
                     .font(.headline)
                     .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .lineLimit(2)
                 Spacer()
                 HStack {
-                    Text(offer.category.rawValue)
+                    Text(product.category)
                         .font(.subheadline)
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
                     Spacer()
-                    Text("\(offer.price) TND")
+                    Text("\(product.price) TND")
                         .font(.title3)
                         .foregroundColor(.black)
                 }
@@ -108,4 +96,4 @@ struct SupplierOfferCardView: View {
         }
         .frame(maxWidth: .infinity)
     }
-}*/
+}

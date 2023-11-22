@@ -13,7 +13,7 @@ struct RestaurantCardView: View {
     @EnvironmentObject var cartManager: CartManager
     var body: some View {
         VStack {
-            Image(restaurant.image)
+            Image(restaurant.username)
                 .resizable()
                 .frame(width: size, height: 200 * (size/210))
                 .cornerRadius(20.0)

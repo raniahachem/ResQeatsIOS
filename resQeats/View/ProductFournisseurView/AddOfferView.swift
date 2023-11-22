@@ -8,16 +8,17 @@
 import SwiftUI
 struct AddOfferView: View {
     @State private var title: String = ""
-    @State private var selectedCategory: Category = .healthy
+    @State private var selectedCategory: Product.Category = .healthy
     @State private var description: String = ""
     @State private var price: String = ""
-    @State private var selectedImage: UIImage?
-    @State private var isImagePickerPresented = false
+    //@State private var selectedImage: UIImage?
+    @State private var image: String = ""
+    //@State private var isImagePickerPresented = false
     @State private var quantity: String = ""
     @State private var isAddSuccessful = false
     
 
-    private let apiURL = URL(string: "http://172.18.32.60:5005/product")!
+    private let apiURL = URL(string: "http://172.20.10.5:5005/product/products")!
 
     var body: some View {
         NavigationView {
@@ -27,21 +28,24 @@ struct AddOfferView: View {
                 }
 
                 Section(header: Text("Category")) {
-                    Picker("Category", selection: $selectedCategory) {
-                        ForEach(Category.allCases, id: \.self) { category in
-                            Text(category.rawValue).tag(category)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                }
-
+                                    Picker("Category", selection: $selectedCategory) {
+                                        ForEach(Product.Category.allCases, id: \.self) { category in
+                                            Text(category.rawValue).tag(category)
+                                        }
+                                    }
+                                    .pickerStyle(.menu)
+                                }
                 Section(header: Text("Description")) {
                     TextEditor(text: $description)
                 }
 
                 Section(header: Text("Price")) {
                     TextField("Price", text: $price)
-                        .keyboardType(.numberPad)
+                        //.keyboardType(.numberPad)
+                }
+                Section(header: Text("Image")) {
+                    TextField("Image", text: $image)
+                        //.keyboardType(.numberPad)
                 }
 
                 /*Section(header: Text("Image")) {
@@ -66,12 +70,12 @@ struct AddOfferView: View {
                 }*/
                 Section(header: Text("Quantity")) {
                     TextField("Quantity", text: $quantity)
-                        .keyboardType(.numberPad)
+                        //.keyboardType(.numberPad)
                 }
             }
-            .sheet(isPresented: $isImagePickerPresented) {
-                ImagePicker(selectedImage: $selectedImage)
-            }
+            //.sheet(isPresented: $isImagePickerPresented) {
+               // ImagePicker(selectedImage: $selectedImage)
+            //}
 
             .toolbar {
                 
@@ -80,9 +84,9 @@ struct AddOfferView: View {
                     Button("Done") {
                         addProduct()
                     }
-                                       .labelStyle(.iconOnly)
-                               .disabled(title.isEmpty)
+                    .disabled(title.isEmpty)
                 }
+
                         }
             .navigationTitle("Add new offer")
                         .alert(isPresented: $isAddSuccessful) {
@@ -105,8 +109,9 @@ struct AddOfferView: View {
                "category": selectedCategory.rawValue,
                "description": description,
                "price": price,
+               "image": image,
                "quantity": quantity,
-               "fournisseur": "65553581de3f2a6f302e2094"
+               "restaurant": "65594e93fb8b75c44f353fb5"
                // Add other fields as needed
            ]
 
@@ -155,8 +160,9 @@ struct AddOfferView: View {
            selectedCategory = .healthy
            description = ""
            price = ""
-           selectedImage = nil
-           isImagePickerPresented = false
+           image = ""
+           //selectedImage = nil
+           //isImagePickerPresented = false
            quantity = ""
        }
    }
@@ -167,4 +173,5 @@ struct AddOfferView: View {
        }
    }
 
-
+    
+    
