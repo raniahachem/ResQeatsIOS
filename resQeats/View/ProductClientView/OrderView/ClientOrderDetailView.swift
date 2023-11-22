@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClientOrderDetailView: View {
+/*struct ClientOrderDetailView: View {
     var order: Order
     
     var body: some View {
@@ -44,4 +44,4 @@ struct ClientOrderDetailView: View {
             .navigationTitle("Order #\(order.orderNumber)")
         }
     }
-}
+}*/

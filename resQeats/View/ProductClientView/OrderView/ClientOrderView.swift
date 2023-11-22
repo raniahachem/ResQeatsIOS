@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ClientOrderView: View {
+/*struct ClientOrderView: View {
     @State private var orders: [Order] = []  // Replace this with your actual data source
     
     var body: some View {
@@ -55,5 +55,5 @@ struct ClientOrderRow: View {
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-}
+}*/
 

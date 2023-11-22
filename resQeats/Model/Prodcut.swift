@@ -38,3 +38,8 @@ struct Product: Codable{
     }
 }
 
+extension Product: Identifiable {
+    var id: String {
+        return _id
+    }
+}

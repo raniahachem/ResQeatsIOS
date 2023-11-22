@@ -18,7 +18,7 @@ struct AddOfferView: View {
     @State private var isAddSuccessful = false
     
 
-    private let apiURL = URL(string: "http://172.20.10.5:5005/product/products")!
+    private let apiURL = URL(string: "http://192.168.100.117:5005/product/products")!
 
     var body: some View {
         NavigationView {

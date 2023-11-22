@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct SupplierOrderView: View {
-    @State private var orders: [Order] = []  // Replace this with your actual data source
-
+/*struct SupplierOrderView: View {
+    @State private var orders: [Order] = []
+    @StateObject private var orderViewModel = OrderViewModel()
     var body: some View {
         NavigationView {
             VStack {
@@ -19,7 +19,7 @@ struct SupplierOrderView: View {
                         .padding()
                         .font(.headline)
                 } else {
-                    List(orders, id: \._id) { order in
+                    /*List(orders, id: \._id) { order in
                         NavigationLink(
                             destination: SupplierOrderDetailView(
                                 order: order,
@@ -35,7 +35,23 @@ struct SupplierOrderView: View {
                         ) {
                             SupplierOrderRow(order: order)
                         }
-                    }
+                    }*/
+                    List(orderViewModel.orders, id: \._id) { order in
+                                            NavigationLink(
+                                                destination: SupplierOrderDetailView(order: order,
+                                                                                     acceptAction: {
+                                                                                         // Supplier-specific logic for accepting an order
+                                                                                         self.acceptOrder(order)
+                                                                                     },
+                                                                                     declineAction: {
+                                                                                         // Supplier-specific logic for declining an order
+                                                                                         self.declineOrder(order)
+                                                                                     }
+                                                                                 )
+                                                                             ) {
+                                                                                 SupplierOrderRow(order: order)
+                                                                             }
+                                        }
                 }
             }
             .navigationTitle("Recieved Orders")
@@ -86,7 +102,7 @@ struct SupplierOrderView_Previews: PreviewProvider {
     static var previews: some View {
         SupplierOrderView()
     }
-}
+}*/
 
 /*func sampleOrder() -> Order {
     let foodOffer = FoodOffer(

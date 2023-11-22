@@ -12,7 +12,9 @@ import CoreLocation
         @Published var orders: [Order] = []
         
         init(){
-            getAllOrders()
+            //getAllOrders()
+            getOrders()
+            
            }
         func getAllOrders() {
                 guard let url = URL(string: "http://192.168.100.117:5005/oder/orders") else {
@@ -73,6 +75,41 @@ import CoreLocation
 
                 }.resume()
             }*/
+        
+        func getOrders() {
+                /*guard let restaurantId = UserDefaults.standard.string(forKey: "currentRestaurantId") else {
+                    print("Restaurant ID not found")
+                    return
+                }*/
+            
+            let idrest = "65594e93fb8b75c44f353fb5"
+
+                guard let url = URL(string: "http://192.168.100.117:5005/restaurant/restaurants/\(idrest)/orders") else {
+                    print("There is an error with URL parsing")
+                    return
+                }
+
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    guard error == nil else {
+                        print("Error from completion handler")
+                        return
+                    }
+
+                    guard let data = data else {
+                        print("Error with data")
+                        return
+                    }
+
+                    do {
+                        let decodedOrders = try JSONDecoder().decode([Order].self, from: data)
+                        DispatchQueue.main.async {
+                            self.orders = decodedOrders
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                }.resume()
+            }
     }
 
 

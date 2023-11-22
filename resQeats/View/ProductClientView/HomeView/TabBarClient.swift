@@ -17,10 +17,10 @@ struct TabBarClient: View {
                 .tabItem{
                     Label("Cart", systemImage: "cart")
                 }
-            ClientOrderView()
+            /*ClientOrderView()
                 .tabItem{
                     Label("Order", systemImage: "checkmark")
-                }
+                }*/
             SettingsView()
                 .tabItem{
                     Label("Settings", systemImage: "gear")
