@@ -76,17 +76,6 @@ struct SupplierOrderRow: View {
             Text(order.status.rawValue)
                 .foregroundColor(order.status == .accepted ? .green : .orange)
 
-            // Additional buttons or actions for the supplier
-            /*Button("Accept") {
-                // Supplier-specific logic for accepting an order
-            }
-            .foregroundColor(.green)
-            .padding(.trailing, 10)
-
-            Button("Decline") {
-                // Supplier-specific logic for declining an order
-            }
-            .foregroundColor(.red)*/
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Foundation
 import CoreLocation
 
     class OrderViewModel: ObservableObject {
@@ -16,7 +15,7 @@ import CoreLocation
             getAllOrders()
            }
         func getAllOrders() {
-                guard let url = URL(string: "http://172.20.10.5:5005/oder/orders") else {
+                guard let url = URL(string: "http://192.168.100.117:5005/oder/orders") else {
                     print("there is errors with url parsing")
                     return
                 }
@@ -53,4 +52,30 @@ import CoreLocation
                 }.resume()
                 
             }
+        
+       /* func getOrdersForRestaurant(restaurantId: String) {
+                // Construisez l'URL avec l'ID du restaurant
+                guard let url = URL(string: "http://192.168.100.117:5005/restaurant/restaurants/\(restaurantId)/orders") else {
+                    print("Il y a des erreurs avec l'analyse de l'URL")
+                    return
+                }
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    // ... Votre logique de gestion des erreurs ici ...
+
+                    guard let jsondata = try? JSONDecoder().decode([Order].self, from: data ?? Data()) else {
+                        print("Erreur du décodeur")
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        self.orders = jsondata
+                        print(self.orders)
+                    }
+
+                }.resume()
+            }*/
     }
+
+
+
+
+

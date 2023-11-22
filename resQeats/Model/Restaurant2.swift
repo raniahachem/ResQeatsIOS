@@ -12,7 +12,7 @@ struct Restaurant2: Codable{
     var category: String
     var image: String
     var description: String
-    var orders: [Order]
+    var orders: [String]
     var username: String
     var password: String
     var email: String
@@ -21,7 +21,7 @@ struct Restaurant2: Codable{
     var role: String
     var type: String
 
-    init(id: String, category: String, image: String, description: String, orders: [Order], username: String, password: String, email: String, phoneNumber: String, adresse: String, role: String, type: String) {
+    init(id: String, category: String, image: String, description: String, orders: [String], username: String, password: String, email: String, phoneNumber: String, adresse: String, role: String, type: String) {
            self._id = id
            self.category = category
            self.image = image

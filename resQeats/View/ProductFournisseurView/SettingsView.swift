@@ -9,13 +9,16 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        NavigationView {
-         Text("settings")
-                .navigationTitle("Settings")
+            NavigationView {
+                ZStack {
+                    Color("Background")
+                        .ignoresSafeArea()
+                Text("settings")
+                    .navigationTitle("Settings")
+            }
         }
-     }
+    }
 }
-
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
