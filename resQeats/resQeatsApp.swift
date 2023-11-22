@@ -13,7 +13,8 @@ struct resQeatsApp: App {
 
     var body: some Scene {
         WindowGroup {
-         map()
+            signUp1()
+            
         }
     }
 }

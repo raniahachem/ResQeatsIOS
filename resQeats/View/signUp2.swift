@@ -1,46 +1,64 @@
 //
-//  signUp1.swift
+//  signUp2.swift
 //  resQeats
 //
-//  Created by KOOLI MOOTEZ on 09/11/2023.
+//  Created by KOOLI MOOTEZ on 22/11/2023.
 //
-
 import SwiftUI
 
-struct signUp1: View {
+struct signUp2: View {
     @State private var showingSheet = false
-    @StateObject var signupController = UserViewModel()
+    @StateObject var signupv = UserViewModel()
     @State private var username = ""
-    @State private var password = ""
     @State private var email = ""
+    @State private var password = ""
     @State private var phoneNumber = ""
     @State private var adresse = ""
     @State private var role = ""
-    @State private var isLoading = false
-    var body: some View{
+    @State private var mission=""
+    var body: some View {
+        
+       
         VStack(alignment: .leading,spacing: 15, content: {
+            
             Text("Signup")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
-                .offset(x:105, y:-120)
+                .offset(x:83, y:-55)
             
-            Text("Add your details to sign up as a food supplier")
+            Text("Add your details to sign up as a recepient")
                 .font(.callout)
                 .fontWeight(.regular)
                 .foregroundStyle(.gray)
                 .padding(.top,-5)
-                .offset(x:3 , y:-100)
+                .offset(x:3 , y:-55)
                 .opacity(0.3)
                 .font(.system(size: 0.1))
+            
+            
         })
         VStack{
-            TextField("username" , text: $username)
+            TextField("Name" , text: $username)
+            
                 .padding()
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-70)
+                .offset(x:-3 ,y:-20)
+            
         }
+     
+        VStack{
+            TextField("Email" , text: $email)
+            
+                .padding()
+                .frame(width: 300 , height: 50)
+                .background(Color.black.opacity(0.05))
+                .cornerRadius(10)
+                .offset(x:-3 ,y:-5)
+            
+        }
+        
         VStack{
             TextField("password" , text: $password)
             
@@ -48,26 +66,23 @@ struct signUp1: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-55)
+                .offset(x:-3 ,y:10)
+            
         }
+        
+    
+        
         VStack{
-            TextField("email" , text: $email)
+            TextField("phonenumber" , text: $phoneNumber)
             
                 .padding()
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-40)
-        }
-        VStack{
-            TextField("PhoneNumber" , text: $phoneNumber)
+                .offset(x:-3 ,y:25)
             
-                .padding()
-                .frame(width: 300 , height: 50)
-                .background(Color.black.opacity(0.05))
-                .cornerRadius(10)
-                .offset(x:-3 ,y:-25)
         }
+        
         VStack{
             TextField("adresse" , text: $adresse)
             
@@ -75,7 +90,8 @@ struct signUp1: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-10)
+                .offset(x:-3 ,y:40)
+            
         }
         VStack{
             TextField("role" , text: $role)
@@ -84,36 +100,77 @@ struct signUp1: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:15)
+                .offset(x:-3 ,y:55)
+            
         }
         VStack{
-            Button("Sign Up"){
-                signUp(username: username, password: password, email: email, phoneNumber: phoneNumber , adresse:adresse ,role: role)
+            TextField("mission" , text: $mission)
+            
+                .padding()
+                .frame(width: 300 , height: 50)
+                .background(Color.black.opacity(0.05))
+                .cornerRadius(10)
+                .offset(x:-3 ,y:65)
+            
+        }
+        VStack{
+            Button("Signup"){
+                signUpRecpient(username: username, password: password, email: email, phoneNumber: phoneNumber, adresse: adresse, role: role, mission: mission)
+                
             }
             .foregroundColor(.white)
             .frame(width: 300 , height: 50)
             .background(Color.green)
             .cornerRadius(10)
-            .offset(x:-3 , y:55)
+            .offset(x:-3 , y:89)
+            
+            
+            
         }
         VStack{
-            Button("already have an an account?"){
+            Text("already have an an account?")
+                .opacity(0.2)
+                .offset(x:-10 , y:100)
+                .font(.system(size:13))
+        }
+        
+        
+        
+        
+        
+     /*   VStack{
+            Text("By Creating an account you agree to our ")
+            Text("Terms of services and Privacy polices")
+            
+        }   .opacity(0.19)
+            .font(.system(size: 15))
+            .offset(x:5,y:27)
+        */
+        VStack{
+            Button("Login"){
                 showingSheet.toggle()
             }
             .sheet(isPresented: $showingSheet) {
                       Login()
             }
-                .opacity(2)
-                .offset(x:-3 , y:80)
-                .font(.system(size:10))
+            .foregroundColor(.red)
+            .frame(width: 55 , height: 19)
+            .background(Color.white)
+            .cornerRadius(10)
+            .offset(x:107 , y:74)
+            .font(.system(size: 12))
+            
+            
+            
         }
-      
-        }
+        //butoon back image manque
+    
+        
+
     }
+}
 
-
-
-func signUp(username: String,password: String, email: String, phoneNumber: String, adresse: String , role:String) {
+func signUpRecpient(username: String,password: String, email: String, phoneNumber: String, adresse: String , role:String,mission:String) {
         // Replace this URL with your actual backend API URL
         DispatchQueue.main.async {
             print("testtest")
@@ -131,9 +188,9 @@ func signUp(username: String,password: String, email: String, phoneNumber: Strin
                 "email": email,
                 "phoneNumber": phoneNumber,
                 //"username": "fay",
-               
                 "adresse":adresse,
-                "role":role
+                "role":role,
+                "mission":mission
                 
             ]
 
@@ -177,10 +234,6 @@ func signUp(username: String,password: String, email: String, phoneNumber: Strin
     }
 
 #Preview {
-    signUp1()
+    signUp2()
 }
-
-
-
-
 

@@ -25,8 +25,9 @@ struct map:View {
     @State private var routeDisplaying:Bool = false
     @State private var route:MKRoute?
     @State private var routeDestination: MKMapItem?
-    var body: some View {
-        
+    
+   // var body: some View {
+    var body: some View{
         NavigationStack{
             Map(position: $cameraPosition , selection: $mapSelection , scope: locationSpace ){
                 //Map annotations
@@ -42,23 +43,22 @@ struct map:View {
                 .annotationTitles(.hidden)
                 
                 //simply display annotation as Marker , as we seen before
-               ForEach($searchResults, id: \.self){ mapItem in
-                  // hiding all other Markers , except the one of destination
-                   if routeDisplaying{
-                       if mapItem == routeDestination{
-                           let placemark = mapItem.placemark
-                           Marker(placemark.name ?? "Place" , coordinate:
-                                .tint(.blue)
-                      )}
-                                  
-                   }
-                      else{
-                       let placemark = mapItem.placemark
-                       Marker(placemark.name ?? "Place", coordinate:
-                                placemark.coordinate)
-                       .tint(.blue)
-                   }
-                }
+                ForEach(searchResults, id: \.self){ mapItem in
+                   // hiding all other Markers , except the one of destination
+                    if routeDisplaying{
+                        if mapItem == routeDestination{
+                            let placemark = mapItem.placemark
+                            Marker(placemark.name ?? "Place" , coordinate:placemark.coordinate)
+                                 .tint(.blue)
+                       }
+                    }
+                       else{
+                        let placemark = mapItem.placemark
+                        Marker(placemark.name ?? "Place", coordinate:
+                                 placemark.coordinate)
+                        .tint(.blue)
+                    }
+                 }
                 // display routes using polyline
                 if let route {
                     MapPolyline(route.polyline)
@@ -108,27 +108,6 @@ struct map:View {
                     .interactiveDismissDisabled(true)
                 
             })
-                .safeAreaInsets(edge : .bottom){
-                    if routeDisplaying {
-                        Button("End Route"){
-                            // closing the routes and setting the selection
-                            withAnimation(.snappy){
-                                routeDisplaying = false
-                                showDetails = true
-                                mapSelection = routeDestination
-                                routeDestination = nil
-                                cameraPosition = .region(.userRegion)
-                            }
-                            
-                        }
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
-                        .background(.red.gradient , in:  .rect(cornerRaduis: 15))
-                        .padding()
-                        .background(.ultraThinMaterial)
-                    }
-                }
         }
         .onSubmit(of: .search) {
             Task{
@@ -239,6 +218,7 @@ struct map:View {
         }
     }
 }
+
 #Preview {
     map()
 }
@@ -253,3 +233,7 @@ extension MKCoordinateRegion{
         return.init(center: .userLocation , latitudinalMeters: 10000,longitudinalMeters: 10000 )
     }
 }
+
+
+
+

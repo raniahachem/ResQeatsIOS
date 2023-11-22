@@ -8,21 +8,21 @@
 
 import Foundation
 
-struct User : Decodable , Encodable{
+struct User : Codable{
      
     
-    let username:String
+    let name:String
     let password:String
     let email:String
     let phoneNumber:String
-    let adresse:String
+    let verif_pass:String
     init( username: String, password: String, email: String, phoneNumber: String, adresse: String) {
         
-        self.username = username
+        self.name = username
         self.password = password
         self.email = email
         self.phoneNumber = phoneNumber
-        self.adresse = adresse
+        self.verif_pass = adresse
     }
 
 }

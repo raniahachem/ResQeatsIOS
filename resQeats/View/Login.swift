@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct Login: View {
+    @State private var showingSheet = false
     @State private var username = ""
     @State private var password = ""
     @State private var wrongUsername: Float = 0
@@ -55,7 +57,11 @@ struct Login: View {
                     
                     Button("Creta an Account"){
                         authenticateUser(username: username, password: password)
+                        showingSheet.toggle()
                     }
+                    .sheet(isPresented: $showingSheet) {
+                                signup()
+                 }
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
                     .background(Color.green)
@@ -63,6 +69,8 @@ struct Login: View {
                     NavigationLink(destination: Text ("you are logged in @\(username)"),isActive:$showingLoginScreen ){
                         EmptyView()
                     }
+                    
+                
                     // manque le label forgot password
                    
                     Image("fb").resizable()
@@ -72,12 +80,13 @@ struct Login: View {
                     Image("google").resizable()
                         .frame(width: 35, height: 19)
                         .offset(x:-52 , y:49)
-                        
-                    
+    
                 }
+         
                 }
             }.navigationBarHidden(true)
-        }
+        } // fin de view
+    
         
     func authenticateUser(username:String , password : String){
         if username.lowercased() == "caircoers"{
@@ -90,12 +99,12 @@ struct Login: View {
         }
         else {
             wrongPassword = 2
-            
+            /*   else {
+                   wrongUsername = 2
+                   
+               }*/
         }
-     /*   else {
-            wrongUsername = 2
-            
-        }*/
+     
         
     }
         }

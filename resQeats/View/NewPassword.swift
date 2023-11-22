@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct NewPassword: View {
+    @State private var showingSheet = false
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var wrongpassword: Float = 0
@@ -29,7 +30,7 @@ struct NewPassword: View {
                     .frame(width: 300 , height: 50)
                     .background(Color.black.opacity(0))
                     .cornerRadius(10)
-                    .offset(x:-5, y:-354)
+                    .offset(x:-5, y:-254)
                 
                 VStack{
                     Spacer(minLength: 20)
@@ -40,7 +41,7 @@ struct NewPassword: View {
                         .background(Color.black.opacity(0))
                         .frame(width: 1200 , height: 150)
                         .cornerRadius(10)
-                        .offset(x:-1 , y:-620)
+                        .offset(x:-1 , y:-520)
                         .opacity(0.35)
                         .font(.system(size: 10))
                     
@@ -75,8 +76,11 @@ struct NewPassword: View {
                 Spacer()
                 VStack{
                     Button("Next"){
-                        
+                        showingSheet.toggle()
                     }
+                    .sheet(isPresented: $showingSheet) {
+                                ResetPassword()
+                 }
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
                     .background(Color.green)

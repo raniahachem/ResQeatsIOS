@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Screen2: View {
+    @State private var showingSheet = false
     var body: some View {
         ZStack{
             (Color.white).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -42,9 +43,13 @@ struct Screen2: View {
                     .font(.system(size: 9))
             }
             VStack{
+                
                 Button("Next"){
-                    
+                    showingSheet.toggle()
                 }
+                .sheet(isPresented: $showingSheet) {
+                            Screen3()
+             }
                 .foregroundColor(.red)
                 .frame(width: 255 , height: 55)
                 .background(Color.green)

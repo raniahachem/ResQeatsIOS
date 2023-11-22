@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Screen1: View {
+   @State private var showingSheet = false
+
     var body: some View {
         ZStack{
             
@@ -45,15 +47,18 @@ struct Screen1: View {
             .offset(x: 0 , y:-60)
             VStack{
                 Button("Next"){
-                 
-                    
+                    showingSheet.toggle()
+
                 }
-                
+                .sheet(isPresented: $showingSheet) {
+                            Screen2()
+             }
                 .foregroundColor(.white)
                 .frame(width: 300 , height: 50)
                 .background(Color.green)
                 .cornerRadius(10)
                 .offset(x:0 , y:169)
+                
                 
                 
             }

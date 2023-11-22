@@ -19,12 +19,12 @@ struct Profile: View {
             .ignoresSafeArea(.all)
         VStack(alignment: .leading,spacing: 15, content: {
             
-            Text("Profile")
+           Text("")
                 .font(.system(size: 29))
                 .font(.largeTitle)
                 .fontWeight(.light)
-                .offset(x:-145, y:-130)
-            
+                .offset(x:-145, y:-60)
+           
           
         })
         VStack{

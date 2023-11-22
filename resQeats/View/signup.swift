@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct signup: View {
+    @State private var showingSheet = false
+    @State private var showingSheetRecepient = false
     var body: some View {
         NavigationView{
             ZStack{
@@ -29,7 +31,12 @@ struct signup: View {
                 
                 VStack{
                     Button("As a Food Supplier"){
-                        
+                        showingSheet.toggle()
+                    
+                  
+                 }
+                    .sheet(isPresented: $showingSheet) {
+                                signUp1()
                     }
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
@@ -43,8 +50,12 @@ struct signup: View {
                 Spacer()
                 VStack{
                     Button("As a recepient" ){
-                        
+                        showingSheetRecepient.toggle()
                     }
+                    .sheet(isPresented: $showingSheetRecepient) {
+                             signUp2()
+                    }
+                    
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
                     .background(Color.green)
