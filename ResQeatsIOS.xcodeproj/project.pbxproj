@@ -32,6 +32,7 @@
 		2CD2C1BC2B0E7DC2000151D0 /* Prodcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1B52B0E7DC2000151D0 /* Prodcut.swift */; };
 		2CD2C1BD2B0E7DC2000151D0 /* FoodOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1B62B0E7DC2000151D0 /* FoodOffer.swift */; };
 		2CD2C1BE2B0E7DC2000151D0 /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1B72B0E7DC2000151D0 /* FoodCategory.swift */; };
+		2CD2C1C02B0E7E78000151D0 /* Restaurant2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1BF2B0E7E78000151D0 /* Restaurant2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		2CD2C1B52B0E7DC2000151D0 /* Prodcut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prodcut.swift; sourceTree = "<group>"; };
 		2CD2C1B62B0E7DC2000151D0 /* FoodOffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodOffer.swift; sourceTree = "<group>"; };
 		2CD2C1B72B0E7DC2000151D0 /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
+		2CD2C1BF2B0E7E78000151D0 /* Restaurant2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +136,9 @@
 				2CD2C1992B0E7A12000151D0 /* ViewModel */,
 				2CD2C1982B0E7A06000151D0 /* Model */,
 				2C4C95302B05133800142FCD /* Assets.xcassets */,
+				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
 				2C4C95352B05133800142FCD /* Persistence.swift */,
 				2C4C95372B05133800142FCD /* ResQeatsIOS.xcdatamodeld */,
-				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
 				2C4C95322B05133800142FCD /* Preview Content */,
 			);
 			path = ResQeatsIOS;
@@ -170,6 +172,7 @@
 		2CD2C1982B0E7A06000151D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CD2C1BF2B0E7E78000151D0 /* Restaurant2.swift */,
 				2CD2C1B32B0E7DC2000151D0 /* Bakery.swift */,
 				2CD2C1B72B0E7DC2000151D0 /* FoodCategory.swift */,
 				2CD2C1B62B0E7DC2000151D0 /* FoodOffer.swift */,
@@ -347,6 +350,7 @@
 				2C4C95362B05133800142FCD /* Persistence.swift in Sources */,
 				2CD2C1B82B0E7DC2000151D0 /* Order.swift in Sources */,
 				2CD2C1AE2B0E7D83000151D0 /* ProductViewModel.swift in Sources */,
+				2CD2C1C02B0E7E78000151D0 /* Restaurant2.swift in Sources */,
 				2CD2C1AF2B0E7D83000151D0 /* PaymentHandler.swift in Sources */,
 				2C4C952D2B05133700142FCD /* ResQeatsIOSApp.swift in Sources */,
 				2CD2C1BB2B0E7DC2000151D0 /* Restaurant.swift in Sources */,
