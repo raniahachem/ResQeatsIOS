@@ -10,7 +10,8 @@ import SwiftUI
 
 struct DetailRestaurantView: View {
     @State private var isShowing = false
-    @StateObject private var cartManager = CartManager()
+    //@StateObject private var cartManager = CartManager()
+    @EnvironmentObject var cartManager: CartManager
     let restaurant: Restaurant2
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     //@State private var isReservationViewPresented = false // Controls the reservation page display
@@ -25,10 +26,13 @@ struct DetailRestaurantView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     // Product Image
                     Image(restaurant.username)
-                        .resizable()
+                        /*.resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(height: 200)
-                        .cornerRadius(12)
+                        .cornerRadius(12)*/
+                        .resizable()
+                        .aspectRatio(1,contentMode: .fit)
+                        .edgesIgnoringSafeArea(.top)
                     Text(restaurant.username)
                         .font(.title)
                         .fontWeight(.bold)

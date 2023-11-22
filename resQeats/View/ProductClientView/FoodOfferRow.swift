@@ -13,7 +13,7 @@ struct FoodOfferRow: View {
 
     var body: some View {
         HStack(spacing: 20) {
-            Image(product.image)
+            Image(product.title)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)

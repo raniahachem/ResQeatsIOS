@@ -15,7 +15,7 @@ struct SupplierHomeView: View {
         NavigationView {
             
             ScrollView {
-                ProductView(viewModel: productViewModel)
+                ProductSupplierView(viewModel: productViewModel)
                     .environmentObject(cartManager)
             }
             .navigationTitle("My offers")

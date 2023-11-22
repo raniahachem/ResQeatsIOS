@@ -20,7 +20,13 @@ struct HomeScreen2View: View {
                     // Le reste de votre AppBarView
                 
     
-
+    var filteredRestaurants: [Restaurant2] {
+            if search.isEmpty {
+                return rl.restaurants
+            } else {
+                return rl.restaurants.filter { $0.username.lowercased().contains(search.lowercased()) }
+            }
+        }
     var body: some View {
         NavigationView {
             ZStack {

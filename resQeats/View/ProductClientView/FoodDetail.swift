@@ -92,7 +92,7 @@ struct FoodDetail: View {
             ScrollView  {
                 //Product Image
                 
-                Image(product.image)
+                Image(product.title)
                         .resizable()
                         .aspectRatio(1,contentMode: .fit)
                         .edgesIgnoringSafeArea(.top)
