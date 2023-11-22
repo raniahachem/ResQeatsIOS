@@ -15,7 +15,9 @@
 		2C4C95432B05133800142FCD /* ResQeatsIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C95422B05133800142FCD /* ResQeatsIOSTests.swift */; };
 		2C4C954D2B05133800142FCD /* ResQeatsIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C954C2B05133800142FCD /* ResQeatsIOSUITests.swift */; };
 		2C4C954F2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C954E2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift */; };
-		2C4C955F2B05159E00142FCD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C955E2B05159E00142FCD /* MainView.swift */; };
+		2CD2C1922B0E789A000151D0 /* FoodOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1912B0E789A000151D0 /* FoodOffer.swift */; };
+		2CD2C1942B0E78AA000151D0 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1932B0E78AA000151D0 /* CartManager.swift */; };
+		2CD2C1962B0E78E0000151D0 /* TabBarClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1952B0E78E0000151D0 /* TabBarClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,9 @@
 		2C4C95482B05133800142FCD /* ResQeatsIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResQeatsIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4C954C2B05133800142FCD /* ResQeatsIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSUITests.swift; sourceTree = "<group>"; };
 		2C4C954E2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2C4C955E2B05159E00142FCD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2CD2C1912B0E789A000151D0 /* FoodOffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodOffer.swift; path = "../../../../Downloads/GestiondesProduits 2/GestiondesProduits/Model/FoodOffer.swift"; sourceTree = "<group>"; };
+		2CD2C1932B0E78AA000151D0 /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartManager.swift; path = "../../../../Downloads/GestiondesProduits 2/GestiondesProduits/ViewModel/CartManager.swift"; sourceTree = "<group>"; };
+		2CD2C1952B0E78E0000151D0 /* TabBarClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarClient.swift; path = "../../../../Downloads/GestiondesProduits 2/GestiondesProduits/View/ProductClientView/TabBarClient.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +142,7 @@
 		2C4C955B2B05138500142FCD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2C4C955E2B05159E00142FCD /* MainView.swift */,
+				2CD2C1952B0E78E0000151D0 /* TabBarClient.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 		2CD2C18F2B0E77F0000151D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CD2C1912B0E789A000151D0 /* FoodOffer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 		2CD2C1902B0E77FE000151D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2CD2C1932B0E78AA000151D0 /* CartManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -287,8 +293,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD2C1962B0E78E0000151D0 /* TabBarClient.swift in Sources */,
+				2CD2C1922B0E789A000151D0 /* FoodOffer.swift in Sources */,
+				2CD2C1942B0E78AA000151D0 /* CartManager.swift in Sources */,
 				2C4C95362B05133800142FCD /* Persistence.swift in Sources */,
-				2C4C955F2B05159E00142FCD /* MainView.swift in Sources */,
 				2C4C952D2B05133700142FCD /* ResQeatsIOSApp.swift in Sources */,
 				2C4C95392B05133800142FCD /* ResQeatsIOS.xcdatamodeld in Sources */,
 			);
