@@ -98,8 +98,8 @@
 		2C4C952B2B05133700142FCD /* ResQeatsIOS */ = {
 			isa = PBXGroup;
 			children = (
-				2CBE467B2B067868006556A3 /* Model */,
-				2C4C955D2B0513B200142FCD /* ViewModel */,
+				2CD2C1902B0E77FE000151D0 /* ViewModel */,
+				2CD2C18F2B0E77F0000151D0 /* Model */,
 				2C4C955B2B05138500142FCD /* View */,
 				2C4C95302B05133800142FCD /* Assets.xcassets */,
 				2C4C95352B05133800142FCD /* Persistence.swift */,
@@ -143,18 +143,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2C4C955D2B0513B200142FCD /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		2CBE467B2B067868006556A3 /* Model */ = {
+		2CD2C18F2B0E77F0000151D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2CD2C1902B0E77FE000151D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
