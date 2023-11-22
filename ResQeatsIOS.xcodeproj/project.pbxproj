@@ -15,9 +15,11 @@
 		2C4C95432B05133800142FCD /* ResQeatsIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C95422B05133800142FCD /* ResQeatsIOSTests.swift */; };
 		2C4C954D2B05133800142FCD /* ResQeatsIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C954C2B05133800142FCD /* ResQeatsIOSUITests.swift */; };
 		2C4C954F2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4C954E2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift */; };
-		2CD2C1922B0E789A000151D0 /* FoodOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1912B0E789A000151D0 /* FoodOffer.swift */; };
-		2CD2C1942B0E78AA000151D0 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1932B0E78AA000151D0 /* CartManager.swift */; };
-		2CD2C1962B0E78E0000151D0 /* TabBarClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD2C1952B0E78E0000151D0 /* TabBarClient.swift */; };
+		2CD2C1A22B0E7BF8000151D0 /* BakeryViews in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2C19D2B0E7BF8000151D0 /* BakeryViews */; };
+		2CD2C1A32B0E7BF8000151D0 /* CatererViews in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2C19E2B0E7BF8000151D0 /* CatererViews */; };
+		2CD2C1A42B0E7BF8000151D0 /* SupermarketViews in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2C19F2B0E7BF8000151D0 /* SupermarketViews */; };
+		2CD2C1A52B0E7BF8000151D0 /* ProductFournisseurView in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2C1A02B0E7BF8000151D0 /* ProductFournisseurView */; };
+		2CD2C1A62B0E7BF8000151D0 /* ProductClientView in Resources */ = {isa = PBXBuildFile; fileRef = 2CD2C1A12B0E7BF8000151D0 /* ProductClientView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +51,11 @@
 		2C4C95482B05133800142FCD /* ResQeatsIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ResQeatsIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C4C954C2B05133800142FCD /* ResQeatsIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSUITests.swift; sourceTree = "<group>"; };
 		2C4C954E2B05133800142FCD /* ResQeatsIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResQeatsIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		2CD2C1912B0E789A000151D0 /* FoodOffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodOffer.swift; path = "../../../../Downloads/GestiondesProduits 2/GestiondesProduits/Model/FoodOffer.swift"; sourceTree = "<group>"; };
-		2CD2C1932B0E78AA000151D0 /* CartManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartManager.swift; path = "../../../../Downloads/GestiondesProduits 2/GestiondesProduits/ViewModel/CartManager.swift"; sourceTree = "<group>"; };
-		2CD2C1952B0E78E0000151D0 /* TabBarClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarClient.swift; path = "../../../../Downloads/GestiondesProduits 2/GestiondesProduits/View/ProductClientView/TabBarClient.swift"; sourceTree = "<group>"; };
+		2CD2C19D2B0E7BF8000151D0 /* BakeryViews */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BakeryViews; sourceTree = "<group>"; };
+		2CD2C19E2B0E7BF8000151D0 /* CatererViews */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CatererViews; sourceTree = "<group>"; };
+		2CD2C19F2B0E7BF8000151D0 /* SupermarketViews */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupermarketViews; sourceTree = "<group>"; };
+		2CD2C1A02B0E7BF8000151D0 /* ProductFournisseurView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ProductFournisseurView; sourceTree = "<group>"; };
+		2CD2C1A12B0E7BF8000151D0 /* ProductClientView */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ProductClientView; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +106,9 @@
 		2C4C952B2B05133700142FCD /* ResQeatsIOS */ = {
 			isa = PBXGroup;
 			children = (
-				2CD2C1902B0E77FE000151D0 /* ViewModel */,
-				2CD2C18F2B0E77F0000151D0 /* Model */,
-				2C4C955B2B05138500142FCD /* View */,
+				2CD2C19C2B0E7BCD000151D0 /* View */,
+				2CD2C1992B0E7A12000151D0 /* ViewModel */,
+				2CD2C1982B0E7A06000151D0 /* Model */,
 				2C4C95302B05133800142FCD /* Assets.xcassets */,
 				2C4C95352B05133800142FCD /* Persistence.swift */,
 				2C4C95372B05133800142FCD /* ResQeatsIOS.xcdatamodeld */,
@@ -139,28 +143,30 @@
 			path = ResQeatsIOSUITests;
 			sourceTree = "<group>";
 		};
-		2C4C955B2B05138500142FCD /* View */ = {
+		2CD2C1982B0E7A06000151D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2CD2C1952B0E78E0000151D0 /* TabBarClient.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		2CD2C18F2B0E77F0000151D0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2CD2C1912B0E789A000151D0 /* FoodOffer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		2CD2C1902B0E77FE000151D0 /* ViewModel */ = {
+		2CD2C1992B0E7A12000151D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2CD2C1932B0E78AA000151D0 /* CartManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2CD2C19C2B0E7BCD000151D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CD2C19D2B0E7BF8000151D0 /* BakeryViews */,
+				2CD2C19E2B0E7BF8000151D0 /* CatererViews */,
+				2CD2C1A12B0E7BF8000151D0 /* ProductClientView */,
+				2CD2C1A02B0E7BF8000151D0 /* ProductFournisseurView */,
+				2CD2C19F2B0E7BF8000151D0 /* SupermarketViews */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +273,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CD2C1A42B0E7BF8000151D0 /* SupermarketViews in Resources */,
+				2CD2C1A62B0E7BF8000151D0 /* ProductClientView in Resources */,
+				2CD2C1A32B0E7BF8000151D0 /* CatererViews in Resources */,
+				2CD2C1A22B0E7BF8000151D0 /* BakeryViews in Resources */,
 				2C4C95342B05133800142FCD /* Preview Assets.xcassets in Resources */,
 				2C4C95312B05133800142FCD /* Assets.xcassets in Resources */,
+				2CD2C1A52B0E7BF8000151D0 /* ProductFournisseurView in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +304,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CD2C1962B0E78E0000151D0 /* TabBarClient.swift in Sources */,
-				2CD2C1922B0E789A000151D0 /* FoodOffer.swift in Sources */,
-				2CD2C1942B0E78AA000151D0 /* CartManager.swift in Sources */,
 				2C4C95362B05133800142FCD /* Persistence.swift in Sources */,
 				2C4C952D2B05133700142FCD /* ResQeatsIOSApp.swift in Sources */,
 				2C4C95392B05133800142FCD /* ResQeatsIOS.xcdatamodeld in Sources */,
