@@ -90,7 +90,7 @@ struct Profile: View {
             
         }
         VStack{
-            TextField("Email" , text: $email)
+            TextField("password" , text: $password)
             
                 .padding()
                 .frame(width: 300 , height: 50)
@@ -101,7 +101,7 @@ struct Profile: View {
         }
         
         VStack{
-            TextField("password" , text: $password)
+            TextField("email" , text: $email)
             
                 .padding()
                 .frame(width: 300 , height: 50)
@@ -204,7 +204,7 @@ func EditProfile(username: String,password: String, email: String, phoneNumber: 
                 var request = URLRequest(url: apiUrl)
 
                 // Set the request method to POST
-                request.httpMethod = "PUT"
+                request.httpMethod = "PATCH"
 
                 // Set the request body with the JSON data
                 request.httpBody = jsonData

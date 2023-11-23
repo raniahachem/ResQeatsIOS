@@ -48,7 +48,7 @@ struct Login: View {
                     
                     Button("Login"){
                         authenticateUser(username: username, password: password)
-                        
+                        login(username: username, password: password)
                     }
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
@@ -101,6 +101,63 @@ struct Login: View {
         }
     }
         }
+func login(username: String,password: String) {
+        // Replace this URL with your actual backend API URL
+        DispatchQueue.main.async {
+            print("testtest")
+//             isLoading = true // Show loading view
+         
+            let apiUrl = URL(string: "http://192.168.1.113:5005/user/users")!
+            
+            // Sample user data
+            let userData: [String: Any] = [
+                //"id": "88",
+                "username": username,
+                //"fname": "jarreeay",
+                //"phone": 1235455555,
+                "password": password,
+                //"username": "fay",
+            ]
+
+            do {
+                // Convert the user data to JSON
+                let jsonData = try JSONSerialization.data(withJSONObject: userData)
+
+                // Create a URLRequest with the API URL
+                var request = URLRequest(url: apiUrl)
+
+                // Set the request method to POST
+                request.httpMethod = "GET"
+
+                // Set the request body with the JSON data
+                request.httpBody = jsonData
+
+                // Set the request header to indicate JSON content
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+                // Make the request
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    // Handle the response and error here
+                    if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                    } else if let data = data {
+                        // Parse and handle the response data
+                        // Note: You should handle this according to your API response format
+                        do {
+                            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                            print("Response: \(jsonResponse)")
+                            // You can update your UI or perform other actions based on the response
+                        } catch {
+                            print("Error parsing JSON: \(error.localizedDescription)")
+                        }
+                    }
+                }.resume()
+            } catch {
+                print("Error converting data to JSON: \(error.localizedDescription)")
+            }
+        }
+    }
+
 
 
 

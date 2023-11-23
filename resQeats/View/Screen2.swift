@@ -30,7 +30,7 @@ struct Screen2: View {
                     .frame(height: 0.0)
                     .bold()
                     .font(.title3)
-                    .offset(x:5 ,y:19)
+                    .offset(x:3 ,y:55)
                 
                 
             }
@@ -40,7 +40,8 @@ struct Screen2: View {
                     .accessibilityElement(children: /*@START_MENU_TOKEN@*/.contain/*@END_MENU_TOKEN@*/)
                     .padding(.top, 180.0)
                     .accessibilityLabel(/*@START_MENU_TOKEN@*/"Label"/*@END_MENU_TOKEN@*/)
-                    .font(.system(size: 9))
+                    .font(.system(size: 10))
+                    .offset(x:1,y:55)
             }
             VStack{
                 
@@ -56,7 +57,7 @@ struct Screen2: View {
                 .cornerRadius(10)
                 .offset(x:95 , y:77)
                 .font(.system(size: 19))
-                .offset(x:-90 , y:95)
+                .offset(x:-90 , y:135)
                 
                 
                 
