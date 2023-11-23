@@ -69,9 +69,9 @@ struct Login: View {
                     NavigationLink(destination: Text ("you are logged in @\(username)"),isActive:$showingLoginScreen ){
                         EmptyView()
                     }
-                    
-                
-                    // manque le label forgot password
+    
+            
+                // manque le label forgot password
                    
                     Image("fb").resizable()
                         .frame(width: 55, height: 19)
@@ -80,14 +80,10 @@ struct Login: View {
                     Image("google").resizable()
                         .frame(width: 35, height: 19)
                         .offset(x:-52 , y:49)
-    
                 }
-         
                 }
             }.navigationBarHidden(true)
         } // fin de view
-    
-        
     func authenticateUser(username:String , password : String){
         if username.lowercased() == "caircoers"{
             wrongUsername = 0
@@ -95,7 +91,6 @@ struct Login: View {
                 wrongPassword = 0
                 showingLoginScreen = true
             }
-            
         }
         else {
             wrongPassword = 2
@@ -104,10 +99,9 @@ struct Login: View {
                    
                }*/
         }
-     
-        
     }
         }
+
 
 
 #Preview {

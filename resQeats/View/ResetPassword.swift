@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import UIKit
+import MessageUI
 
 struct ResetPassword: View {
     @State private var email = ""
@@ -74,8 +76,9 @@ struct ResetPassword: View {
                 
             }
         }
-    }
-}
+    }//fin de view
+}//fin de struct
+
 
 #Preview {
     ResetPassword()

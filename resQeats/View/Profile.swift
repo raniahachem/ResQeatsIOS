@@ -43,11 +43,9 @@ struct Profile: View {
         
         VStack{
             Button("Edit Profile"){
-                showingSheet.toggle()
+                
             }
-            .sheet(isPresented: $showingSheet) {
-                        signup()
-         }
+     
 
             .foregroundColor(.black)
             .frame(width: 300 , height: 50)
@@ -70,8 +68,11 @@ struct Profile: View {
         }*/
         VStack{
             Button("Sign out"){
-                
+                showingSheet.toggle()
             }
+            .sheet(isPresented: $showingSheet) {
+                        signup()
+         }
             .foregroundColor(.black)
             .frame(width: 300 , height: 50)
             .background(Color.white)
