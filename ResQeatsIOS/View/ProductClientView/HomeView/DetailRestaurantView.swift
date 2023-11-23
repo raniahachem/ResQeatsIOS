@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-
-
 struct DetailRestaurantView: View {
     @State private var isShowing = false
     //@StateObject private var cartManager = CartManager()
@@ -57,23 +55,29 @@ struct DetailRestaurantView: View {
                     Text(restaurant.description)
                         .foregroundColor(.secondary)
                         .lineSpacing(8)
-                    ProductView(viewModel: productViewModel)
-                        .environmentObject(cartManager)
                     
-                    Spacer()
-                }
-                .padding()
-            }
-        }.toolbar {
-            NavigationLink(destination: FoodCartView().environmentObject(cartManager)) {
-                FoodCartButton(numberOfOffers: cartManager.products.count)
-            }
- }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: BackButton(action: { presentationMode.wrappedValue.dismiss() }), trailing: Image("threeDot"))
-   
-    }
-}
+                    //ProductView(viewModel: productViewModel)
+                    ProductView(viewModel: productViewModel, restaurantId: restaurant._id)
+                                           .environmentObject(cartManager)
+                                           .onAppear {
+                                               // Fetch les produits spécifiques au restaurant lorsque la vue apparaît
+                                               productViewModel.getProductsByRestaurantId(restaurantId: restaurant._id)
+                                           }
+
+                                       Spacer()
+                                   }
+                                   .padding()
+                               }
+                           }.toolbar {
+                               NavigationLink(destination: FoodCartView().environmentObject(cartManager)) {
+                                   FoodCartButton(numberOfOffers: cartManager.products.count)
+                               }
+                           }
+                           .navigationBarBackButtonHidden(true)
+                           .navigationBarItems(leading: BackButton(action: { presentationMode.wrappedValue.dismiss() }), trailing: Image("threeDot"))
+                           .environmentObject(productViewModel)
+                       }
+                   }
 
 
 

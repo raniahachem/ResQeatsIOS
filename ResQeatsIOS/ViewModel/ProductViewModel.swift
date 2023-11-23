@@ -10,12 +10,13 @@ import CoreLocation
 
     class ProductViewModel: ObservableObject {
         @Published var products: [Product] = []
+        
         //@Published var cart: [Product] = []
         init(){
             getAllProducts()
            }
         func getAllProducts() {
-                guard let url = URL(string: "http://192.168.100.117:5005/product/products") else {
+                guard let url = URL(string: "http://172.20.10.5:5005/product/products") else {
                     print("there is errors with url parsing")
                     return
                 }
@@ -54,8 +55,34 @@ import CoreLocation
             }
 
 
-    
+        // Function to get products by restaurant ID
+        func getProductsByRestaurantId(restaurantId: String) {
+                guard let url = URL(string: "http://172.20.10.5:5005/product/\(restaurantId)/products") else {
+                    print("There is an error with URL parsing")
+                    return
+                }
 
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    guard error == nil else {
+                        print("Error from completion handler")
+                        return
+                    }
+
+                    guard let data = data else {
+                        print("Error with data")
+                        return
+                    }
+
+                    do {
+                        let decodedProducts = try JSONDecoder().decode([Product].self, from: data)
+                        DispatchQueue.main.async {
+                            self.products = decodedProducts
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                }.resume()
+            }
     
     func ajouterProduit(_ product: Product) {
         // Création d'une instance de User

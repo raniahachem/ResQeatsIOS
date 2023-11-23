@@ -26,11 +26,14 @@ struct ResQeatsIOSApp: App {
 struct ResQeatsIOSApp: App {
     //@StateObject var cartManager = CartManager() // Déclarer CartManager comme @StateObject
     @StateObject private var cartManager = CartManager()
+    @StateObject var productViewModel = ProductViewModel()
+
 
     var body: some Scene {
         WindowGroup {
            ClientView()
-                .environmentObject(cartManager) // Injectez l'instance de CartManager dans l'environnement
+                .environmentObject(cartManager)
+                .environmentObject(productViewModel)// Injectez l'instance de CartManager dans l'environnement
         }
     }
 }
