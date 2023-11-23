@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct AddOfferView: View {
+    
     @State private var title: String = ""
     @State private var selectedCategory: Product.Category = .healthy
     @State private var description: String = ""
@@ -16,7 +17,7 @@ struct AddOfferView: View {
     //@State private var isImagePickerPresented = false
     @State private var quantity: String = ""
     @State private var isAddSuccessful = false
-    
+
 
     private let apiURL = URL(string: "http://192.168.100.117:5005/product/products")!
 
@@ -165,6 +166,7 @@ struct AddOfferView: View {
            //isImagePickerPresented = false
            quantity = ""
        }
+   
    }
 
    struct AddOfferView_Previews: PreviewProvider {

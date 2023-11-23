@@ -16,7 +16,7 @@ import CoreLocation
             getAllRestaurants()
            }
         func getAllRestaurants() {
-                guard let url = URL(string: "http://192.168.100.117:5005/restaurant/restaurants") else {
+                guard let url = URL(string: "http://172.20.10.5:5005/restaurant/restaurants") else {
                     print("there is errors with url parsing")
                     return
                 }

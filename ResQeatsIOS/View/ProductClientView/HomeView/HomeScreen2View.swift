@@ -12,21 +12,22 @@ struct HomeScreen2View: View {
     @State private var search: String = ""
     @State private var selectedIndex2: Int = 0
     @State private var selectedLogo: String?
-@StateObject private var rl = RestaurantViewModel()
-
+    @StateObject private var rl = RestaurantViewModel()
     @StateObject var cartManager = CartManager()
-
+    @StateObject private var productViewModel = ProductViewModel()
+    
+    
     private let categories = ["Restaurants", "Bakeries", "Caterers"]
-                    // Le reste de votre AppBarView
-                
+    // Le reste de votre AppBarView
+    
     
     var filteredRestaurants: [Restaurant2] {
-            if search.isEmpty {
-                return rl.restaurants
-            } else {
-                return rl.restaurants.filter { $0.username.lowercased().contains(search.lowercased()) }
-            }
+        if search.isEmpty {
+            return rl.restaurants
+        } else {
+            return rl.restaurants.filter { $0.username.lowercased().contains(search.lowercased()) }
         }
+    }
     var body: some View {
         NavigationView {
             ZStack {
@@ -60,29 +61,45 @@ struct HomeScreen2View: View {
                                 ForEach(rl.restaurants, id: \._id) { restaurant in
                                     NavigationLink(destination: DetailRestaurantView(restaurant: restaurant),
                                                    label: {
-                                                       RestaurantCardView(restaurant: restaurant, size: 180)
-                                                   }
-                                               )
+                                        RestaurantCardView(restaurant: restaurant, size: 180)
+                                    }
+                                    )
                                 }
+                                
                                 .padding(.leading)
                             }
                         }
                         .padding(.bottom)
+                        Text("All Products") // or any appropriate title
+                            .font(.custom("PlayfairDisplay-Bold", size: 19))
+                            .padding(.horizontal)
+                            .foregroundColor(Color.black.opacity(0.9))
                         
-                    }
-                }
-                
-                VStack {
-                    Spacer()
-                   
-                }
-            }
-        }
-    }
-    
+                        ScrollView(.horizontal, showsIndicators: false) {
+                                                  HStack(spacing: 0) {
+                                                      ForEach(productViewModel.products, id: \._id) { product in
+                                                          NavigationLink(destination: FoodDetail(product: product, viewModel: productViewModel)) {
+                                                              ProductCardView(product: product)
+                                                          }
+                                                          .padding(.leading)
+                                                      }
+                                                  }
+                                              }
+                                              
+                                              VStack {
+                                                  Spacer()
+                                              }
+                                                                }
+                                                            }
+                                                        }
+                                                        .onAppear {
+                                                            // Fetch all products when the view appears
+                                                            productViewModel.getAllProducts()
+                                                        }
+                                                        .environmentObject(productViewModel)
+                                                    }
+                                                }
 }
-
-    
     
     struct AppBarView2: View {
 
