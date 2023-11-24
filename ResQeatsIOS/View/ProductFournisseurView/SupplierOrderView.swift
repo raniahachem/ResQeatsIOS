@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-/*struct SupplierOrderView: View {
-    @State private var orders: [Order] = []
-    @StateObject private var orderViewModel = OrderViewModel()
+struct SupplierOrderView: View {
+    @State private var orders: [Order] = [sampleOrder(id: UUID().uuidString)]
+
+
     var body: some View {
         NavigationView {
             VStack {
@@ -19,39 +20,22 @@ import SwiftUI
                         .padding()
                         .font(.headline)
                 } else {
-                    /*List(orders, id: \._id) { order in
+                    List(orders, id: \._id) { order in
                         NavigationLink(
-                            destination: SupplierOrderDetailView(
-                                order: order,
-                                acceptAction: {
-                                    // Supplier-specific logic for accepting an order
-                                    self.acceptOrder(order)
-                                },
-                                declineAction: {
-                                    // Supplier-specific logic for declining an order
-                                    self.declineOrder(order)
-                                }
+                            destination: SupplierOrderDetailView(order: order,
+                                                                 acceptAction: {
+                                                                    // Supplier-specific logic for accepting an order
+                                                                    self.acceptOrder(order)
+                                                                 },
+                                                                 declineAction: {
+                                                                    // Supplier-specific logic for declining an order
+                                                                    self.declineOrder(order)
+                                                                 }
                             )
                         ) {
                             SupplierOrderRow(order: order)
                         }
-                    }*/
-                    List(orderViewModel.orders, id: \._id) { order in
-                                            NavigationLink(
-                                                destination: SupplierOrderDetailView(order: order,
-                                                                                     acceptAction: {
-                                                                                         // Supplier-specific logic for accepting an order
-                                                                                         self.acceptOrder(order)
-                                                                                     },
-                                                                                     declineAction: {
-                                                                                         // Supplier-specific logic for declining an order
-                                                                                         self.declineOrder(order)
-                                                                                     }
-                                                                                 )
-                                                                             ) {
-                                                                                 SupplierOrderRow(order: order)
-                                                                             }
-                                        }
+                    }
                 }
             }
             .navigationTitle("Recieved Orders")
@@ -91,18 +75,35 @@ struct SupplierOrderRow: View {
 
             Text(order.status.rawValue)
                 .foregroundColor(order.status == .accepted ? .green : .orange)
-
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
+func sampleOrder(id: String) -> Order {
+    let sampleProduct = Product(
+        id: "2",
+        title: "Sample Product",
+        category: "Sample Category",
+        description: "A delicious sample product",
+        price: 10,
+        image: "sample_image",
+        quantity: 1,
+        restaurant: "Sample Restaurant"
+    )
+
+    let sampleItem = Order.OrderItem(product: sampleProduct, quantity: 1, _id: UUID().uuidString)
+
+    return Order(id: id, status: .pending, items: [sampleItem], totalAmount: 10, orderNumber: UUID().uuidString.prefix(8).uppercased())
+}
+
+
 struct SupplierOrderView_Previews: PreviewProvider {
     static var previews: some View {
         SupplierOrderView()
     }
-}*/
+}
 
 /*func sampleOrder() -> Order {
     let foodOffer = FoodOffer(

@@ -23,10 +23,10 @@ struct TabBarSupplier: View {
                 .tabItem{
                     Label("New", systemImage: "plus")
                 }
-            /*SupplierOrderView()
+            SupplierOrderView()
                 .tabItem{
                     Label("Orders", systemImage: "checkmark")
-                }*/
+                }
             SettingsView()
                 .tabItem{
                     Label("Settings", systemImage: "gear")

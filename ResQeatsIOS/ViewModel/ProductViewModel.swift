@@ -16,7 +16,7 @@ import CoreLocation
             getAllProducts()
            }
         func getAllProducts() {
-                guard let url = URL(string: "http://172.20.10.5:5005/product/products") else {
+                guard let url = URL(string: "http://172.18.32.60:5005/product/products") else {
                     print("there is errors with url parsing")
                     return
                 }
@@ -57,7 +57,7 @@ import CoreLocation
 
         // Function to get products by restaurant ID
         func getProductsByRestaurantId(restaurantId: String) {
-                guard let url = URL(string: "http://172.20.10.5:5005/product/\(restaurantId)/products") else {
+                guard let url = URL(string: "http://172.18.32.60:5005/product/\(restaurantId)/products") else {
                     print("There is an error with URL parsing")
                     return
                 }
@@ -94,7 +94,7 @@ import CoreLocation
         }
         
         // Créer une URLRequest avec l'URL de votre API
-        let url = URL(string: "http://192.168.100.117:5005/product/products")! // Remplacez par votre URL
+        let url = URL(string: "http://172.18.32.60:5005/product/products")! // Remplacez par votre URL
         var request = URLRequest(url: url)
         
         // Configurer la requête en tant que POST et définir le corps de la requête

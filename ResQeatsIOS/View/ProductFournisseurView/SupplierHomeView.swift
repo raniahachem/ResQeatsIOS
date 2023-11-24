@@ -10,20 +10,22 @@ import SwiftUI
 struct SupplierHomeView: View {
     @StateObject private var cartManager = CartManager()
     @StateObject private var productViewModel = ProductViewModel()
-
+    
     var body: some View {
         NavigationView {
-            
-            ScrollView {
-                ProductSupplierView(viewModel: productViewModel)
-                    .environmentObject(cartManager)
+            ZStack {
+                Color("Background")
+                    .ignoresSafeArea()
+                ScrollView {
+                    ProductSupplierView(viewModel: productViewModel)
+                        .environmentObject(cartManager)
+                }
+                .navigationTitle("My offers")
             }
-            .navigationTitle("My offers")
+            .navigationViewStyle(.stack)
         }
-        .navigationViewStyle(.stack)
     }
 }
-
 struct SupplierOffers: View {
     @ObservedObject var viewModel: ProductViewModel
     

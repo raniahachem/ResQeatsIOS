@@ -13,8 +13,8 @@ struct SettingsView: View {
                 ZStack {
                     Color("Background")
                         .ignoresSafeArea()
-                Text("settings")
-                    .navigationTitle("Settings")
+                Text("My profile")
+                    .navigationTitle("Profile")
             }
         }
     }

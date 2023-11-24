@@ -180,9 +180,9 @@
 		2C4C952B2B05133700142FCD /* ResQeatsIOS */ = {
 			isa = PBXGroup;
 			children = (
-				2CD2C19C2B0E7BCD000151D0 /* View */,
 				2CD2C1992B0E7A12000151D0 /* ViewModel */,
 				2CD2C1982B0E7A06000151D0 /* Model */,
+				2CD2C19C2B0E7BCD000151D0 /* View */,
 				2C4C95302B05133800142FCD /* Assets.xcassets */,
 				2C4C952C2B05133700142FCD /* ResQeatsIOSApp.swift */,
 				2C4C95352B05133800142FCD /* Persistence.swift */,
@@ -335,9 +335,9 @@
 		2CD2C19C2B0E7BCD000151D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C7AEC6F2B0F809A0064B5C4 /* ProductFournisseurView */,
 				2C7AEC7A2B0F820D0064B5C4 /* ProductClientView */,
 				2C7AEC702B0F80B50064B5C4 /* SupermarketViews */,
-				2C7AEC6F2B0F809A0064B5C4 /* ProductFournisseurView */,
 				2C7AEC6D2B0F806A0064B5C4 /* CatererViews */,
 				2C7AEC6C2B0F80230064B5C4 /* BakeryViews */,
 			);

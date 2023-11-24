@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-/*struct SupplierOrderDetailView: View {
+struct SupplierOrderDetailView: View {
     var order: Order
     var acceptAction: () -> Void
     var declineAction: () -> Void
@@ -77,7 +77,7 @@ import SwiftUI
         }
         .navigationTitle("Order #\(order.orderNumber)")
     }
-}*/
+}
 
 /*struct SupplierOrderDetailView: View {
     var order: Order

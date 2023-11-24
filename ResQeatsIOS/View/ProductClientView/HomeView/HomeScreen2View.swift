@@ -15,7 +15,7 @@ struct HomeScreen2View: View {
     @StateObject private var rl = RestaurantViewModel()
     @StateObject var cartManager = CartManager()
     @StateObject private var productViewModel = ProductViewModel()
-    
+    let columns: [GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     
     private let categories = ["Restaurants", "Bakeries", "Caterers"]
     // Le reste de votre AppBarView
@@ -70,13 +70,15 @@ struct HomeScreen2View: View {
                             }
                         }
                         .padding(.bottom)
-                        Text("All Products") // or any appropriate title
+                        Text("Recently added offers") // or any appropriate title
                             .font(.custom("PlayfairDisplay-Bold", size: 19))
                             .padding(.horizontal)
                             .foregroundColor(Color.black.opacity(0.9))
-                        
-                        ScrollView(.horizontal, showsIndicators: false) {
-                                                  HStack(spacing: 0) {
+                    }
+                        //ScrollView(.horizontal, showsIndicators: false) {
+                    ScrollView {
+                            VStack (alignment: .leading) {
+                            LazyVGrid(columns: columns, spacing: 16) {
                                                       ForEach(productViewModel.products, id: \._id) { product in
                                                           NavigationLink(destination: FoodDetail(product: product, viewModel: productViewModel)) {
                                                               ProductCardView(product: product)
@@ -86,9 +88,9 @@ struct HomeScreen2View: View {
                                                   }
                                               }
                                               
-                                              VStack {
-                                                  Spacer()
-                                              }
+                                              //VStack {
+                                                  //Spacer()
+                                            //  }
                                                                 }
                                                             }
                                                         }
@@ -100,6 +102,7 @@ struct HomeScreen2View: View {
                                                     }
                                                 }
 }
+
     
     struct AppBarView2: View {
 

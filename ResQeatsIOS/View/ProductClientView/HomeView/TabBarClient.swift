@@ -23,7 +23,7 @@ struct TabBarClient: View {
                 }*/
             SettingsView()
                 .tabItem{
-                    Label("Settings", systemImage: "gear")
+                    Label("Profile", image: "User")
                 }
             
         }
