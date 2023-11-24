@@ -10,7 +10,7 @@ import SwiftUI
 
 struct sendpassword: View {
     @StateObject var otpModel: OTPViewModel = .init()
-   
+    @State private var showingSheet = false
     @FocusState var activeField : OTPField?
     var body: some View {
         VStack{
@@ -44,8 +44,11 @@ struct sendpassword: View {
         }
         VStack{
             Button("Next"){
-                
+                showingSheet.toggle()
             }
+            .sheet(isPresented: $showingSheet) {
+                        signup()
+         }
             .foregroundColor(.white)
             .frame(width: 300 , height: 50)
             .background(Color.green)
@@ -98,7 +101,7 @@ struct sendpassword: View {
             }
         }
     }
-  /*  func activeStateForIndex(index:Int) ->OTPField{
+   func activeStateForIndex(index:Int) ->OTPField{
         switch index {
         case 0:
             return .field1
@@ -111,7 +114,7 @@ struct sendpassword: View {
         default:
             return .field6
         }
-    }*/
+    }
     
 }
 

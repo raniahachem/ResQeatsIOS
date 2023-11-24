@@ -178,7 +178,7 @@ func EditProfile(username: String,password: String, email: String, phoneNumber: 
             print("testtest")
 //             isLoading = true // Show loading view
          
-            let apiUrl = URL(string: "http://192.168.1.113:5005/user/users")!
+            let apiUrl = URL(string: "http://192.168.1.113:7001/user/users")!
             
             // Sample user data
             let userData: [String: Any] = [
@@ -204,7 +204,7 @@ func EditProfile(username: String,password: String, email: String, phoneNumber: 
                 var request = URLRequest(url: apiUrl)
 
                 // Set the request method to POST
-                request.httpMethod = "PATCH"
+                request.httpMethod = "POST"
 
                 // Set the request body with the JSON data
                 request.httpBody = jsonData

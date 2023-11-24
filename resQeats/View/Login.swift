@@ -47,8 +47,8 @@ struct Login: View {
                         .border(.red , width: CGFloat(wrongPassword))
                     
                     Button("Login"){
-                        authenticateUser(username: username, password: password)
-                        login(username: username, password: password)
+                       // authenticateUser(username: username, password: password)
+                        loginsuccess(username: username, password: password)
                     }
                     .foregroundColor(.white)
                     .frame(width: 300 , height: 50)
@@ -73,13 +73,13 @@ struct Login: View {
             
                 // manque le label forgot password
                    
-                    Image("fb").resizable()
+                   /* Image("fb").resizable()
                         .frame(width: 55, height: 19)
                         .offset(x:55 , y:75)
                     
                     Image("google").resizable()
                         .frame(width: 35, height: 19)
-                        .offset(x:-52 , y:49)
+                        .offset(x:-52 , y:49) */
                 }
                 }
             }.navigationBarHidden(true)
@@ -101,13 +101,13 @@ struct Login: View {
         }
     }
         }
-func login(username: String,password: String) {
+func loginsuccess(username: String,password: String) {
         // Replace this URL with your actual backend API URL
         DispatchQueue.main.async {
             print("testtest")
 //             isLoading = true // Show loading view
          
-            let apiUrl = URL(string: "http://192.168.1.113:5005/user/users")!
+            let apiUrl = URL(string: "http://192.168.1.113:7001/user/users")!
             
             // Sample user data
             let userData: [String: Any] = [
@@ -118,6 +118,7 @@ func login(username: String,password: String) {
                 "password": password,
                 //"username": "fay",
             ]
+            print ("teset123")
 
             do {
                 // Convert the user data to JSON
@@ -127,7 +128,7 @@ func login(username: String,password: String) {
                 var request = URLRequest(url: apiUrl)
 
                 // Set the request method to POST
-                request.httpMethod = "GET"
+                request.httpMethod = "POST"
 
                 // Set the request body with the JSON data
                 request.httpBody = jsonData

@@ -44,7 +44,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-20)
+                .offset(x:-3 ,y:-40)
             
         }
      
@@ -55,7 +55,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:-5)
+                .offset(x:-3 ,y:-30)
             
         }
         
@@ -66,7 +66,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:10)
+                .offset(x:-3 ,y:-20)
             
         }
         
@@ -79,7 +79,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:25)
+                .offset(x:-3 ,y:-10)
             
         }
         
@@ -90,7 +90,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:40)
+                .offset(x:-3 ,y:0)
             
         }
         VStack{
@@ -100,7 +100,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:55)
+                .offset(x:-3 ,y:10)
             
         }
         VStack{
@@ -110,7 +110,7 @@ struct signUp2: View {
                 .frame(width: 300 , height: 50)
                 .background(Color.black.opacity(0.05))
                 .cornerRadius(10)
-                .offset(x:-3 ,y:65)
+                .offset(x:-3 ,y:20)
             
         }
         VStack{
@@ -122,17 +122,17 @@ struct signUp2: View {
             .frame(width: 300 , height: 50)
             .background(Color.green)
             .cornerRadius(10)
-            .offset(x:-3 , y:89)
+            .offset(x:-3 , y:39)
             
             
             
         }
-        VStack{
+      /*  VStack{
             Text("already have an an account?")
                 .opacity(0.2)
                 .offset(x:-10 , y:100)
                 .font(.system(size:13))
-        }
+        }*/
         
         
         
@@ -157,7 +157,7 @@ struct signUp2: View {
             .frame(width: 55 , height: 19)
             .background(Color.white)
             .cornerRadius(10)
-            .offset(x:107 , y:74)
+            .offset(x:5 , y:64)
             .font(.system(size: 12))
             
             
@@ -176,7 +176,7 @@ func signUpRecpient(username: String,password: String, email: String, phoneNumbe
             print("testtest")
 //             isLoading = true // Show loading view
          
-            let apiUrl = URL(string: "http://192.168.1.113:5005/user/users")!
+            let apiUrl = URL(string: "http://192.168.1.113:7001/user/users")!
             
             // Sample user data
             let userData: [String: Any] = [
