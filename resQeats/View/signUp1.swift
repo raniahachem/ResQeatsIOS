@@ -119,7 +119,7 @@ func signUp(username: String,password: String, email: String, phoneNumber: Strin
             print("testtest")
 //             isLoading = true // Show loading view
          
-            let apiUrl = URL(string: "http://192.168.1.113:7001/user/users")!
+            let apiUrl = URL(string: "http://192.168.1.113:7019/user/users")!
             
             // Sample user data
             let userData: [String: Any] = [

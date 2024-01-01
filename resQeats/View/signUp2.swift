@@ -176,7 +176,7 @@ func signUpRecpient(username: String,password: String, email: String, phoneNumbe
             print("testtest")
 //             isLoading = true // Show loading view
          
-            let apiUrl = URL(string: "http://192.168.1.113:7001/user/users")!
+            let apiUrl = URL(string: "http://192.168.1.113:7019/beneficiaire/beneficiaires")!
             
             // Sample user data
             let userData: [String: Any] = [

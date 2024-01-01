@@ -16,6 +16,7 @@ struct Profile: View {
    @State private var phoneNumber = ""
    @State private var mission = ""
    @State private var role = ""
+   
     var body: some View {
         Color(.white)
             .ignoresSafeArea(.all)
@@ -42,8 +43,8 @@ struct Profile: View {
         }
         
         VStack{
-            Button("Edit Profile"){
-                
+            Button("Delete Profile"){
+                deleteProfile(username: username, password: password, email: email, phoneNumber: phoneNumber, adresse: adresse, role: role, mission: mission)
             }
      
 
@@ -71,7 +72,7 @@ struct Profile: View {
                 showingSheet.toggle()
             }
             .sheet(isPresented: $showingSheet) {
-                        signup()
+                        Login()
          }
             .foregroundColor(.black)
             .frame(width: 300 , height: 50)
@@ -141,7 +142,7 @@ struct Profile: View {
                 .offset(x:-3 ,y:-55)
             
         }
-        VStack{
+      VStack{
             TextField("mission" , text: $mission)
             
                 .padding()
@@ -151,11 +152,12 @@ struct Profile: View {
                 .offset(x:-3 ,y:-50)
             
         }
+      
 
         
         VStack{
             Button("Save"){
-                EditProfile(username: username, password: password, email: email, phoneNumber: phoneNumber, adresse: adresse, role: role, mission: mission)
+                EditProfile(username: username, password: password, email: email, phoneNumber: phoneNumber, adresse: adresse, role: role , mission: mission)
             }
             .foregroundColor(.white)
             .frame(width: 300 , height: 50)
@@ -172,17 +174,17 @@ struct Profile: View {
     }
 }
 //Erruer dans le code quelque part utilise le debug 
-func EditProfile(username: String,password: String, email: String, phoneNumber: String, adresse: String , role:String,mission:String) {
+func EditProfile(username: String,password: String, email: String, phoneNumber: String, adresse: String , role:String  , mission:String ) {
         // Replace this URL with your actual backend API URL
         DispatchQueue.main.async {
             print("testtest")
 //             isLoading = true // Show loading view
          
-            let apiUrl = URL(string: "http://192.168.1.113:7001/user/users")!
+            let apiUrl = URL(string: "http://192.168.1.104:7019/beneficiaire/beneficiaires")!
             
             // Sample user data
             let userData: [String: Any] = [
-                //"id": "88",
+               // "id": "88",
                 "username": username,
                 //"fname": "jarreeay",
                 //"phone": 1235455555,
@@ -192,7 +194,7 @@ func EditProfile(username: String,password: String, email: String, phoneNumber: 
                 //"username": "fay",
                 "adresse":adresse,
                 "role":role,
-               "mission":mission
+                "mission":mission
                 
             ]
 
@@ -204,7 +206,7 @@ func EditProfile(username: String,password: String, email: String, phoneNumber: 
                 var request = URLRequest(url: apiUrl)
 
                 // Set the request method to POST
-                request.httpMethod = "POST"
+                request.httpMethod = "POST" // le PUT ne fonctionne pas
 
                 // Set the request body with the JSON data
                 request.httpBody = jsonData
@@ -234,6 +236,70 @@ func EditProfile(username: String,password: String, email: String, phoneNumber: 
             }
         }
     }
+
+func deleteProfile(username: String,password: String, email: String, phoneNumber: String, adresse: String , role:String  , mission:String ) {
+        // Replace this URL with your actual backend API URL
+        DispatchQueue.main.async {
+            print("testtest")
+//             isLoading = true // Show loading view
+         
+            let apiUrl = URL(string: "http://192.168.1.113:7019/user/users")!
+            
+            // Sample user data
+            let userData: [String: Any] = [
+                //"id": "88",
+                "username": username,
+                //"fname": "jarreeay",
+                //"phone": 1235455555,
+                "password": password,
+                "email": email,
+                "phoneNumber": phoneNumber,
+                //"username": "fay",
+                "adresse":adresse,
+                "role":role,
+                "mission":mission
+                
+            ]
+
+            do {
+                // Convert the user data to JSON
+                let jsonData = try JSONSerialization.data(withJSONObject: userData)
+
+                // Create a URLRequest with the API URL
+                var request = URLRequest(url: apiUrl)
+
+                // Set the request method to POST
+                request.httpMethod = "DELETE" // le PUT ne fonctionne pas
+
+                // Set the request body with the JSON data
+                request.httpBody = jsonData
+
+                // Set the request header to indicate JSON content
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+                // Make the request
+                URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    // Handle the response and error here
+                    if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                    } else if let data = data {
+                        // Parse and handle the response data
+                        // Note: You should handle this according to your API response format
+                        do {
+                            let jsonResponse = try JSONSerialization.jsonObject(with: data, options: [])
+                            print("Response: \(jsonResponse)")
+                            // You can update your UI or perform other actions based on the response
+                        } catch {
+                            print("Error parsing JSON: \(error.localizedDescription)")
+                        }
+                    }
+                }.resume()
+            } catch {
+                print("Error converting data to JSON: \(error.localizedDescription)")
+            }
+        }
+    }
+
 #Preview {
     Profile()
 }

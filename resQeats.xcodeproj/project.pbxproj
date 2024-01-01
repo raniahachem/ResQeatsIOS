@@ -10,15 +10,18 @@
 		4B0AE2BD2AFD4ADE0020608B /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B0AE2BC2AFD4ADE0020608B /* map.swift */; };
 		4B10F2C12B0E339300FD5376 /* signUp2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B10F2C02B0E339300FD5376 /* signUp2.swift */; };
 		4B2545262B03382A00B646B2 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2545252B03382A00B646B2 /* Profile.swift */; };
-		4B2AF2942AFB73E000F3DE2D /* Screen3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2932AFB73E000F3DE2D /* Screen3.swift */; };
 		4B2AF2A42AFBF85200F3DE2D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2A32AFBF85200F3DE2D /* Login.swift */; };
 		4B2AF2A62AFC1C0B00F3DE2D /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2A52AFC1C0B00F3DE2D /* ResetPassword.swift */; };
 		4B2AF2AA2AFC5E1100F3DE2D /* NewPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2A92AFC5E1100F3DE2D /* NewPassword.swift */; };
 		4B2AF2AC2AFC649800F3DE2D /* signup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2AB2AFC649800F3DE2D /* signup.swift */; };
 		4B2AF2AE2AFCBC7500F3DE2D /* signUp1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2AF2AD2AFCBC7500F3DE2D /* signUp1.swift */; };
-		4B2F8CA72B06817A00C768C4 /* Fournisseur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F8CA62B06817A00C768C4 /* Fournisseur.swift */; };
 		4B2F8CA92B06822200C768C4 /* Beneficiaire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F8CA82B06822200C768C4 /* Beneficiaire.swift */; };
 		4B2F8CAD2B068E9000C768C4 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F8CAC2B068E9000C768C4 /* UserViewModel.swift */; };
+		4B35843D2B43627500A5821A /* Launch Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35843C2B43627500A5821A /* Launch Screen.swift */; };
+		4B3584412B43629600A5821A /* Screen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35843E2B43629600A5821A /* Screen2.swift */; };
+		4B3584422B43629600A5821A /* Screen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B35843F2B43629600A5821A /* Screen1.swift */; };
+		4B3584432B43629600A5821A /* Screen3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3584402B43629600A5821A /* Screen3.swift */; };
+		4B3584452B4362F600A5821A /* Fournisseur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3584442B4362F600A5821A /* Fournisseur.swift */; };
 		4B6729C42AFA6D3E0002F7B8 /* resQeatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6729C32AFA6D3E0002F7B8 /* resQeatsApp.swift */; };
 		4B6729C62AFA6D3E0002F7B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6729C52AFA6D3E0002F7B8 /* ContentView.swift */; };
 		4B6729C82AFA6D3F0002F7B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B6729C72AFA6D3F0002F7B8 /* Assets.xcassets */; };
@@ -29,11 +32,8 @@
 		4B6729E42AFA6D3F0002F7B8 /* resQeatsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6729E32AFA6D3F0002F7B8 /* resQeatsUITests.swift */; };
 		4B6729E62AFA6D3F0002F7B8 /* resQeatsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6729E52AFA6D3F0002F7B8 /* resQeatsUITestsLaunchTests.swift */; };
 		4B93AD012B05AACA00D96BD4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93AD002B05AACA00D96BD4 /* User.swift */; };
-		4BB3F24E2AFDBDEE0017EAF7 /* Screen2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3F24D2AFDBDEE0017EAF7 /* Screen2.swift */; };
 		4BB3F2522AFDD28D0017EAF7 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3F2512AFDD28D0017EAF7 /* OTPViewModel.swift */; };
 		4BB3F2542AFDD5980017EAF7 /* SendPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB3F2532AFDD5980017EAF7 /* SendPassword.swift */; };
-		4BCDF6A42AFAB32400C86716 /* Launch Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDF6A32AFAB32400C86716 /* Launch Screen.swift */; };
-		4BCDF6A62AFABD3900C86716 /* Screen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCDF6A52AFABD3900C86716 /* Screen1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,15 +57,18 @@
 		4B0AE2BC2AFD4ADE0020608B /* map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = map.swift; sourceTree = "<group>"; };
 		4B10F2C02B0E339300FD5376 /* signUp2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp2.swift; sourceTree = "<group>"; };
 		4B2545252B03382A00B646B2 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		4B2AF2932AFB73E000F3DE2D /* Screen3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen3.swift; sourceTree = "<group>"; };
 		4B2AF2A32AFBF85200F3DE2D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		4B2AF2A52AFC1C0B00F3DE2D /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		4B2AF2A92AFC5E1100F3DE2D /* NewPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPassword.swift; sourceTree = "<group>"; };
 		4B2AF2AB2AFC649800F3DE2D /* signup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signup.swift; sourceTree = "<group>"; };
 		4B2AF2AD2AFCBC7500F3DE2D /* signUp1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUp1.swift; sourceTree = "<group>"; };
-		4B2F8CA62B06817A00C768C4 /* Fournisseur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fournisseur.swift; sourceTree = "<group>"; };
 		4B2F8CA82B06822200C768C4 /* Beneficiaire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beneficiaire.swift; sourceTree = "<group>"; };
 		4B2F8CAC2B068E9000C768C4 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		4B35843C2B43627500A5821A /* Launch Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Launch Screen.swift"; path = "../../../../../../../../.Trash/Launch Screen.swift"; sourceTree = "<group>"; };
+		4B35843E2B43629600A5821A /* Screen2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Screen2.swift; path = ../../../../../../../../.Trash/Screen2.swift; sourceTree = "<group>"; };
+		4B35843F2B43629600A5821A /* Screen1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Screen1.swift; path = ../../../../../../../../.Trash/Screen1.swift; sourceTree = "<group>"; };
+		4B3584402B43629600A5821A /* Screen3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Screen3.swift; path = ../../../../../../../../.Trash/Screen3.swift; sourceTree = "<group>"; };
+		4B3584442B4362F600A5821A /* Fournisseur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Fournisseur.swift; path = ../../../../../../../../.Trash/Fournisseur.swift; sourceTree = "<group>"; };
 		4B6729C02AFA6D3E0002F7B8 /* resQeats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = resQeats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B6729C32AFA6D3E0002F7B8 /* resQeatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resQeatsApp.swift; sourceTree = "<group>"; };
 		4B6729C52AFA6D3E0002F7B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,11 +82,9 @@
 		4B6729E32AFA6D3F0002F7B8 /* resQeatsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resQeatsUITests.swift; sourceTree = "<group>"; };
 		4B6729E52AFA6D3F0002F7B8 /* resQeatsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resQeatsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4B93AD002B05AACA00D96BD4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4BB3F24D2AFDBDEE0017EAF7 /* Screen2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen2.swift; sourceTree = "<group>"; };
+		4BA11A482B38BAAC006DB203 /* Script.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Script.sh; sourceTree = "<group>"; };
 		4BB3F2512AFDD28D0017EAF7 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		4BB3F2532AFDD5980017EAF7 /* SendPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPassword.swift; sourceTree = "<group>"; };
-		4BCDF6A32AFAB32400C86716 /* Launch Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch Screen.swift"; sourceTree = "<group>"; };
-		4BCDF6A52AFABD3900C86716 /* Screen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +143,7 @@
 				4B6729CC2AFA6D3F0002F7B8 /* Persistence.swift */,
 				4B6729CE2AFA6D3F0002F7B8 /* resQeats.xcdatamodeld */,
 				4B6729C92AFA6D3F0002F7B8 /* Preview Content */,
+				4BA11A482B38BAAC006DB203 /* Script.sh */,
 			);
 			path = resQeats;
 			sourceTree = "<group>";
@@ -184,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4B93AD002B05AACA00D96BD4 /* User.swift */,
-				4B2F8CA62B06817A00C768C4 /* Fournisseur.swift */,
+				4B3584442B4362F600A5821A /* Fournisseur.swift */,
 				4B2F8CA82B06822200C768C4 /* Beneficiaire.swift */,
 			);
 			path = Model;
@@ -194,10 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				4B6729C52AFA6D3E0002F7B8 /* ContentView.swift */,
-				4BCDF6A32AFAB32400C86716 /* Launch Screen.swift */,
-				4BCDF6A52AFABD3900C86716 /* Screen1.swift */,
-				4BB3F24D2AFDBDEE0017EAF7 /* Screen2.swift */,
-				4B2AF2932AFB73E000F3DE2D /* Screen3.swift */,
+				4B35843C2B43627500A5821A /* Launch Screen.swift */,
+				4B35843F2B43629600A5821A /* Screen1.swift */,
+				4B35843E2B43629600A5821A /* Screen2.swift */,
+				4B3584402B43629600A5821A /* Screen3.swift */,
 				4B2AF2A32AFBF85200F3DE2D /* Login.swift */,
 				4B2AF2A52AFC1C0B00F3DE2D /* ResetPassword.swift */,
 				4B2AF2A92AFC5E1100F3DE2D /* NewPassword.swift */,
@@ -343,23 +345,23 @@
 			files = (
 				4B0AE2BD2AFD4ADE0020608B /* map.swift in Sources */,
 				4B2F8CAD2B068E9000C768C4 /* UserViewModel.swift in Sources */,
-				4BCDF6A42AFAB32400C86716 /* Launch Screen.swift in Sources */,
-				4B2AF2942AFB73E000F3DE2D /* Screen3.swift in Sources */,
 				4B2AF2A42AFBF85200F3DE2D /* Login.swift in Sources */,
-				4BB3F24E2AFDBDEE0017EAF7 /* Screen2.swift in Sources */,
-				4B2F8CA72B06817A00C768C4 /* Fournisseur.swift in Sources */,
 				4B2F8CA92B06822200C768C4 /* Beneficiaire.swift in Sources */,
+				4B35843D2B43627500A5821A /* Launch Screen.swift in Sources */,
 				4B2AF2AE2AFCBC7500F3DE2D /* signUp1.swift in Sources */,
-				4BCDF6A62AFABD3900C86716 /* Screen1.swift in Sources */,
 				4B2AF2AA2AFC5E1100F3DE2D /* NewPassword.swift in Sources */,
 				4B6729CD2AFA6D3F0002F7B8 /* Persistence.swift in Sources */,
 				4B2AF2A62AFC1C0B00F3DE2D /* ResetPassword.swift in Sources */,
 				4B6729D02AFA6D3F0002F7B8 /* resQeats.xcdatamodeld in Sources */,
 				4B2AF2AC2AFC649800F3DE2D /* signup.swift in Sources */,
 				4B6729C62AFA6D3E0002F7B8 /* ContentView.swift in Sources */,
+				4B3584432B43629600A5821A /* Screen3.swift in Sources */,
 				4BB3F2542AFDD5980017EAF7 /* SendPassword.swift in Sources */,
+				4B3584412B43629600A5821A /* Screen2.swift in Sources */,
+				4B3584452B4362F600A5821A /* Fournisseur.swift in Sources */,
 				4B2545262B03382A00B646B2 /* Profile.swift in Sources */,
 				4B10F2C12B0E339300FD5376 /* signUp2.swift in Sources */,
+				4B3584422B43629600A5821A /* Screen1.swift in Sources */,
 				4B6729C42AFA6D3E0002F7B8 /* resQeatsApp.swift in Sources */,
 				4BB3F2522AFDD28D0017EAF7 /* OTPViewModel.swift in Sources */,
 				4B93AD012B05AACA00D96BD4 /* User.swift in Sources */,
